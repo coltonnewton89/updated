@@ -1,0 +1,13 @@
+.slides {
+  position: absolute;
+  height: 100%;
+  width: 90%;
+  border-radius: 24px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f1faee;
+  text-shadow: 2px 6px 4px #233e4f;
+}
+
+

@@ -1,0 +1,58 @@
+.changeSubmit {
+  background-color: rgba(0, 217, 255, 0);
+  color: #f1faee;
+  font-size: medium;
+  border: 1px solid #f1faee;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.editContinue {
+  margin-top: 20px;
+  background-color: rgb(14, 189, 192);
+  color: #f1faee;
+  font-size: medium;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.wordbank {
+  background-color: rgb(14, 189, 192);
+  color: #f1faee;
+  font-size: medium;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.wordbankClear {
+  margin-bottom: 20px !important;
+  background-color: rgb(14, 189, 192);
+  color: #f1faee;
+  font-size: medium;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.finish {
+  position: absolute;
+  background-color: rgb(14, 189, 192);
+  color: #f1faee;
+  font-size: medium;
+  height: 60px;
+  width: 65%;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

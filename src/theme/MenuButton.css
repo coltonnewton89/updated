@@ -1,0 +1,39 @@
+.listDiv {
+  font-size: 30px;
+}
+
+.MuiPaper-root {
+  background: rgb(14, 189, 192);
+  background: linear-gradient(
+    144deg,
+    rgba(14, 189, 192, 1) 0%,
+    rgba(35, 62, 79, 1) 100%
+  );
+  width: 250px;
+  color: #f1faeeef !important;
+
+  border-top-right-radius: 24%;
+  border-bottom-right-radius: 24%;
+  align-items: center !important;
+}
+
+.menuBtnContainer {
+  height: fit-content;
+  position: absolute;
+}
+
+.menuLogo {
+  margin-top: 30%;
+  filter: sepia(120%);
+}
+
+.menuBtn {
+  position: absolute;
+  background-image: url("../imgs/menuBtn.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+  top: 5px;
+}

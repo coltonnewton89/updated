@@ -1,0 +1,22 @@
+.brainGif {
+  margin-top: -15%;
+  height: 65%;
+  text-align: center;
+}
+
+.slideTitle {
+  margin-top: -5px;
+}
+
+.gifContainer {
+  border: 1px solid #f1faee;
+  border-radius: 60px;
+  height: 90%;
+  box-shadow: 2px 6px 4px #233e4f;
+}
+
+.instructions {
+  border-radius: 50%;
+  border: 1px solid #f1faee;
+  width: 10%;
+}

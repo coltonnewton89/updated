@@ -1,0 +1,63 @@
+.GearContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.painPart {
+  position: absolute;
+  top: 50px;
+}
+
+.truthPart {
+  position: absolute;
+  top: 50px;
+}
+
+.gearImg {
+  position: absolute;
+  width: 200px !important;
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+.editCycle {
+  position: absolute;
+  background-color: rgba(51, 207, 247, 0);
+  color: #f1faee;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  border: 1px solid #f1faee;
+  box-shadow: 2px 2px 2px 3px #233e4f;
+}
+
+.copePart {
+  position: absolute;
+  bottom: 50px;
+}
+
+.reactPart {
+  position: absolute;
+  bottom: 50px;
+}
