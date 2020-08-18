@@ -20,6 +20,7 @@
 .menuBtnContainer {
   height: fit-content;
   position: absolute;
+  z-index: 50;
 }
 
 .menuLogo {

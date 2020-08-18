@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import firebase from "../FireConfig";
 import "../theme/FourSteps.css";
 import Success from "../imgs/success.png";
 
@@ -8,6 +9,10 @@ class FourSteps extends Component {
     stepTwo: false,
     stepThree: false,
     stepFour: false,
+    priArr: "",
+    copeArr: "",
+    truthArr: "",
+    responseArr: "",
   };
 
   stepOneComplete = () => {
@@ -33,6 +38,51 @@ class FourSteps extends Component {
     this.props._completeFourSteps();
   };
 
+  componentDidMount = () => {
+    const currentUser = firebase.auth().currentUser.uid.toString();
+    var priArrRef = firebase
+      .firestore()
+      .collection("usercycle")
+      .doc(`${currentUser}_priArr`);
+    var copeArrRef = firebase
+      .firestore()
+      .collection("usercycle")
+      .doc(`${currentUser}_copeArr`);
+    var truthArrRef = firebase
+      .firestore()
+      .collection("usercycle")
+      .doc(`${currentUser}_truthArr`);
+    var responseArrRef = firebase
+      .firestore()
+      .collection("usercycle")
+      .doc(`${currentUser}_responseArr`);
+
+    priArrRef.get().then((doc) => {
+      if (doc.exists) {
+        this.setState({ priArr: doc.data().priArr });
+        console.log("pulled pri");
+      }
+    });
+    copeArrRef.get().then((doc) => {
+      if (doc.exists) {
+        this.setState({ copeArr: doc.data().copeArr });
+        console.log("pulled cope");
+      }
+    });
+    truthArrRef.get().then((doc) => {
+      if (doc.exists) {
+        this.setState({ truthArr: doc.data().truthArr });
+        console.log("pulled truth");
+      }
+    });
+    responseArrRef.get().then((doc) => {
+      if (doc.exists) {
+        this.setState({ responseArr: doc.data().responseArr });
+        console.log("pulled response");
+      }
+    });
+  };
+
   render() {
     return (
       <div>
@@ -52,9 +102,8 @@ class FourSteps extends Component {
           <div className="timelineContainer">
             <div className="fourStepContent">
               <p>
-                <b>Your Pain, Your Pain, and Your Pain</b>
+                <b>Pain: "{this.state.priArr}"</b>
               </p>
-              <p className="fourP">is your pain.</p>
               {this.state.stepOne ? null : (
                 <button className="fourStepBtn" onClick={this.stepOneComplete}>
                   Continue
@@ -65,9 +114,8 @@ class FourSteps extends Component {
             {this.state.stepOne ? (
               <div className="fourStepContent">
                 <p>
-                  <b>Your Cope, Your cope, and YoUr CoPe</b>
+                  <b>Cope: "{this.state.copeArr}"</b>
                 </p>
-                <p className="fourP">is your cope.</p>
                 {this.state.stepTwo ? null : (
                   <button
                     className="fourStepBtn"
@@ -82,9 +130,8 @@ class FourSteps extends Component {
             {this.state.stepTwo ? (
               <div className="fourStepContent">
                 <p>
-                  <b>Your truth, your truth, your truth</b>
+                  <b>Truth: "{this.state.truthArr}"</b>
                 </p>
-                <p className="fourP">is your truth</p>
                 {this.state.stepThree ? null : (
                   <button
                     className="fourStepBtn"
@@ -99,9 +146,8 @@ class FourSteps extends Component {
             {this.state.stepThree ? (
               <div className="fourStepContent">
                 <p>
-                  <b>Your truth, your truth, your truth</b>
+                  <b>Response: "{this.state.responseArr}"</b>
                 </p>
-                <p className="fourP">is your truth</p>
                 {this.state.stepFour ? null : (
                   <button
                     className="fourStepBtn"
