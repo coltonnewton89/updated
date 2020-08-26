@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import Button from "@material-ui/core/Button";
+import { Plugins } from "@capacitor/core";
+import "../theme/Journal.css";
 
 const Journal = () => {
   const instructions = () => {
     alert(
-      'Journal is designed to search for "pain" words through out your entry. Saving entries option is coming very soon.'
+      'Journal is designed to search for "pain" words through out your entry. This section is saved to your phone and does not share any of your journal data to any selfteck database to ensure your privacy.'
     );
   };
 
@@ -38,13 +39,19 @@ const Journal = () => {
   ];
 
   //setting up hook for journal input with function
+  const [userTitle, setUserTitle] = useState("");
   const [userText, setUserText] = useState("");
   const [pain, setPain] = useState(false);
   const [ignore, setIgnore] = useState(false);
+  const [completeUser, _completeUser] = useState([]);
+
+  const updateUserTitle = (event) => {
+    setUserTitle(event.target.value);
+  };
 
   const updateUserText = (event) => {
     setUserText(event.target.value);
-
+    //findPain
     const userWords = userText.split(" ");
     if (ignore === false) {
       if (
@@ -54,69 +61,83 @@ const Journal = () => {
         userWords.push(null);
       }
     }
+    console.log(userText);
   };
 
+  //Ignore findPain
   const justIgnore = () => {
     setIgnore(true);
     setPain(!pain);
   };
 
+  //trigger painAlert
   function inPain() {
     setPain(!pain);
     console.log("in pain alert");
   }
 
+  //Save entry
+
+  // function saveItem() {
+  //   localStorage.setItem(
+  //     "userInput",
+  //     JSON.stringify([
+  //       {
+  //         title: userTitle,
+  //         body: userText,
+  //       },
+  //     ])
+  //   );
+  // }
+
+  // React.useEffect(() => {
+  //   const userValue = localStorage.getItem("userInput");
+  //   _completeUser(JSON.parse(userValue));
+  // });
+
   return (
-    <div
-      id="backdrop"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "center",
-        maxWidth: "100%",
-      }}
-    >
+    <div className="journalContainer">
       {pain ? (
-        <div className="backDrop">
-          You might be in pain! Analyzing your four steps might help!
-          <br />
-          <NavLink to="/Cycle/CycleHome">
-            <Button
-              style={{ borderRadius: "25px" }}
-              variant="contained"
-              color="primary"
-            >
-              Go to cycle
-            </Button>
+        <div className="painAlert">
+          <p>You might be in pain! Analyzing your four steps might help!</p>
+          <NavLink to="/Cycle">
+            <button className="journalBtn">Go to cycle</button>
           </NavLink>
-          <Button
-            style={{ borderRadius: "25px" }}
+          <button
+            className="journalBtn"
             variant="contained"
             color="primary"
             onClick={justIgnore}
           >
-            Just ignore it.
-          </Button>
+            Ignore
+          </button>
         </div>
-      ) : null}
-      <div style={{ color: "black", height: "100vh" }}>
-        <h2>Journal</h2>
-        <p onClick={instructions}>tap Here For Instructions</p>
-        <div className="customInput">
+      ) : (
+        <div className="newJournal">
+          <h2>Journal</h2>
+          <p className="question" onClick={instructions}>
+            <small>Questions/Who see's this?</small>
+          </p>
+          <label htmlFor="journalTitle">Title:</label>
+          <input
+            type="text"
+            className="journalTitle"
+            onChange={updateUserTitle}
+          />
+          <label htmlFor="journalBody">Body:</label>
           <input
             name="journalInput"
             type="text"
             onChange={updateUserText}
-            id="journalInput"
+            className="journalBody"
             value={userText}
             required
           />
-          <span class="highlight"></span>
-          <span class="bar"></span>
-          <label>Journal Input</label>
+          <button className="journalSave">
+            Save New Entry
+          </button>
         </div>
-      </div>
+      )}
     </div>
   );
 };

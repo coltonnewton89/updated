@@ -6,14 +6,17 @@ import ListItem from "@material-ui/core/ListItem";
 import firebase from "../FireConfig";
 import "../theme/MenuButton.css";
 import { NavLink } from "react-router-dom";
-import selfTeckLogo from '../imgs/teck.png';
-
+import selfTeckLogo from "../imgs/teck.png";
+import cycleBtn from "../menuImgs/cycleBtn.png";
+import journalBtn from "../menuImgs/journalBtn.png";
+import messengerBtn from "../menuImgs/messengerBtn.png";
+import workshopBtn from "../menuImgs/workshopBtn.png";
+import bilateralBtn from "../menuImgs/bilateralBtn.png";
+import logOut from "../menuImgs/logOut.png";
 
 //Menu Drawer Styles
 
-
 export default function SwipeableTemporaryDrawer() {
-  
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -35,62 +38,89 @@ export default function SwipeableTemporaryDrawer() {
 
   //Menu Drawer
   const list = (anchor) => (
-    <div 
-      className='listDiv'
+    <div
+      className="listDiv"
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <h3>Menu</h3>
-        <NavLink
-          exact
-          to="/Cycle"
-          className="menuNavLink"
-          activeClassName="activeRoute"
-          activeStyle={{ color: "#e56b6f" }}
-        >
-          <ListItem>
-            Cycle
-          </ListItem>
-        </NavLink>
+        <div className="menuRow">
+          <NavLink
+            exact
+            to="/Cycle"
+            className="menuNavLink"
+            activeClassName="activeRoute"
+            activeStyle={{ color: "#e56b6f" }}
+          >
+            <div className="menuIconDiv">
+              <img className="menuIcon" src={cycleBtn} />
+              <p>Cycle</p>
+            </div>
+          </NavLink>
 
-        <NavLink
-          to="/Journal"
-          className="navLink"
-          activeClassName="activeRoute"
-          activeStyle={{ color: "#e56b6f" }}
-        >
-          <ListItem>
-            Journal
-          </ListItem>
-        </NavLink>
+          <NavLink
+            to="/Workshop"
+            className="navLink"
+            activeClassName="activeRoute"
+            activeStyle={{ color: "#e56b6f" }}
+          >
+            <div className="menuIconDiv">
+              <img className="menuIcon" src={workshopBtn} />
+              <p>Workshop</p>
+            </div>
+          </NavLink>
+        </div>
 
-        <NavLink
-          to="/Bilateral"
-          className="navLink"
-          activeClassName="activeRoute"
-          activeStyle={{ color: "#e56b6f" }}
-        >
-          <ListItem>
-            Bilateral
-          </ListItem>
-        </NavLink>
+        <div className="menuRow">
+          <NavLink
+            to="/Journal"
+            className="navLink"
+            activeClassName="activeRoute"
+            activeStyle={{ color: "#e56b6f" }}
+          >
+            <div className="menuIconDiv">
+              <img className="menuIcon" src={journalBtn} />
+              <p>Journal</p>
+            </div>
+          </NavLink>
 
-        <NavLink
-          to="/Workshop"
-          className="navLink"
-          activeClassName="activeRoute"
-          activeStyle={{ color: "#e56b6f" }}
-        >
-          <ListItem>
-            Workshop
-          </ListItem>
-        </NavLink>
+          <NavLink
+            to="/Messenger"
+            className="navLink"
+            activeClassName="activeRoute"
+            activeStyle={{ color: "#e56b6f" }}
+          >
+            <div className="menuIconDiv">
+              <img className="menuIcon" src={messengerBtn} />
+              <p>Messenger</p>
+            </div>
+          </NavLink>
+        </div>
 
-        <ListItem onClick={logOff}>Log Off</ListItem>
+        <div className="menuRow">
+          <NavLink
+            to="/Bilateral"
+            className="navLink"
+            activeClassName="activeRoute"
+            activeStyle={{ color: "#e56b6f" }}
+          >
+            <div className="menuIconDiv">
+              <img className="menuIcon" src={bilateralBtn} />
+              <p>Bilateral</p>
+            </div>
+          </NavLink>
+        </div>
+
+        <img className="menuLogo" src={selfTeckLogo} alt="Self Teck logo" />
+
+        <div className="logOffDiv">
+          <img src={logOut} />
+          <ListItem onClick={logOff} className="logOutItem">
+            Log Off
+          </ListItem>
+        </div>
       </List>
-      <img className='menuLogo' src={selfTeckLogo} alt="Self Teck logo"/>
     </div>
   );
 
@@ -121,7 +151,6 @@ export default function SwipeableTemporaryDrawer() {
     </div>
   );
 }
-
 
 //Create link for chat
 //create settings pop menu

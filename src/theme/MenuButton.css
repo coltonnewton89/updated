@@ -1,20 +1,7 @@
-.listDiv {
-  font-size: 30px;
-}
-
 .MuiPaper-root {
-  background: rgb(14, 189, 192);
-  background: linear-gradient(
-    144deg,
-    rgba(14, 189, 192, 1) 0%,
-    rgba(35, 62, 79, 1) 100%
-  );
+  background: rgba(10, 131, 133, 0.801) !important;
   width: 250px;
   color: #f1faeeef !important;
-
-  border-top-right-radius: 24%;
-  border-bottom-right-radius: 24%;
-  align-items: center !important;
 }
 
 .menuBtnContainer {
@@ -24,8 +11,9 @@
 }
 
 .menuLogo {
-  margin-top: 30%;
+  margin-top: 10%;
   filter: sepia(120%);
+  opacity: 60%;
 }
 
 .menuBtn {
@@ -37,4 +25,38 @@
   height: 50px;
   width: 50px;
   top: 5px;
+}
+
+.menuIconDiv {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.menuIcon {
+  height: 75px;
+  margin-bottom: -10px;
+}
+
+.menuRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.logOffDiv {
+  display: grid;
+  position: fixed;
+  grid-template-columns: 25px 200px;
+  align-items: center;
+  bottom: 5px;
+  left: 5px;
+}
+
+.logOutItem {
+  padding: 5px !important;
 }
