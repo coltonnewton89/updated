@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { Plugins } from "@capacitor/core";
+import firebase from "../FireConfig";
+import JournalEntries from "../components/JournalEntries";
 import "../theme/Journal.css";
 
 const Journal = () => {
@@ -43,7 +44,7 @@ const Journal = () => {
   const [userText, setUserText] = useState("");
   const [pain, setPain] = useState(false);
   const [ignore, setIgnore] = useState(false);
-  const [completeUser, _completeUser] = useState([]);
+  const [viewEntry, _viewEntry] = useState(false);
 
   const updateUserTitle = (event) => {
     setUserTitle(event.target.value);
@@ -77,23 +78,21 @@ const Journal = () => {
   }
 
   //Save entry
+  const saveUserEntry = () => {
+    const currentUser = firebase.auth().currentUser.uid.toString();
+    const newEntry = {
+      title: userTitle,
+      body: userText,
+    };
+    firebase.database().ref(`/userPosts/${currentUser}`).push(newEntry);
+    setUserTitle("");
+    setUserText("");
+  };
 
-  // function saveItem() {
-  //   localStorage.setItem(
-  //     "userInput",
-  //     JSON.stringify([
-  //       {
-  //         title: userTitle,
-  //         body: userText,
-  //       },
-  //     ])
-  //   );
-  // }
-
-  // React.useEffect(() => {
-  //   const userValue = localStorage.getItem("userInput");
-  //   _completeUser(JSON.parse(userValue));
-  // });
+  const viewUserEntry = () => {
+    _viewEntry(!viewEntry);
+    console.log(viewEntry);
+  };
 
   return (
     <div className="journalContainer">
@@ -112,6 +111,8 @@ const Journal = () => {
             Ignore
           </button>
         </div>
+      ) : viewEntry ? (
+        <JournalEntries />
       ) : (
         <div className="newJournal">
           <h2>Journal</h2>
@@ -133,10 +134,19 @@ const Journal = () => {
             value={userText}
             required
           />
-          <button className="journalSave">
+          <button className="journalSave" onClick={saveUserEntry}>
             Save New Entry
           </button>
         </div>
+      )}
+      {viewEntry ? (
+        <button className="journalBtn" onClick={viewUserEntry}>
+          Create New Entry
+        </button>
+      ) : (
+        <button className="journalBtn" onClick={viewUserEntry}>
+          View Entries
+        </button>
       )}
     </div>
   );

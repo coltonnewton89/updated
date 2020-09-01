@@ -9,6 +9,7 @@
   width: 100vw;
   overflow: scroll;
   justify-items: center;
+  align-items: center;
   text-align: center;
   color: #f1faee;
 }
@@ -16,7 +17,6 @@
 .newJournal {
   background-color: #00d1bb;
   border-radius: 24px;
-  margin-top: 10%;
   width: 90%;
   height: fit-content;
   text-shadow: 2px 6px 4px #233e4f;
@@ -45,8 +45,8 @@
   background-color: #f1faee;
   color: #00d1bb;
   padding: 10px;
+  bottom: 10px;
   border-radius: 24px;
-  margin-right: 10px;
   box-shadow: 2px 6px 4px #233e4f;
 }
 
