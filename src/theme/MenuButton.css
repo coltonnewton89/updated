@@ -22,20 +22,24 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   top: 5px;
 }
 
 .menuIconDiv {
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
+  display: flex;
+  justify-items: left;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.navP {
+  margin-left: 5px;
 }
 
 .menuIcon {
-  height: 75px;
+  height: 55px;
   margin-bottom: -10px;
 }
 

@@ -9,7 +9,6 @@ import { NavLink } from "react-router-dom";
 import selfTeckLogo from "../imgs/teck.png";
 import cycleBtn from "../menuImgs/cycleBtn.png";
 import journalBtn from "../menuImgs/journalBtn.png";
-import messengerBtn from "../menuImgs/messengerBtn.png";
 import workshopBtn from "../menuImgs/workshopBtn.png";
 import bilateralBtn from "../menuImgs/bilateralBtn.png";
 import logOut from "../menuImgs/logOut.png";
@@ -45,7 +44,7 @@ export default function SwipeableTemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <div className="menuRow">
+        
           <NavLink
             exact
             to="/Cycle"
@@ -55,7 +54,7 @@ export default function SwipeableTemporaryDrawer() {
           >
             <div className="menuIconDiv">
               <img className="menuIcon" src={cycleBtn} />
-              <p>Cycle</p>
+              <p className='navP'>Cycle</p>
             </div>
           </NavLink>
 
@@ -67,12 +66,11 @@ export default function SwipeableTemporaryDrawer() {
           >
             <div className="menuIconDiv">
               <img className="menuIcon" src={workshopBtn} />
-              <p>Workshop</p>
+              <p className='navP'>Workshop</p>
             </div>
           </NavLink>
-        </div>
 
-        <div className="menuRow">
+        
           <NavLink
             to="/Journal"
             className="navLink"
@@ -81,24 +79,11 @@ export default function SwipeableTemporaryDrawer() {
           >
             <div className="menuIconDiv">
               <img className="menuIcon" src={journalBtn} />
-              <p>Journal</p>
+              <p className='navP'>Journal</p>
             </div>
           </NavLink>
 
-          <NavLink
-            to="/Messenger"
-            className="navLink"
-            activeClassName="activeRoute"
-            activeStyle={{ color: "#e56b6f" }}
-          >
-            <div className="menuIconDiv">
-              <img className="menuIcon" src={messengerBtn} />
-              <p>Messenger</p>
-            </div>
-          </NavLink>
-        </div>
-
-        <div className="menuRow">
+        
           <NavLink
             to="/Bilateral"
             className="navLink"
@@ -107,10 +92,9 @@ export default function SwipeableTemporaryDrawer() {
           >
             <div className="menuIconDiv">
               <img className="menuIcon" src={bilateralBtn} />
-              <p>Bilateral</p>
+              <p className='navP'>Bilateral</p>
             </div>
           </NavLink>
-        </div>
 
         <img className="menuLogo" src={selfTeckLogo} alt="Self Teck logo" />
 
