@@ -54,7 +54,7 @@ class EditPeace extends Component {
     this.setState({ truthArr: [] });
   };
 
-  componentWillReceiveProps = () => {
+  componentDidMount() {
     const currentUser = firebase.auth().currentUser.uid.toString();
     var priArrRef = firebase
       .firestore()
@@ -66,7 +66,7 @@ class EditPeace extends Component {
       }
     });
     console.log("i pulled pain");
-  };
+  }
 
   componentDidUpdate = () => {
     const currentUser = firebase.auth().currentUser.uid.toString();

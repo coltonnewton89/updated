@@ -151,6 +151,3 @@ export default function SwipeableTemporaryDrawer() {
     </div>
   );
 }
-
-//Create link for chat
-//create settings pop menu

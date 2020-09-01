@@ -8,6 +8,7 @@ class ContinuePainEdit extends Component {
       priArr: [],
       _priArr: "",
       viewPain: false,
+      event: "",
     };
     this.pushCustomChoice = this.pushCustomChoice.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -30,6 +31,19 @@ class ContinuePainEdit extends Component {
       });
     }
     document.getElementById("custom").value = "";
+  }
+
+  componentDidMount() {
+    const currentUser = firebase.auth().currentUser.uid.toString();
+    var eventRef = firebase
+      .firestore()
+      .collection("usercycle")
+      .doc(`${currentUser}_event`);
+    eventRef.get().then((doc) => {
+      if (doc.exists) {
+        this.setState({ event: doc.data().event });
+      }
+    });
   }
 
   componentDidUpdate() {
@@ -72,7 +86,7 @@ class ContinuePainEdit extends Component {
   render() {
     return (
       <div>
-        <p>Event: "Event event event, so event and event event."</p>
+        <p>{this.state.event}</p>
         <p>
           <small>
             When this event took place, What were you feeling or believing?

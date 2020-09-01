@@ -8,6 +8,7 @@ class ContinueCopeEdit extends Component {
       cope: true,
       copeArr: [],
       _copeArr: "",
+      event: "",
     };
     this.pushCustomChoice = this.pushCustomChoice.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -32,6 +33,19 @@ class ContinueCopeEdit extends Component {
     document.getElementById("custom").value = "";
 
     console.log(this.state.copeArr);
+  }
+
+  componentDidMount() {
+    const currentUser = firebase.auth().currentUser.uid.toString();
+    var eventRef = firebase
+      .firestore()
+      .collection("usercycle")
+      .doc(`${currentUser}_event`);
+    eventRef.get().then((doc) => {
+      if (doc.exists) {
+        this.setState({ event: doc.data().event });
+      }
+    });
   }
 
   componentDidUpdate() {
@@ -73,7 +87,7 @@ class ContinueCopeEdit extends Component {
     return (
       <div className="continuePainEditContainer">
         <div>
-          <p>"Event event event event, Event so Event event."</p>
+          <p>Event: {this.state.event}</p>
           <p>
             <small>
               How did you act when this took place? IE: "I started to/ I became

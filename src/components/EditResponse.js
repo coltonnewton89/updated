@@ -13,7 +13,7 @@ class EditResponse extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentWillReceiveProps = () => {
+  componentDidMount() {
     const currentUser = firebase.auth().currentUser.uid.toString();
     var truthArrRef = firebase
       .firestore()

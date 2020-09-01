@@ -37,29 +37,33 @@ class PeaceGear extends Component {
     console.log("I am completely finished!");
   };
 
-  componentWillReceiveProps = () => {
-    const currentUser = firebase.auth().currentUser.uid.toString();
-    var truthArrRef = firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_truthArr`);
-    truthArrRef.get().then((doc) => {
-      if (doc.exists) {
-        this.setState({ truthArr: doc.data().truthArr });
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        const currentUser = firebase.auth().currentUser.uid.toString();
+        var truthArrRef = firebase
+          .firestore()
+          .collection("usercycle")
+          .doc(`${currentUser}_truthArr`);
+        truthArrRef.get().then((doc) => {
+          if (doc.exists) {
+            this.setState({ truthArr: doc.data().truthArr });
+          }
+        });
+        var responseArrRef = firebase
+          .firestore()
+          .collection("usercycle")
+          .doc(`${currentUser}_responseArr`);
+        responseArrRef.get().then((doc) => {
+          if (doc.exists) {
+            this.setState({ responseArr: doc.data().responseArr });
+          }
+        });
+        console.log("i pulled truth");
+        console.log("i pulled response");
       }
     });
-    var responseArrRef = firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_responseArr`);
-    responseArrRef.get().then((doc) => {
-      if (doc.exists) {
-        this.setState({ responseArr: doc.data().responseArr });
-      }
-    });
-    console.log("i pulled truth");
-    console.log("i pulled response");
-  };
+  }
 
   render() {
     return (

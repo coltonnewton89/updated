@@ -35,25 +35,29 @@ class PainGear extends Component {
     console.log("I am completely finished!");
   };
 
-  componentWillReceiveProps() {
-    const currentUser = firebase.auth().currentUser.uid.toString();
-    var priArrRef = firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_priArr`);
-    var copeArrRef = firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_copeArr`);
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        const currentUser = firebase.auth().currentUser.uid.toString();
+        var priArrRef = firebase
+          .firestore()
+          .collection("usercycle")
+          .doc(`${currentUser}_priArr`);
+        var copeArrRef = firebase
+          .firestore()
+          .collection("usercycle")
+          .doc(`${currentUser}_copeArr`);
 
-    priArrRef.get().then((doc) => {
-      if (doc.exists) {
-        this.setState({ priArr: doc.data().priArr });
-      }
-    });
-    copeArrRef.get().then((doc) => {
-      if (doc.exists) {
-        this.setState({ copeArr: doc.data().copeArr });
+        priArrRef.get().then((doc) => {
+          if (doc.exists) {
+            this.setState({ priArr: doc.data().priArr });
+          }
+        });
+        copeArrRef.get().then((doc) => {
+          if (doc.exists) {
+            this.setState({ copeArr: doc.data().copeArr });
+          }
+        });
       }
     });
   }
