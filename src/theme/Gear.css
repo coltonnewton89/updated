@@ -24,23 +24,6 @@
   animation: spin 4s linear infinite;
 }
 
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(180deg);
-  }
-}
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(180deg);
-  }
-}
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-}
-
 .editCycle {
   position: absolute;
   background-color: rgba(51, 207, 247, 0);
@@ -60,4 +43,24 @@
 .reactPart {
   position: absolute;
   bottom: 50px;
+}
+
+/* =====Animations===== */
+
+/* =Spin Gear== */
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
 }

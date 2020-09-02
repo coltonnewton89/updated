@@ -4,7 +4,7 @@ import Gear from "../imgs/gear.png";
 import "../theme/Gear.css";
 import EditPeace from "./EditPeace";
 import EditResponse from "./EditResponse";
-import Checky from "../imgs/checky.png";
+import Checky from "../imgs/goodJob.png";
 
 class PeaceGear extends Component {
   state = {

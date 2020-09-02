@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Gear from "../imgs/gear.png";
 import "../theme/Gear.css";
 import EditPain from "./EditPain";
-import Checky from "../imgs/checky.png";
+import Checky from "../imgs/goodJob.png";
 import firebase from "../FireConfig";
 
 class PainGear extends Component {

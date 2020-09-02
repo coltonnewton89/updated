@@ -38,6 +38,14 @@ import unplug from "./wsImgs/unplug.png";
 import unSafe from "./wsImgs/unSafe.png";
 import wordsOfAffirmation from "./wsImgs/wordsOfAffirmation.png";
 import read from "./wsImgs/read.png";
+import Challenges from "../components/Challenges";
+
+// When they complete challenge that's
+// when it prompts save others share facebook
+
+// Logic: challenge ? challenge Counter ++
+// onClick addToChallengeCounter
+//  also remove Counter btn so they can't cheat
 
 export const workshopChallenges = [
   {

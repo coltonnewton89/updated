@@ -13,8 +13,11 @@ class PainBrain extends Component {
   };
 
   giveInstructions = () => {
-    alert("to open your four steps, click on the brain. Remember: red means pain, green means peace.");
+    alert(
+      "to open your four steps, click on the brain. Remember: red means pain, green means peace."
+    );
   };
+  z;
 
   render() {
     return (

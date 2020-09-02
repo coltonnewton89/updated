@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import firebase from "../FireConfig";
 import "../theme/FourSteps.css";
-import Success from "../imgs/success.png";
+import Success from "../imgs/goodJob.png";
 
 class FourSteps extends Component {
   state = {
