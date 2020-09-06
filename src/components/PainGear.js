@@ -86,7 +86,7 @@ class PainGear extends Component {
             <button className="editCycle" onClick={this.toggleEdit}>
               Click here to edit Pain Cycle
             </button>
-            <p className="copePart">Which leads you "{this.state.copeArr}"</p>
+            <p className="copePart">Which leads you to/become: "{this.state.copeArr}"</p>
           </div>
         )}
       </div>

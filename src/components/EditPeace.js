@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import firebase from "../FireConfig";
+import "../theme/EditCycle.css";
 
 class EditPeace extends Component {
   constructor(props) {
@@ -86,7 +87,7 @@ class EditPeace extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="editTruth">
         <p>Pain: "{this.state.priArr}"</p>
         <p>
           <small>

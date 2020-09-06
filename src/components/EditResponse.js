@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import firebase from "../FireConfig";
+import "../theme/EditCycle.css";
 
 class EditResponse extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class EditResponse extends Component {
         console.log("fetched truthArr");
       }
     });
-  };
+  }
 
   handleChange(e) {
     this.setState({ _responseArr: e.target.value });
@@ -89,7 +90,7 @@ class EditResponse extends Component {
 
   render() {
     return (
-      <div>
+      <div className='editResponse'>
         <p>Truth: "{this.state.truthArr}"</p>
         <p>
           <small>

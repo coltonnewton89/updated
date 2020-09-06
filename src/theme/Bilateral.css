@@ -20,10 +20,9 @@
     display: initial;
     text-align: center;
     width: 90%;
-    -webkit-animation: rotate-out-2-cw 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-      reverse both;
-    animation: rotate-out-2-cw 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse
+    -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
       both;
+    animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
 
   .landscapeDiv {
@@ -39,6 +38,9 @@
 
   .landscapeDiv {
     display: initial;
+    -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+      both;
+    animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
 
   .buttonRow {
@@ -92,29 +94,30 @@
 }
 
 /* =====Animations===== */
-/* ==StandardPortraitAnimation== */
-@-webkit-keyframes rotate-out-2-cw {
+
+/* ==App Animation== */
+@-webkit-keyframes text-focus-in {
   0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-    opacity: 1;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
   }
   100% {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    opacity: 0;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
   }
 }
-@keyframes rotate-out-2-cw {
+@keyframes text-focus-in {
   0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-    opacity: 1;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
   }
   100% {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    opacity: 0;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
   }
 }
 

@@ -65,10 +65,11 @@ class Bilateral extends Component {
                   alt="we're working torwards a non-visual version"
                 />
               </div>
+              
             </div>
           ) : (
             <div className="startDiv">
-              <p>
+              <p className='startP'>
                 <small>
                   Press the Start button to begin. You'll see a button appear on
                   the right. After pressing, this will toggle the left button.

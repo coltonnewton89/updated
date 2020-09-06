@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import firebase from "../FireConfig";
 import JournalEntries from "../components/JournalEntries";
@@ -77,6 +77,8 @@ const Journal = () => {
     console.log("in pain alert");
   }
 
+  /*=====TRY THIS WITH LOCAL STATE...
+  REMEBER YOU CAN USE _LODASH=====*/
   //Save entry
   const saveUserEntry = () => {
     const currentUser = firebase.auth().currentUser.uid.toString();

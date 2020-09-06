@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import firebase from "../FireConfig";
+import "../theme/EditCycle.css";
 
 class ContinuePainEdit extends Component {
   constructor(props) {
@@ -85,7 +86,7 @@ class ContinuePainEdit extends Component {
 
   render() {
     return (
-      <div>
+      <div className="editCope">
         <p>{this.state.event}</p>
         <p>
           <small>

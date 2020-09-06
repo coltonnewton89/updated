@@ -56,3 +56,53 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.event {
+  -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.editCope {
+  -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.editTruth {
+  -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.editResponse {
+  -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+/* =====Animations===== */
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}

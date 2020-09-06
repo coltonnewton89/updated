@@ -100,9 +100,10 @@ class FourSteps extends Component {
           </div>
         ) : (
           <div className="timelineContainer">
+            <h2>Your Four Steps</h2>
             <div className="fourStepContent">
-              <p>
-                <b>Pain: "{this.state.priArr}"</b>
+              <p className="fourB">
+                <b>"{this.state.priArr}" is your pain.</b>
               </p>
               {this.state.stepOne ? null : (
                 <button className="fourStepBtn" onClick={this.stepOneComplete}>
@@ -113,8 +114,8 @@ class FourSteps extends Component {
 
             {this.state.stepOne ? (
               <div className="fourStepContent">
-                <p>
-                  <b>Cope: "{this.state.copeArr}"</b>
+                <p className="fourB">
+                  <b>Which leads you to/to become: "{this.state.copeArr}"</b>
                 </p>
                 {this.state.stepTwo ? null : (
                   <button
@@ -129,8 +130,8 @@ class FourSteps extends Component {
 
             {this.state.stepTwo ? (
               <div className="fourStepContent">
-                <p>
-                  <b>Truth: "{this.state.truthArr}"</b>
+                <p className="fourB">
+                  <b>But you are: "{this.state.truthArr}"</b>
                 </p>
                 {this.state.stepThree ? null : (
                   <button
@@ -145,8 +146,8 @@ class FourSteps extends Component {
 
             {this.state.stepThree ? (
               <div className="fourStepContent">
-                <p>
-                  <b>Response: "{this.state.responseArr}"</b>
+                <p className="fourB">
+                  <b>Which allows you to beome: "{this.state.responseArr}"</b>
                 </p>
                 {this.state.stepFour ? null : (
                   <button
