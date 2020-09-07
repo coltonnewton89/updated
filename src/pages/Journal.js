@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import firebase from "../FireConfig";
 import JournalEntries from "../components/JournalEntries";
 import "../theme/Journal.css";
 
 const Journal = () => {
   const instructions = () => {
     alert(
-      'Journal is designed to search for "pain" words through out your entry. This section is saved to your phone and does not share any of your journal data to any selfteck database to ensure your privacy.'
+      "Through out your entry, Journal is designed to search for certain 'pain' words. This section is saved to your phone's local storage only and does not post or share any of your journal data to any external source to ensure your privacy."
     );
   };
 
@@ -44,6 +43,7 @@ const Journal = () => {
   const [userText, setUserText] = useState("");
   const [pain, setPain] = useState(false);
   const [ignore, setIgnore] = useState(false);
+  const [currentNewEntry, setNewEntry] = useState([]);
   const [viewEntry, _viewEntry] = useState(false);
 
   const updateUserTitle = (event) => {
@@ -81,19 +81,19 @@ const Journal = () => {
   REMEBER YOU CAN USE _LODASH=====*/
   //Save entry
   const saveUserEntry = () => {
-    const currentUser = firebase.auth().currentUser.uid.toString();
+    var oldEntry = JSON.parse(localStorage.getItem("currentUser")) || [];
     const newEntry = {
       title: userTitle,
       body: userText,
     };
-    firebase.database().ref(`/userPosts/${currentUser}`).push(newEntry);
+    oldEntry.push(newEntry);
+    localStorage.setItem("currentUser", JSON.stringify(oldEntry));
     setUserTitle("");
     setUserText("");
   };
 
   const viewUserEntry = () => {
     _viewEntry(!viewEntry);
-    console.log(viewEntry);
   };
 
   return (

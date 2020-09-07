@@ -22,6 +22,10 @@ class JournalEntries extends Component {
     this.setState({ largeKey: "" });
   };
 
+  deleteItem = (e) => {
+    localStorage.removeItem("currentUser", e.target.value);
+  };
+
   renderLargePost() {
     return _.map(this.state.userEntries, (post, key) => {
       if (key == this.state.largeKey) {
@@ -35,6 +39,13 @@ class JournalEntries extends Component {
               value={key}
             >
               Return To Entries
+            </button>
+            <button
+              className="journalBtnDelete"
+              onClick={this.deleteItem}
+              value={key}
+            >
+              Delete
             </button>
           </div>
         );
@@ -61,13 +72,8 @@ class JournalEntries extends Component {
   }
 
   componentDidMount() {
-    const currentUser = firebase.auth().currentUser.uid.toString();
-    firebase
-      .database()
-      .ref(`/userPosts/${currentUser}`)
-      .on("value", (snapshot) => {
-        this.setState({ userEntries: snapshot.val() });
-      });
+    let pulledEntry = JSON.parse(localStorage.getItem("currentUser"));
+    this.setState({ userEntries: pulledEntry });
   }
 
   render() {
