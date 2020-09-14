@@ -44,57 +44,54 @@ export default function SwipeableTemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        
-          <NavLink
-            exact
-            to="/Cycle"
-            className="menuNavLink"
-            activeClassName="activeRoute"
-            activeStyle={{ color: "#e56b6f" }}
-          >
-            <div className="menuIconDiv">
-              <img className="menuIcon" src={cycleBtn} />
-              <p className='navP'>Cycle</p>
-            </div>
-          </NavLink>
+        <NavLink
+          exact
+          to="/Cycle"
+          className="menuNavLink"
+          activeClassName="activeRoute"
+          activeStyle={{ color: "#e56b6f" }}
+        >
+          <div className="menuIconDiv">
+            <img className="menuIcon" src={cycleBtn} />
+            <p className="navP">Cycle</p>
+          </div>
+        </NavLink>
 
-          <NavLink
-            to="/Workshop"
-            className="navLink"
-            activeClassName="activeRoute"
-            activeStyle={{ color: "#e56b6f" }}
-          >
-            <div className="menuIconDiv">
-              <img className="menuIcon" src={workshopBtn} />
-              <p className='navP'>Workshop</p>
-            </div>
-          </NavLink>
+        <NavLink
+          to="/Workshop"
+          className="navLink"
+          activeClassName="activeRoute"
+          activeStyle={{ color: "#e56b6f" }}
+        >
+          <div className="menuIconDiv">
+            <img className="menuIcon" src={workshopBtn} />
+            <p className="navP">Workshop</p>
+          </div>
+        </NavLink>
 
-        
-          <NavLink
-            to="/Journal"
-            className="navLink"
-            activeClassName="activeRoute"
-            activeStyle={{ color: "#e56b6f" }}
-          >
-            <div className="menuIconDiv">
-              <img className="menuIcon" src={journalBtn} />
-              <p className='navP'>Journal</p>
-            </div>
-          </NavLink>
+        <NavLink
+          to="/Journal"
+          className="navLink"
+          activeClassName="activeRoute"
+          activeStyle={{ color: "#e56b6f" }}
+        >
+          <div className="menuIconDiv">
+            <img className="menuIcon" src={journalBtn} />
+            <p className="navP">Journal</p>
+          </div>
+        </NavLink>
 
-        
-          <NavLink
-            to="/Bilateral"
-            className="navLink"
-            activeClassName="activeRoute"
-            activeStyle={{ color: "#e56b6f" }}
-          >
-            <div className="menuIconDiv">
-              <img className="menuIcon" src={bilateralBtn} />
-              <p className='navP'>Bilateral</p>
-            </div>
-          </NavLink>
+        <NavLink
+          to="/Bilateral"
+          className="navLink"
+          activeClassName="activeRoute"
+          activeStyle={{ color: "#e56b6f" }}
+        >
+          <div className="menuIconDiv">
+            <img className="menuIcon" src={bilateralBtn} />
+            <p className="navP">Bilateral</p>
+          </div>
+        </NavLink>
 
         <img className="menuLogo" src={selfTeckLogo} alt="Self Teck logo" />
 

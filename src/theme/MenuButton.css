@@ -1,7 +1,7 @@
 .MuiPaper-root {
   background: rgba(10, 131, 133, 0.801) !important;
   width: 250px;
-  color: #f1faeeef !important;
+  color: #f1faee !important;
 }
 
 .menuBtnContainer {
@@ -36,6 +36,10 @@
 
 .navP {
   margin-left: 5px;
+}
+
+.navLink {
+  color: #f1faee;
 }
 
 .menuIcon {

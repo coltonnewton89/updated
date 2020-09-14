@@ -12,12 +12,10 @@ class Bilateral extends Component {
 
   viewRight = () => {
     this.setState({ class: "ViewRight" });
-    console.log(this.state.class);
   };
 
   viewLeft = () => {
     this.setState({ class: "ViewLeft" });
-    console.log(this.state.class);
   };
 
   start = () => {
@@ -65,11 +63,10 @@ class Bilateral extends Component {
                   alt="we're working torwards a non-visual version"
                 />
               </div>
-              
             </div>
           ) : (
             <div className="startDiv">
-              <p className='startP'>
+              <p className="startP">
                 <small>
                   Press the Start button to begin. You'll see a button appear on
                   the right. After pressing, this will toggle the left button.

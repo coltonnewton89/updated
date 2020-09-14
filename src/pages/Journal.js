@@ -77,8 +77,6 @@ const Journal = () => {
     console.log("in pain alert");
   }
 
-  /*=====TRY THIS WITH LOCAL STATE...
-  REMEBER YOU CAN USE _LODASH=====*/
   //Save entry
   const saveUserEntry = () => {
     var oldEntry = JSON.parse(localStorage.getItem("currentUser")) || [];
@@ -114,7 +112,7 @@ const Journal = () => {
           </button>
         </div>
       ) : viewEntry ? (
-        <JournalEntries />
+        <JournalEntries toggleView={viewUserEntry} />
       ) : (
         <div className="newJournal">
           <h2>Journal</h2>
@@ -126,6 +124,7 @@ const Journal = () => {
             type="text"
             className="journalTitle"
             onChange={updateUserTitle}
+            required
           />
           <label htmlFor="journalBody">Body:</label>
           <input

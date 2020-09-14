@@ -8,6 +8,7 @@ class JournalEntries extends Component {
     userEntries: [],
     viewLarge: false,
     largeKey: "",
+    targetDelete: null,
   };
 
   viewLarge = (e) => {
@@ -23,7 +24,16 @@ class JournalEntries extends Component {
   };
 
   deleteItem = (e) => {
-    localStorage.removeItem("currentUser", e.target.value);
+    this.setState({ targetDelete: e.target.value });
+    var oldEntry = JSON.parse(localStorage.getItem("currentUser")) || [];
+    for (let i = 0; i < oldEntry.length; i++) {
+      if (i === parseInt(this.state.targetDelete)) {
+        oldEntry.pop(i);
+        localStorage.setItem("currentUser", JSON.stringify(oldEntry));
+        const { toggleView } = this.props;
+        this.props.toggleView();
+      }
+    }
   };
 
   renderLargePost() {
@@ -33,20 +43,22 @@ class JournalEntries extends Component {
           <div className="largeJournalContainer" key={key}>
             <h2>{post.title}</h2>
             <p>{post.body}</p>
-            <button
-              className="journalBtnTwo"
-              onClick={this.cancelView}
-              value={key}
-            >
-              Return To Entries
-            </button>
-            <button
-              className="journalBtnDelete"
-              onClick={this.deleteItem}
-              value={key}
-            >
-              Delete
-            </button>
+            <div className="journalBtnContainer">
+              <button
+                className="journalBtnTwo"
+                onClick={this.cancelView}
+                value={key}
+              >
+                Return To Entries
+              </button>
+              <button
+                className="journalBtnDelete"
+                onClick={this.deleteItem}
+                value={key}
+              >
+                Delete
+              </button>
+            </div>
           </div>
         );
       }
