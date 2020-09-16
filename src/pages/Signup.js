@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import firebase from "../FireConfig";
 import "../theme/Signup.css";
-import createTitle from '../imgs/createTitle.png'
+import createTitle from "../imgs/createTitle.png";
 
 class Signup extends Component {
   constructor(props) {
@@ -70,10 +70,19 @@ class Signup extends Component {
     });
   };
 
+  goBack = () => {
+    const { goBack } = this.props;
+    this.props.goBack();
+  };
+
   render() {
     return (
       <div className="signUpContainer">
-        <img src={createTitle} className='createTitle' alt="create user title"/>
+        <img
+          src={createTitle}
+          className="createTitle"
+          alt="create user title"
+        />
         <form className="signUpForm" onSubmit={this.clicked}>
           <div className="signUpInput">
             <label htmlFor="email">Email:</label>
@@ -130,6 +139,9 @@ class Signup extends Component {
           </div>
           <button type="submit" className="signUpBtn">
             Create New User
+          </button>
+          <button className="createUser" onClick={this.goBack}>
+            Go Back
           </button>
         </form>
       </div>

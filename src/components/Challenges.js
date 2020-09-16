@@ -49,6 +49,11 @@ class Challenges extends Component {
     this.componentDidMount();
   };
 
+  //share challenge img, title and body with link to facebook
+  shareContent=()=>{
+
+  }
+
   completeToday = () => {
     let days = localStorage.getItem("userChallengeRemainder");
     if (days - 1 > 0) {

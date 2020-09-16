@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../theme/Login.css";
 import firebase from "../FireConfig";
 import Signup from "../pages/Signup";
-import selfteckImg from "../imgs/teck.gif";
+import selfteckImg from "../imgs/teck.png";
 
 class Login extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class Login extends Component {
   }
 
   create = () => {
-    this.setState({ create: true });
+    this.setState({ create: !this.state.create });
   };
 
   login(e) {
@@ -72,7 +72,7 @@ class Login extends Component {
               Login
             </button>
           </form>
-          <span className='loginSpan'></span>
+          <span className="loginSpan"></span>
           <div className="specDiv">
             <p>Not yet a user?</p>
             <p className="specP" onClick={this.create}>
@@ -85,7 +85,7 @@ class Login extends Component {
         </div>
       );
     } else {
-      return <Signup />;
+      return <Signup goBack={this.create} />;
     }
   }
 }
