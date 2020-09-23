@@ -50,6 +50,7 @@ class Login extends Component {
             <div className="loginInput">
               <label htmlFor="email">Email:</label>
               <input
+                className="inputLogin"
                 type="text"
                 name="email"
                 placeholder="Email"
@@ -60,6 +61,7 @@ class Login extends Component {
             <div className="loginInput">
               <label htmlFor="password">Password:</label>
               <input
+                className="inputLogin"
                 type="password"
                 name="password"
                 placeholder="Password"

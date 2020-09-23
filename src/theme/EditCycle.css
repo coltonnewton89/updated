@@ -24,6 +24,33 @@
   background-color: rgb(14, 189, 192);
   color: #f1faee;
   font-size: medium;
+  margin-bottom: 5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.wordbank:focus {
+  background-color: rgb(23, 241, 245);
+  color: #f1faee;
+  font-size: medium;
+  margin-bottom: 5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.wordbankTwo {
+  background-color: rgb(14, 189, 192);
+  color: #f1faee;
+  font-size: medium;
+  margin-top: 8px;
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
   border-top-right-radius: 24px;

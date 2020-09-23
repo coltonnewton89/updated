@@ -1,0 +1,167 @@
+/* ==Intro Master== */
+
+.masterIntroContainer {
+  position: absolute;
+  display: grid;
+  background: rgb(14, 189, 192);
+  background: linear-gradient(
+    144deg,
+    rgba(14, 189, 192, 1) 0%,
+    rgba(35, 62, 79, 1) 100%
+  );
+  height: 100vh !important;
+  width: 100vw;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  color: #f1faee;
+  overflow: scroll;
+  z-index: 2;
+}
+
+/* ==Intro B== */
+
+.demographicOne {
+  height: 80%;
+}
+
+.introBContainer {
+  margin-top: 10px;
+  border-radius: 24px;
+  width: 90%;
+  text-shadow: 2px 6px 4px #233e4f;
+  -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.inputBContainer {
+  display: grid;
+  grid-template-columns: 2% 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". .";
+}
+
+.introBSubmit {
+  position: relative;
+  background-color: #00d1bb;
+  color: #f1faee;
+  bottom: 10px;
+  padding: 10px;
+  border-radius: 24px;
+  width: 65%;
+  box-shadow: 2px 6px 4px #233e4f;
+}
+
+.otherSlideOver {
+  margin-left: 24px;
+}
+
+/* ==CheckBox== */
+.checkbox {
+  margin-top: 1px !important;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox .overlay {
+  height: 24px;
+  width: 24px;
+  background-color: #f1faee;
+  border-radius: 5px;
+  border: 2px solid #00d1bb;
+  transform: rotate(-90deg);
+  transition: all 0.3s;
+}
+
+.checkbox .icon {
+  color: #f1faee;
+  display: none;
+}
+
+.checkbox input:checked ~ .overlay {
+  background-color: #00d1bb;
+  border-radius: 8px;
+  transform: rotate(0deg);
+  opacity: 1;
+  border: 2px solid #00d1bb;
+}
+
+.checkbox input:checked ~ .overlay .icon {
+  display: block;
+}
+
+/* ==Intro C== */
+.triggerEvent {
+  width: 40%;
+}
+
+/* ==Intro D== */
+
+.selfReflection {
+  width: 60%;
+}
+
+/* ==Intro E== */
+
+.painBulb {
+  width: 30%;
+}
+
+/* ==Pain Cycle== */
+
+.swiperRight {
+  width: 60%;
+}
+
+.introPCSubmit {
+  position: relative;
+  background-color: #00d1bb;
+  color: #f1faee;
+  margin-top: 30px;
+  bottom: 10px;
+  padding: 10px;
+  border-radius: 24px;
+  width: 65%;
+  box-shadow: 2px 6px 4px #233e4f;
+}
+
+.changeAndInfluence {
+  width: 60%;
+}
+
+/* ==Intro F== */
+
+.introFContainer {
+  align-items: center;
+  text-align: center;
+}
+
+.moveToPeace {
+  width: 40%;
+}
+
+/* ==Intro G== */
+
+.castedLightBulb {
+  width: 30%;
+}
+
+/* ==Intro H== */
+.bulbAndOthers {
+  width: 60%;
+}
+
+.swipeLeft {
+  width: 60%;
+}

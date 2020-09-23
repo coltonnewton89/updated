@@ -87,6 +87,7 @@ class Signup extends Component {
           <div className="signUpInput">
             <label htmlFor="email">Email:</label>
             <input
+              className="inputSignUp"
               type="text"
               id="email"
               name="email"
@@ -98,6 +99,7 @@ class Signup extends Component {
           <div className="signUpInput">
             <label htmlFor="password">Password:</label>
             <input
+              className="inputSignUp"
               name="password"
               type="password"
               onChange={this.handleChange}
@@ -109,6 +111,7 @@ class Signup extends Component {
           <div className="signUpInput">
             <label htmlFor="confirmPassword">Confirm Password:</label>
             <input
+              className="inputSignUp"
               name="confirm"
               type="password"
               onChange={this.handleChange}
@@ -125,6 +128,7 @@ class Signup extends Component {
           </div>
           <div className="specDiv">
             <input
+              className="inputSignUp"
               type="checkbox"
               className="checkbox"
               name="terms"
