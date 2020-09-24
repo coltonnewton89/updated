@@ -104,7 +104,7 @@ class IntroE extends Component {
               src={painBulb}
               alt="image of red light bulb with broken power cord"
             />
-            <div id="button-container">
+            <div className="button-container">
               <button
                 className="wordbank"
                 value="Unloved"

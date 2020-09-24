@@ -89,7 +89,7 @@ class IntroG extends Component {
             alt="light bulb casting itself"
           />
           <div id="btnBackdrop">
-            <div className="gBtnContainer">
+            <div className="button-container">
               <button
                 className="wordbank"
                 value="Loving"

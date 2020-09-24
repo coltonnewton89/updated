@@ -78,10 +78,14 @@ class IntroD extends Component {
     }
 
     console.log(this.state.copeArr);
+    e.target.style.backgroundColor = "rgb(33, 221, 224)";
+    e.target.style.border = "1px solid #f1faee";
+    e.target.style.scale = "1.3";
   };
 
   clearAll = () => {
     this.setState({ copeArr: [] });
+    document.getElementsByClassName("wordbank").style = null;
   };
 
   render() {
@@ -99,7 +103,7 @@ class IntroD extends Component {
             alt="image of lightbuld looking into mirror"
           />
 
-          <div id="button-container">
+          <div className="button-container">
             <button
               className="wordbank"
               value="Criticize"

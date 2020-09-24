@@ -131,7 +131,7 @@ class IntroH extends Component {
                 </h4>
 
                 <div id="btnBackdrop">
-                  <div id="button-container">
+                  <div className="button-container">
                     <button
                       className="wordbank"
                       value="Loved"
