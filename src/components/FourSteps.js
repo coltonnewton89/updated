@@ -115,7 +115,7 @@ class FourSteps extends Component {
             {this.state.stepOne ? (
               <div className="fourStepContent">
                 <p className="fourB">
-                  <b>Which leads you to/to become: "{this.state.copeArr}"</b>
+                  <b>Which leads you to get/start: "{this.state.copeArr}"</b>
                 </p>
                 {this.state.stepTwo ? null : (
                   <button

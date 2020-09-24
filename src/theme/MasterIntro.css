@@ -140,6 +140,18 @@
   width: 60%;
 }
 
+.painCycleSubmit {
+  position: relative;
+  background-color: #00d1bb;
+  color: #f1faee;
+  bottom: 10px;
+  padding: 10px;
+  border-radius: 24px;
+  width: 65%;
+  box-shadow: 2px 6px 4px #233e4f;
+  margin-top: 10px;
+}
+
 /* ==Intro F== */
 
 .introFContainer {

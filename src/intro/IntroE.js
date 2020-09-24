@@ -82,6 +82,9 @@ class IntroE extends Component {
         priArr: this.state.priArr.concat("and " + e.target.value),
       });
     }
+    e.target.style.backgroundColor = "rgb(33, 221, 224)";
+    e.target.style.border = "1px solid #f1faee";
+    e.target.style.scale = "1.3";
   };
 
   clearAll = () => {
@@ -97,7 +100,8 @@ class IntroE extends Component {
               Have you ever thought about the emotions or thoughts that keep
               driving you to this place of pain? Look again at the triggering
               situation. <p>"{this.state.event}"</p>
-              What were you feeling or believing?
+              Choose three words that best describe how you were feeling or
+              believing?
             </p>
             <img
               className="painBulb"

@@ -102,8 +102,8 @@ class PainCycle extends Component {
                   src={painCycler}
                   alt="image of red bulb angery at reflection of breaking bulb"
                 />
-                <h4>your reaction is to {this.state.copeArr}</h4>
-                <button className="introBSubmit" onClick={this.painFunction}>
+                <h4>your reaction is to get/start {this.state.copeArr}</h4>
+                <button className="painCycleSubmit" onClick={this.painFunction}>
                   Got it
                 </button>
               </div>

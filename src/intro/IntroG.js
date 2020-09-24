@@ -68,6 +68,9 @@ class IntroG extends Component {
     }
 
     console.log(this.state.responseArr);
+    e.target.style.backgroundColor = "rgb(33, 221, 224)";
+    e.target.style.border = "1px solid #f1faee";
+    e.target.style.scale = "1.3";
   };
 
   clearAll = () => {
@@ -79,9 +82,9 @@ class IntroG extends Component {
       <div className="introGContainer">
         <div style={{ textAlign: "center" }}>
           <h4>
-            When you are feeling your best, how do you respond to situations or
-            how would you want to repond? "I am _____" *try to come up with
-            better wording*
+            Choose three words from below that best describes how you would
+            respond to or want to respond to situations when feeling your best?
+            I am or I want to become _____.
           </h4>
           <img
             className="castedLightBulb"
@@ -261,17 +264,18 @@ class IntroG extends Component {
                   onChange={this.handleChange}
                 />{" "}
                 <br />
-                <button type="submit" className="wordbank">
+                <button type="submit" className="wordbankTwo">
                   Add Response
                 </button>
               </form>
-              <br />
-              <button className="wordbank" onClick={this.clearAll}>
+              <span>{this.state.responseArr}</span>
+              <button
+                className="wordbank"
+                style={{ marginTop: "5px" }}
+                onClick={this.clearAll}
+              >
                 Clear All
               </button>
-              <p className="list">
-                <span>{this.state.responseArr}</span>
-              </p>
             </div>
           </div>
         </div>

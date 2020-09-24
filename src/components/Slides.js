@@ -33,12 +33,12 @@ class Slides extends Component {
 
   render() {
     return (
-      <IonSlides className="slides" pager={true} options={slideOpts}>
-        <IonSlide className="slide">
+      <IonSlides className="slides" options={slideOpts}>
+        <IonSlide className="slideLeft">
           <PainGear />
         </IonSlide>
 
-        <IonSlide>
+        <IonSlide className="slideCenter">
           {this.state.fourSteps ? (
             <FourSteps _completeFourSteps={this.completedFourSteps} />
           ) : this.state.inPeace ? (
@@ -48,7 +48,7 @@ class Slides extends Component {
           )}
         </IonSlide>
 
-        <IonSlide>
+        <IonSlide className="slideRight">
           <PeaceGear />
         </IonSlide>
       </IonSlides>

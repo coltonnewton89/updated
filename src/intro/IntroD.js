@@ -94,8 +94,8 @@ class IntroD extends Component {
         <div style={{ textAlign: "center" }}>
           <h3>You said: {this.state.event}</h3>
           <h4>
-            Now, true confession time. How did you act in this situation? "I
-            started to / I become _____"
+            Now, true confession time. Choose three words from below that best
+            describe how you acted in this situation? I became _____.
           </h4>
           <img
             className="selfReflection"
@@ -106,10 +106,10 @@ class IntroD extends Component {
           <div className="button-container">
             <button
               className="wordbank"
-              value="Criticize"
+              value="Criticizing"
               onClick={this.pushChoice}
             >
-              Criticize
+              Criticizing
             </button>
             <button
               className="wordbank"
@@ -134,24 +134,24 @@ class IntroD extends Component {
             </button>
             <button
               className="wordbank"
-              value="Hold a Grudge"
+              value="Grudgeful"
               onClick={this.pushChoice}
             >
-              Hold a Grudge
+              Grudgeful
             </button>
             <button
               className="wordbank"
-              value="Withdraw"
+              value="Withdrawing"
               onClick={this.pushChoice}
             >
-              Withdraw
+              Withdrawing
             </button>
             <button
               className="wordbank"
-              value="Self Shame"
+              value="Self Shameful"
               onClick={this.pushChoice}
             >
-              Self Shame
+              Self Shameful
             </button>
             <button
               className="wordbank"
@@ -176,10 +176,10 @@ class IntroD extends Component {
             </button>
             <button
               className="wordbank"
-              value="Exagerate"
+              value="Exagerative"
               onClick={this.pushChoice}
             >
-              Exagerate
+              Exagerative
             </button>
             <button
               className="wordbank"
@@ -207,7 +207,7 @@ class IntroD extends Component {
               value="Demanding"
               onClick={this.pushChoice}
             >
-              Demanding-
+              Demanding
             </button>
             <button className="wordbank" value="Numb" onClick={this.pushChoice}>
               Numb
@@ -249,10 +249,10 @@ class IntroD extends Component {
             </button>
             <button
               className="wordbank"
-              value="Minimize"
+              value="Minimizing"
               onClick={this.pushChoice}
             >
-              Minimize
+              Minimizing
             </button>
 
             <form onSubmit={this.pushCustomChoice}>

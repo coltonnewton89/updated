@@ -23,7 +23,7 @@ class IntroF extends Component {
           />
           <br />
           <button className="introPCSubmit" onClick={this.moveOn}>
-            Yes. Lets move on
+            Continue
           </button>
         </div>
       </div>

@@ -10,6 +10,8 @@ class IntroH extends Component {
     this.state = {
       truthArr: [],
       _truthArr: "",
+      responseArr: "",
+      priArr: "",
       viewTruth: false,
       see: false,
     };
@@ -71,9 +73,38 @@ class IntroH extends Component {
         truthArr: this.state.truthArr.concat("and " + e.target.value),
       });
     }
-
     console.log(this.state.truthArr);
+    e.target.style.backgroundColor = "rgb(33, 221, 224)";
+    e.target.style.border = "1px solid #f1faee";
+    e.target.style.scale = "1.3";
   };
+
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        const currentUser = firebase.auth().currentUser.uid.toString();
+        var priArrRef = firebase
+          .firestore()
+          .collection("usercycle")
+          .doc(`${currentUser}_priArr`);
+        priArrRef.get().then((doc) => {
+          if (doc.exists) {
+            this.setState({ priArr: doc.data().priArr });
+          }
+        });
+        var responseArrRef = firebase
+          .firestore()
+          .collection("usercycle")
+          .doc(`${currentUser}_responseArr`);
+        responseArrRef.get().then((doc) => {
+          if (doc.exists) {
+            this.setState({ responseArr: doc.data().responseArr });
+          }
+        });
+        console.log("i pulled response");
+      }
+    });
+  }
 
   clearAll = () => {
     this.setState({ truthArr: [] });
@@ -101,14 +132,14 @@ class IntroH extends Component {
               <div style={{ textAlign: "center" }}>
                 <h3>Now we have our peace cycle!</h3>
                 <br />
-                <h4>You are *Truth Arr here*</h4>
+                <h4>You are {this.state.truthArr}</h4>
                 <img
                   src={truthReflection}
                   alt="green bulb standing in front of mirror"
                 />
 
                 <br />
-                <h4>which makes you become *Response Arr here*</h4>
+                <h4>which leads you to become {this.state.responseArr}</h4>
                 <br />
                 <button className="loginBtn" onClick={this.toggleSee}>
                   Continue
@@ -118,16 +149,15 @@ class IntroH extends Component {
               <div style={{ textAlign: "center" }}>
                 <h4>
                   Next step. Remember these words?
-                  <br /> <h3>*YOUR PAIN HERE*</h3>
+                  <br /> <h3>{this.state.priArr}</h3>
                   <img
                     className="bulbAndOthers"
                     src={bulbAndOthers}
                     alt="light bulb conversing with other light bulbs"
                   />
                   <br />
-                  Imagine that the people who know you best could speak to you
-                  about those words. What would they tell you was your truth?
-                  Ex: You are: ""
+                  Imagine that the people who knew you best could speak to you
+                  about those words. What would they tell you was your truth? You are _____.
                 </h4>
 
                 <div id="btnBackdrop">

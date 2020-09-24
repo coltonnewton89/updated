@@ -50,7 +50,7 @@ class IntroC extends Component {
           <div>
             <form onSubmit={this.clicked}>
               <div className="customInput">
-                <p>Now type a life situation here</p>
+                <p>Please type your life situation here</p>
                 <input
                   name="slidecInput"
                   onChange={this.handleChange}

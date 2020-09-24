@@ -3,6 +3,7 @@ import "../theme/EditCycle.css";
 import firebase from "../FireConfig";
 import ContinueCopeEdit from "./ContinueCopeEdit";
 import ContinuePainEdit from "./ContinuePainEdit";
+import triggerEvent from "../imgs/triggerEvent.png";
 
 class EditPain extends Component {
   constructor(props) {
@@ -79,10 +80,14 @@ class EditPain extends Component {
                 place, please type in a new event and click change event
               </small>
             </p>
-
+            <img
+              className="triggerEvent"
+              src={triggerEvent}
+              alt="image of red lightbulb breaking"
+            />
             <input
               type="text"
-              className="newEvent"
+              className="inputLogin"
               value={this.state.value}
               onChange={this.handleChange}
               placeholder="New Event..."
