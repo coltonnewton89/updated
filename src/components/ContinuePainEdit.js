@@ -78,6 +78,9 @@ class ContinuePainEdit extends Component {
         priArr: this.state.priArr.concat("and " + e.target.value),
       });
     }
+    e.target.style.backgroundColor = "rgb(33, 221, 224)";
+    e.target.style.border = "1px solid #f1faee";
+    e.target.style.scale = "1.3";
   };
 
   clearAll = () => {
@@ -87,12 +90,8 @@ class ContinuePainEdit extends Component {
   render() {
     return (
       <div className="editCope">
-        <p>{this.state.event}</p>
-        <p>
-          <small>
-            When this event took place, What were you feeling or believing?
-          </small>
-        </p>
+        <p>"{this.state.event}"</p>
+        <p>When this event took place, What were you feeling or believing?</p>
         <div id="button-container">
           <button
             className="wordbank"
@@ -264,13 +263,13 @@ class ContinuePainEdit extends Component {
           <form onSubmit={this.pushCustomChoice}>
             <input
               type="text"
-              id="custom"
+              className="inputLogin"
               placeholder="Type Custom Pain Here"
               value={this.state.value}
               onChange={this.handleChange}
             />
-            <button type="submit" className="wordbank">
-              Add custom pain
+            <button type="submit" className="wordbankTwo">
+              Add pain
             </button>
           </form>
 

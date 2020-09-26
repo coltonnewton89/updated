@@ -87,7 +87,7 @@ class PainGear extends Component {
               Click here to edit Pain Cycle
             </button>
             <p className="copePart">
-              Which leads you to get/start: "{this.state.copeArr}"
+              Which leads you to get or start: "{this.state.copeArr}"
             </p>
           </div>
         )}

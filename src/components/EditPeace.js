@@ -47,7 +47,9 @@ class EditPeace extends Component {
         truthArr: this.state.truthArr.concat("and " + e.target.value),
       });
     }
-
+    e.target.style.backgroundColor = "rgb(33, 221, 224)";
+    e.target.style.border = "1px solid #f1faee";
+    e.target.style.scale = "1.3";
     console.log(this.state.truthArr);
   };
 
@@ -92,8 +94,8 @@ class EditPeace extends Component {
         <p>
           <small>
             Your pain is often an illusion. Try to replace this lie with what
-            you know to be true about you. Ex: "I might feel this pain but in
-            reality I am _____"
+            you know to be true about you. I might feel this pain but in
+            reality I am or I can choose to become _____.
           </small>
         </p>
         <div id="button-container">
@@ -112,7 +114,7 @@ class EditPeace extends Component {
           </button>
           <button
             className="wordbank"
-            value="Accomplished/Not Alone"
+            value="Accompanied/Not Alone"
             onClick={this.pushChoice}
           >
             Accompanied/Not Alone
@@ -201,12 +203,12 @@ class EditPeace extends Component {
           <form onSubmit={this.pushCustomChoice}>
             <input
               type="text"
-              id="custom"
+              className="inputLogin"
               placeholder="Type Custom Truth Here"
               value={this.state.value}
               onChange={this.handleChange}
             />
-            <button type="submit" className="wordbank">
+            <button type="submit" className="wordbankTwo">
               Add Truth
             </button>
           </form>

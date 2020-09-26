@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Login from "./pages/Login";
 import firebase from "./FireConfig";
-import ButtonApp from './components/ButtonApp'
+import ButtonApp from "./components/ButtonApp";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
 import { IonApp, IonContent } from "@ionic/react";
@@ -53,8 +53,12 @@ class App extends Component {
         <IonContent>
           {this.state.user ? (
             <BrowserRouter>
-              <ButtonApp/>
-              <Router style={{ alignText: "center" }} />
+              <ButtonApp />
+              <Router
+                style={{
+                  alignText: "center",
+                }}
+              />
             </BrowserRouter>
           ) : (
             <Login />

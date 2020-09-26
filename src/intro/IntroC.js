@@ -37,10 +37,10 @@ class IntroC extends Component {
       <div className="IntroCContainer">
         <div style={{ textAlign: "center" }}>
           <h3>
-            Excellent. Now think of a real life situation where you had conflict
+            Try to think of a real life situation where you had conflict
             or stuggled with negative feelings. (example: Fought with a friend
             last night, meeting someone and got nervous or got outraged around
-            others.)
+            others.) Briefly explain below what happened.
           </h3>
           <img
             className="triggerEvent"

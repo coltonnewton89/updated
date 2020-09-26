@@ -3,6 +3,7 @@
 .masterIntroContainer {
   position: absolute;
   display: grid;
+  border-radius: 0px;
   background: rgb(14, 189, 192);
   background: linear-gradient(
     144deg,

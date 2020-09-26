@@ -64,8 +64,9 @@ class EditResponse extends Component {
         responseArr: this.state.responseArr.concat("and " + e.target.value),
       });
     }
-
-    console.log(this.state.responseArr);
+    e.target.style.backgroundColor = "rgb(33, 221, 224)";
+    e.target.style.border = "1px solid #f1faee";
+    e.target.style.scale = "1.3";
   };
 
   clearAll = () => {
@@ -90,11 +91,11 @@ class EditResponse extends Component {
 
   render() {
     return (
-      <div className='editResponse'>
+      <div className="editResponse">
         <p>Truth: "{this.state.truthArr}"</p>
         <p>
           <small>
-            Now that you can see your truth, this makes you become _____.
+            Now that you can see your truth, this allows you to become _____.
           </small>
         </p>
         <div id="button-container">
@@ -230,13 +231,13 @@ class EditResponse extends Component {
           <form onSubmit={this.pushCustomChoice}>
             <input
               type="text"
-              id="custom"
+              className="inputLogin"
               placeholder="Type Custom Response"
               value={this.state.value}
               onChange={this.handleChange}
             />
-            <button type="submit" className="wordbank">
-              Add Custom Response
+            <button type="submit" className="wordbankTwo">
+              Add Response
             </button>
           </form>
 

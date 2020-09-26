@@ -75,6 +75,9 @@ class ContinueCopeEdit extends Component {
         copeArr: this.state.copeArr.concat("and " + e.target.value),
       });
     }
+    e.target.style.backgroundColor = "rgb(33, 221, 224)";
+    e.target.style.border = "1px solid #f1faee";
+    e.target.style.scale = "1.3";
 
     console.log(this.state.copeArr);
   };
@@ -87,20 +90,20 @@ class ContinueCopeEdit extends Component {
     return (
       <div className="continuePainEditContainer">
         <div>
-          <p>Event: {this.state.event}</p>
+          <p>"{this.state.event}"</p>
           <p>
             <small>
-              How did you act when this took place? IE: "I started to/ I became
-              _____."
+              How did you act when this took place? I started to get or I became
+              _____.
             </small>
           </p>
           <div id="button-container">
             <button
               className="wordbank"
-              value="Criticize"
+              value="Criticizing"
               onClick={this.pushChoice}
             >
-              Criticize
+              Criticizing
             </button>
             <button
               className="wordbank"
@@ -125,24 +128,24 @@ class ContinueCopeEdit extends Component {
             </button>
             <button
               className="wordbank"
-              value="Hold a Grudge"
+              value="Grudgeful"
               onClick={this.pushChoice}
             >
-              Hold a Grudge
+              Grudgeful
             </button>
             <button
               className="wordbank"
-              value="Withdraw"
+              value="Withdrawing"
               onClick={this.pushChoice}
             >
-              Withdraw
+              Withdrawing
             </button>
             <button
               className="wordbank"
               value="Self Shame"
               onClick={this.pushChoice}
             >
-              Self Shame
+              Self Shameful
             </button>
             <button
               className="wordbank"
@@ -167,10 +170,10 @@ class ContinueCopeEdit extends Component {
             </button>
             <button
               className="wordbank"
-              value="Exagerate"
+              value="Exagerative"
               onClick={this.pushChoice}
             >
-              Exagerate
+              Exagerative
             </button>
             <button
               className="wordbank"
@@ -198,7 +201,7 @@ class ContinueCopeEdit extends Component {
               value="Demanding"
               onClick={this.pushChoice}
             >
-              Demanding-
+              Demanding
             </button>
             <button className="wordbank" value="Numb" onClick={this.pushChoice}>
               Numb
@@ -240,21 +243,22 @@ class ContinueCopeEdit extends Component {
             </button>
             <button
               className="wordbank"
-              value="Minimize"
+              value="Minimizing"
               onClick={this.pushChoice}
             >
-              Minimize
+              Minimizing
             </button>
 
             <form onSubmit={this.pushCustomChoice}>
               <input
+                className="inputLogin"
                 type="text"
                 id="custom"
                 placeholder="Type Custom Cope Here"
                 value={this.state.value}
                 onChange={this.handleChange}
               />
-              <button type="submit" className="wordbank">
+              <button type="submit" className="wordbankTwo">
                 Add Cope
               </button>
             </form>

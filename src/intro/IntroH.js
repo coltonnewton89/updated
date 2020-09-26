@@ -157,7 +157,8 @@ class IntroH extends Component {
                   />
                   <br />
                   Imagine that the people who knew you best could speak to you
-                  about those words. What would they tell you was your truth? You are _____.
+                  about those words. What would they tell you was your truth?
+                  You are _____.
                 </h4>
 
                 <div id="btnBackdrop">
@@ -185,7 +186,7 @@ class IntroH extends Component {
                     </button>
                     <button
                       className="wordbank"
-                      value="Accomplished/Not Alone"
+                      value="Accompanied/Not Alone"
                       onClick={this.pushChoice}
                     >
                       Accompanied/Not Alone

@@ -43,8 +43,8 @@ class IntroB extends Component {
         {!this.state.great ? (
           <div>
             <p>
-              Welcome to SelfTeck. Do any of the fallowing match why you're
-              here?
+              Welcome to SelfTeck. Will you help us get to know you a little
+              better? Do any of the fallowing match why you're here?
             </p>
             <br />
             <form className="demographicOne" onSubmit={this.handleFormSubmit}>

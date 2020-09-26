@@ -1,13 +1,13 @@
 .MuiPaper-root {
+  position: absolute;
   background: rgba(10, 131, 133, 0.801) !important;
   width: 250px;
   color: #f1faee !important;
 }
 
 .menuBtnContainer {
-  height: fit-content;
   position: absolute;
-  z-index: 1;
+  z-index: 2 !important;
 }
 
 .menuLogo {
@@ -25,6 +25,7 @@
   height: 35px;
   width: 35px;
   top: 5px;
+  z-index: 2 !important;
 }
 
 .menuIconDiv {
@@ -32,6 +33,7 @@
   justify-items: left;
   margin-top: 10px;
   margin-left: 5px;
+  z-index: 0;
 }
 
 .navP {

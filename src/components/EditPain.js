@@ -3,7 +3,6 @@ import "../theme/EditCycle.css";
 import firebase from "../FireConfig";
 import ContinueCopeEdit from "./ContinueCopeEdit";
 import ContinuePainEdit from "./ContinuePainEdit";
-import triggerEvent from "../imgs/triggerEvent.png";
 
 class EditPain extends Component {
   constructor(props) {
@@ -75,16 +74,12 @@ class EditPain extends Component {
             <p className="eventP">Event: "{this.state.event}"</p>
             <p>
               <small>
-                The event is the start of how all this happened. If this is the
-                same just click continue. If there is a new event that took
-                place, please type in a new event and click change event
+                The event is the start of how all this happened. If this hasn't
+                changed, just click continue. If there is a new event however,
+                please type in a new event and click "Change Event."
               </small>
             </p>
-            <img
-              className="triggerEvent"
-              src={triggerEvent}
-              alt="image of red lightbulb breaking"
-            />
+
             <input
               type="text"
               className="inputLogin"

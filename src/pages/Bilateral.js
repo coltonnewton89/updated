@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import RotateImg from "../imgs/rotatePhone.png";
 import leftBtn from "../imgs/bilatLeftBtn.png";
 import rightBtn from "../imgs/bilatRightBtn.png";
+import bilatAudio from "../audio/bilatAudio.wav";
 import "../theme/Bilateral.css";
 
 class Bilateral extends Component {
@@ -51,7 +52,9 @@ class Bilateral extends Component {
                 />
               </div>
 
-              <div className="gap"></div>
+              <div className="gap">
+                <audio src={bilatAudio} autoPlay></audio>
+              </div>
 
               <div
                 className={`rightBtnContainer${this.state.class}`}
@@ -68,11 +71,10 @@ class Bilateral extends Component {
             <div className="startDiv">
               <p className="startP">
                 <small>
-                  Press the Start button to begin. You'll see a button appear on
-                  the right. After pressing, this will toggle the left button.
-                  These buttons will toggle back and forth. For best results,
-                  try to stay with the pattern. This process takes approximately
-                  45 minutes.
+                  The fallowing process is designed to help individuals relax.
+                  Press the Start button to begin. For best results, try to stay
+                  with the audiotory que. This process takes approximately 5:30
+                  minutes.
                 </small>
               </p>
               <button className="bilatStartBtn" onClick={this.start}>
