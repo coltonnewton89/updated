@@ -60,25 +60,21 @@ class FourSteps extends Component {
     priArrRef.get().then((doc) => {
       if (doc.exists) {
         this.setState({ priArr: doc.data().priArr });
-        console.log("pulled pri");
       }
     });
     copeArrRef.get().then((doc) => {
       if (doc.exists) {
         this.setState({ copeArr: doc.data().copeArr });
-        console.log("pulled cope");
       }
     });
     truthArrRef.get().then((doc) => {
       if (doc.exists) {
         this.setState({ truthArr: doc.data().truthArr });
-        console.log("pulled truth");
       }
     });
     responseArrRef.get().then((doc) => {
       if (doc.exists) {
         this.setState({ responseArr: doc.data().responseArr });
-        console.log("pulled response");
       }
     });
   };

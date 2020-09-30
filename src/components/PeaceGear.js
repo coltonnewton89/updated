@@ -59,8 +59,6 @@ class PeaceGear extends Component {
             this.setState({ responseArr: doc.data().responseArr });
           }
         });
-        console.log("i pulled truth");
-        console.log("i pulled response");
       }
     });
   }
@@ -92,7 +90,8 @@ class PeaceGear extends Component {
               Click here to edit Peace Cycle
             </button>
             <p className="reactPart">
-              Which means you are or you can choose to become: "{this.state.responseArr}""
+              Which means you are or you can choose to become: "
+              {this.state.responseArr}""
             </p>
           </div>
         )}

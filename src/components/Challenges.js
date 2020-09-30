@@ -18,7 +18,7 @@ class Challenges extends Component {
 
   acceptedNumber = (e) => {
     workshopChallenges.map((challenge) => {
-      if (challenge.id == e.target.value) {
+      if (challenge.id === e.target.value) {
         localStorage.setItem("userChallengeRemainder", challenge.days);
       }
     });
@@ -60,7 +60,7 @@ class Challenges extends Component {
       localStorage.setItem("userChallengeRemainder", days - 1);
       this.setState({ daysLeft: days - 1 });
     }
-    if (days - 1 == 0) {
+    if (days - 1 === 0) {
       this.congrats();
     }
   };
@@ -78,7 +78,7 @@ class Challenges extends Component {
         {/* =current challenge= */}
         {this.state.acceptedNumber
           ? workshopChallenges.map((challenge) => {
-              if (this.state.acceptedNumber == challenge.id) {
+              if (this.state.acceptedNumber === challenge.id) {
                 return (
                   <div className="currentChallenge">
                     {this.state.congrats ? (
@@ -125,7 +125,7 @@ class Challenges extends Component {
             })
           : null}
         {workshopChallenges.map((challenge) => {
-          if (this.state.selectedNumber == challenge.id) {
+          if (this.state.selectedNumber === challenge.id) {
             //large
             return (
               <div className="challengeDiv">

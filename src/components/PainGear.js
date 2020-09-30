@@ -22,7 +22,6 @@ class PainGear extends Component {
 
   finished = () => {
     this.toggleAlmost();
-    console.log("I'm almost finished");
   };
 
   toggleAlmost = () => {
@@ -32,7 +31,6 @@ class PainGear extends Component {
 
   returnGear = () => {
     this.setState({ edit: false, almost: false });
-    console.log("I am completely finished!");
   };
 
   componentDidMount() {
