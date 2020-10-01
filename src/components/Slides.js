@@ -36,8 +36,8 @@ class Slides extends Component {
     var tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
     localStorage.setItem("loggedDate", tomorrow);
-    localStorage.setItem("count", 1);
     this.setState({ stepCounter: 1 });
+    localStorage.setItem("count", this.state.stepCounter);
     console.log("changeDate");
   };
 
@@ -65,7 +65,10 @@ class Slides extends Component {
     let count = localStorage.getItem("count");
     if (loggedDate === null) {
       this.setBeginningDate();
-    } else if (loggedDate === today) {
+    } else if (
+      loggedDate.toString().substring(0, 15) ===
+      today.toString().substring(0, 15)
+    ) {
       this.changeDate();
     } else if (this.state.stepCounter <= 2) {
       this.setState({ stepCounter: this.state.stepCounter + 1 });
@@ -74,7 +77,7 @@ class Slides extends Component {
     } else if (this.state.stepCounter >= 3) {
       this.setState({ stepCounter: this.state.stepCounter + 1 });
       localStorage.setItem("count", this.state.stepCounter);
-      console.log("togglePeace greater than 3", this.state.stepCounter, count);
+      console.log("togglePeace greater than 3");
     }
   };
 
