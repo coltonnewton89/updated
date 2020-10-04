@@ -18,7 +18,7 @@ class Challenges extends Component {
 
   acceptedNumber = (e) => {
     workshopChallenges.map((challenge) => {
-      if (challenge.id === e.target.value) {
+      if (challenge.id == e.target.value) {
         localStorage.setItem("userChallengeRemainder", challenge.days);
       }
     });
@@ -28,9 +28,7 @@ class Challenges extends Component {
   };
 
   pushChoice = (e) => {
-    if (this.state.selectedNumber === null) {
-      this.setState({ selectedNumber: e.target.value });
-    }
+    this.setState({ selectedNumber: e.target.value });
   };
 
   clearAll = () => {
@@ -58,7 +56,7 @@ class Challenges extends Component {
       localStorage.setItem("userChallengeRemainder", days - 1);
       this.setState({ daysLeft: days - 1 });
     }
-    if (days - 1 === 0) {
+    if (days - 1 == 0) {
       this.congrats();
     }
   };
@@ -76,7 +74,7 @@ class Challenges extends Component {
         {/* =current challenge= */}
         {this.state.acceptedNumber
           ? workshopChallenges.map((challenge) => {
-              if (this.state.acceptedNumber === challenge.id) {
+              if (this.state.acceptedNumber == challenge.id) {
                 return (
                   <div className="currentChallenge">
                     {this.state.congrats ? (
@@ -123,11 +121,11 @@ class Challenges extends Component {
             })
           : null}
         {workshopChallenges.map((challenge) => {
-          if (this.state.selectedNumber === challenge.id) {
+          if (this.state.selectedNumber == challenge.id) {
             //large
             return (
               <div className="challengeDiv">
-                <img className="challengeDivImg" src={challenge.img} alt="" />
+                <img className="challengeDivImg" src={challenge.img} />
                 <h2>{challenge.title}</h2>
                 <p>{challenge.body}</p>
                 <button
@@ -143,7 +141,7 @@ class Challenges extends Component {
                 </button>
               </div>
             );
-          } else if (this.state.selectedNumber === null) {
+          } else if (this.state.selectedNumber == null) {
             //small
             return (
               <div className="challengeCard">
