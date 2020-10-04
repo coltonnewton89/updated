@@ -23,7 +23,7 @@ class ResetPassword extends Component {
   render() {
     return (
       <div className="resetContainer">
-        <h2>
+        <h2 className="resetHeader">
           To reset your password, click the button below, we'll then send you an
           email to the address attached to this account. Fallow the emailed
           instructions to complete resetting your password.
