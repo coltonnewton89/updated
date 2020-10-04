@@ -69,7 +69,7 @@ class Login extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <p>Forgot Username or Password?</p>
+            <p>Forgot Email or Password?</p>
             <button type="submit" className="loginBtn">
               Login
             </button>

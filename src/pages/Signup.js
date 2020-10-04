@@ -80,14 +80,15 @@ class Signup extends Component {
       <div className="signUpContainer">
         <img
           src={createTitle}
-          className="createTitle"
+          className="selfteckImg"
           alt="create user title"
         />
         <form className="signUpForm" onSubmit={this.clicked}>
           <div className="signUpInput">
             <label htmlFor="email">Email:</label>
             <input
-              className="inputSignUp"
+              className="inputLogin"
+              placeholder="Email"
               type="text"
               id="email"
               name="email"
@@ -99,7 +100,8 @@ class Signup extends Component {
           <div className="signUpInput">
             <label htmlFor="password">Password:</label>
             <input
-              className="inputSignUp"
+              className="inputLogin"
+              placeholder="Create Password"
               name="password"
               type="password"
               onChange={this.handleChange}
@@ -111,7 +113,8 @@ class Signup extends Component {
           <div className="signUpInput">
             <label htmlFor="confirmPassword">Confirm Password:</label>
             <input
-              className="inputSignUp"
+              className="inputLogin"
+              placeholder="Confirm Password"
               name="confirm"
               type="password"
               onChange={this.handleChange}

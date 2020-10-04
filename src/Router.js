@@ -5,6 +5,7 @@ import Cycle from "./pages/Cycle";
 import Journal from "./pages/Journal";
 import Bilateral from "./pages/Bilateral";
 import Workshop from "./pages/Workshop";
+import ResetPassword from "./pages/ResetPassword";
 
 const Router = () => {
   return (
@@ -13,6 +14,7 @@ const Router = () => {
       <Route path="/Journal" component={Journal} />
       <Route path="/Bilateral" component={Bilateral} />
       <Route path="/Workshop" component={Workshop} />
+      <Route path="/Reset" component={ResetPassword} />
       <Redirect from="/" to="/Cycle" />
     </Switch>
   );

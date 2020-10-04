@@ -1,4 +1,5 @@
 import React from "react";
+import SimpleMenu from "../components/SimpleMenu";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
@@ -11,11 +12,12 @@ import cycleBtn from "../menuImgs/cycleBtn.png";
 import journalBtn from "../menuImgs/journalBtn.png";
 import workshopBtn from "../menuImgs/workshopBtn.png";
 import bilateralBtn from "../menuImgs/bilateralBtn.png";
+import wrench from "../menuImgs/wrench.png";
 import logOut from "../menuImgs/logOut.png";
 
 //Menu Drawer Styles
 
-export default function SwipeableTemporaryDrawer() {
+export default function SwipeableTemporaryDrawer(props) {
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -40,15 +42,14 @@ export default function SwipeableTemporaryDrawer() {
     <div
       className="listDiv"
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
         <NavLink
-          exact
+          onClick={toggleDrawer(anchor, false)}
           to="/Cycle"
           className="menuNavLink"
-          activeClassName="activeRoute"
+          style={{ color: "#F1FAEE" }}
           activeStyle={{ color: "#e56b6f" }}
         >
           <div className="menuIconDiv">
@@ -58,9 +59,9 @@ export default function SwipeableTemporaryDrawer() {
         </NavLink>
 
         <NavLink
+          onClick={toggleDrawer(anchor, false)}
           to="/Workshop"
           className="navLink"
-          activeClassName="activeRoute"
           activeStyle={{ color: "#e56b6f" }}
         >
           <div className="menuIconDiv">
@@ -70,9 +71,9 @@ export default function SwipeableTemporaryDrawer() {
         </NavLink>
 
         <NavLink
+          onClick={toggleDrawer(anchor, false)}
           to="/Journal"
           className="navLink"
-          activeClassName="activeRoute"
           activeStyle={{ color: "#e56b6f" }}
         >
           <div className="menuIconDiv">
@@ -82,9 +83,9 @@ export default function SwipeableTemporaryDrawer() {
         </NavLink>
 
         <NavLink
+          onClick={toggleDrawer(anchor, false)}
           to="/Bilateral"
           className="navLink"
-          activeClassName="activeRoute"
           activeStyle={{ color: "#e56b6f" }}
         >
           <div className="menuIconDiv">
@@ -92,6 +93,11 @@ export default function SwipeableTemporaryDrawer() {
             <p className="navP">Bilateral</p>
           </div>
         </NavLink>
+
+        <div className="menuIconDiv">
+          <img className="menuIcon" src={wrench} />
+          <SimpleMenu />
+        </div>
 
         <img className="menuLogo" src={selfTeckLogo} alt="Self Teck logo" />
 
@@ -108,7 +114,6 @@ export default function SwipeableTemporaryDrawer() {
   //Log Off function
   function logOff() {
     firebase.auth().signOut();
-    alert("I should of signed off");
   }
 
   //Menu Button

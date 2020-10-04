@@ -1,6 +1,6 @@
 .MuiPaper-root {
   position: absolute;
-  background: rgba(10, 131, 133, 0.801) !important;
+  background-color: rgba(10, 131, 133, 0.801) !important;
   width: 250px;
   color: #f1faee !important;
 }
@@ -38,6 +38,10 @@
 
 .navP {
   margin-left: 5px;
+}
+
+.navP:active {
+  color: #e56b6f !important;
 }
 
 .navLink {
