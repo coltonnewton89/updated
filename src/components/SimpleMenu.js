@@ -33,7 +33,14 @@ export default function SimpleMenu(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Change Notification Timing</MenuItem>
+        <NavLink
+          to="/Notifications"
+          style={{ color: "#F1FAEE" }}
+          activeStyle={{ color: "#e56b6f" }}
+        >
+          <MenuItem onClick={handleClose}>Change Notification Timing</MenuItem>
+        </NavLink>
+
         <NavLink
           to="/Reset"
           style={{ color: "#F1FAEE" }}
@@ -42,7 +49,13 @@ export default function SimpleMenu(props) {
           <MenuItem onClick={handleClose}>Reset Password</MenuItem>
         </NavLink>
 
-        <MenuItem onClick={handleClose}>Delete Account</MenuItem>
+        <NavLink
+          to="/DeleteUser"
+          style={{ color: "#F1FAEE" }}
+          activeStyle={{ color: "#e56b6f" }}
+        >
+          <MenuItem onClick={handleClose}>Delete Account</MenuItem>
+        </NavLink>
       </Menu>
     </div>
   );

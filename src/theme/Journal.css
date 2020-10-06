@@ -47,9 +47,33 @@
   width: 90%;
 }
 
+.journalHome {
+  display: grid;
+  justify-items: center;
+}
+
+.journalImg {
+  position: relative;
+  width: 90%;
+  bottom: 100px;
+  -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
 .journalBtn {
   background-color: #f1faee;
   color: #00d1bb;
+  padding: 10px;
+  bottom: 10px;
+  border-radius: 24px;
+  box-shadow: 2px 6px 4px #233e4f;
+}
+
+.journalBtnIgnore {
+  background-color: #f1faee;
+  margin-left: 4px;
+  color: #e56b6f;
   padding: 10px;
   bottom: 10px;
   border-radius: 24px;

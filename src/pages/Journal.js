@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import JournalEntries from "../components/JournalEntries";
+import journal from "../db/wsImgs/journal.png";
 import "../theme/Journal.css";
 
 const Journal = () => {
@@ -43,7 +44,7 @@ const Journal = () => {
   const [userText, setUserText] = useState("");
   const [pain, setPain] = useState(false);
   const [ignore, setIgnore] = useState(false);
-  const [currentNewEntry, setNewEntry] = useState([]);
+  const [isEntry, setIsEntry] = useState(false);
   const [viewEntry, _viewEntry] = useState(false);
 
   const updateUserTitle = (event) => {
@@ -62,7 +63,6 @@ const Journal = () => {
         userWords.push(null);
       }
     }
-    console.log(userText);
   };
 
   //Ignore findPain
@@ -74,7 +74,6 @@ const Journal = () => {
   //trigger painAlert
   function inPain() {
     setPain(!pain);
-    console.log("in pain alert");
   }
 
   //Save entry
@@ -88,11 +87,27 @@ const Journal = () => {
     localStorage.setItem("currentUser", JSON.stringify(oldEntry));
     setUserTitle("");
     setUserText("");
+    _viewEntry(!viewEntry);
   };
 
   const viewUserEntry = () => {
     _viewEntry(!viewEntry);
   };
+
+  //findEntry
+
+  useEffect(() => {
+    let entry = localStorage.getItem("currentUser");
+    if (entry != null) {
+      setIsEntry(true);
+    }
+    if (entry == null || entry.toString() == "[]") {
+      setIsEntry(false);
+    }
+    if (entry.toString() == "[]") {
+      setIsEntry(false);
+    }
+  });
 
   return (
     <div className="journalContainer">
@@ -103,15 +118,14 @@ const Journal = () => {
             <button className="journalBtn">Go to cycle</button>
           </NavLink>
           <button
-            className="journalBtn"
+            className="journalBtnIgnore"
             variant="contained"
-            color="primary"
             onClick={justIgnore}
           >
             Ignore
           </button>
         </div>
-      ) : viewEntry ? (
+      ) : !viewEntry ? (
         <JournalEntries toggleView={viewUserEntry} />
       ) : (
         <div className="newJournal">
@@ -121,17 +135,20 @@ const Journal = () => {
           </p>
           <label htmlFor="journalTitle">Title:</label>
           <input
+            placeholder="Title"
             type="text"
-            className="journalTitle"
+            className="inputLogin"
+            name="journalTitle"
             onChange={updateUserTitle}
             required
           />
           <label htmlFor="journalBody">Body:</label>
           <input
-            name="journalInput"
+            placeholder="Body"
+            className="inputLogin"
             type="text"
             onChange={updateUserText}
-            className="journalBody"
+            name="journalBody"
             value={userText}
             required
           />
@@ -140,10 +157,20 @@ const Journal = () => {
           </button>
         </div>
       )}
-      {viewEntry ? (
-        <button className="journalBtn" onClick={viewUserEntry}>
-          Create New Entry
-        </button>
+      {!viewEntry ? (
+        <div className="journalHome">
+          {isEntry === false ? (
+            <img
+              className="journalImg"
+              src={journal}
+              alt="image of journal and caligraphy pen"
+            />
+          ) : null}
+
+          <button className="journalBtn" onClick={viewUserEntry}>
+            Create New Entry
+          </button>
+        </div>
       ) : (
         <button className="journalBtn" onClick={viewUserEntry}>
           View Entries
