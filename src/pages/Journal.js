@@ -135,6 +135,7 @@ const Journal = () => {
           </p>
           <label htmlFor="journalTitle">Title:</label>
           <input
+            style={{ width: "90%" }}
             placeholder="Title"
             type="text"
             className="inputLogin"
@@ -142,8 +143,11 @@ const Journal = () => {
             onChange={updateUserTitle}
             required
           />
-          <label htmlFor="journalBody">Body:</label>
+          <label htmlFor="journalBody" style={{ marginTop: "10px" }}>
+            Body:
+          </label>
           <input
+            style={{ width: "90%" }}
             placeholder="Body"
             className="inputLogin"
             type="text"
@@ -159,20 +163,14 @@ const Journal = () => {
       )}
       {!viewEntry ? (
         <div className="journalHome">
-          {isEntry === false ? (
-            <img
-              className="journalImg"
-              src={journal}
-              alt="image of journal and caligraphy pen"
-            />
-          ) : null}
+          {isEntry === false ? <div className="journalImg"></div> : null}
 
           <button className="journalBtn" onClick={viewUserEntry}>
             Create New Entry
           </button>
         </div>
       ) : (
-        <button className="journalBtn" onClick={viewUserEntry}>
+        <button className="journalBtnTwo" onClick={viewUserEntry}>
           View Entries
         </button>
       )}

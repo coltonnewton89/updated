@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import "../theme/Challenges.css";
 import { workshopChallenges } from "../db/Workshop";
+import spinTeck from "../imgs/spinTeck.gif";
 
 class Challenges extends Component {
   constructor(props) {
     super(props);
+    this.myRef = React.createRef();
     this.state = {
       selectedNumber: null,
       acceptedNumber: null,
@@ -48,13 +50,23 @@ class Challenges extends Component {
   };
 
   //share challenge img, title and body with link to facebook
-  shareContent = () => {};
+  shareContent = () => {
+    alert(
+      "We apologize! Hopefully we can get this function up by Beta testing. Thank you for understanding and again, congratulations on completing your challenge!"
+    );
+    this._congrats();
+  };
 
   completeToday = () => {
     let days = localStorage.getItem("userChallengeRemainder");
     if (days - 1 > 0) {
       localStorage.setItem("userChallengeRemainder", days - 1);
       this.setState({ daysLeft: days - 1 });
+      alert(
+        `Keep it up! You have ${
+          this.state.daysLeft - 1
+        } day(s) left until you complete this challenge!`
+      );
     }
     if (days - 1 == 0) {
       this.congrats();
@@ -81,19 +93,22 @@ class Challenges extends Component {
                       <div>
                         <h2>Congratulations!</h2>
                         <p>
-                          You have successfully completed your challenge. We
-                          want to congratulate you on a job well done! From
-                          here, you can share your completed challenge, possibly
-                          challenging others to do so, and/or accept a new
-                          challenge.
+                          We wanted to congratulate you on completing your
+                          challenge! From here, you can share your completed
+                          challenge, possibly challenging others to do so,
+                          and/or accept a new challenge.
                         </p>
                         <small>
-                          Do you wish to share or challenge others of this
-                          accomplishment via facebook? This will appear as a
-                          post on your feed.
+                          Do you wish to post this on facebook? This will appear
+                          as a post on your feed.
                         </small>
                         <div className="challengeBtnContainer">
-                          <button className="challengeDivBtn">Share</button>
+                          <button
+                            className="challengeDivBtn"
+                            onClick={this.shareContent}
+                          >
+                            Share
+                          </button>
                           <button
                             className="challengeDivCancel"
                             onClick={this._congrats}
@@ -128,42 +143,45 @@ class Challenges extends Component {
                 <img className="challengeDivImg" src={challenge.img} />
                 <h2>{challenge.title}</h2>
                 <p>{challenge.body}</p>
-                <button
-                  className="challengeDivBtn"
-                  value={challenge.id}
-                  onClick={this.acceptedNumber}
-                >
-                  Accept
-                </button>
+                <a href="/Workshop">
+                  <button
+                    className="challengeDivBtn"
+                    value={challenge.id}
+                    onClick={this.acceptedNumber}
+                  >
+                    Accept
+                  </button>
+                </a>
+
                 <br />
                 <button className="challengeDivCancel" onClick={this.clearAll}>
                   Cancel
                 </button>
               </div>
             );
-          } else if (this.state.selectedNumber == null) {
-            //small
-            return (
-              <div className="challengeCard">
-                <img src={challenge.img} className="challengeCardImg" />
-                <div className="challengeCardRight">
-                  <h4 className="challengeCardTitle">{challenge.title}</h4>
-                  <p className="challengeCardBody">
-                    {challenge.body.length > 30
-                      ? `${challenge.body.substring(0, 30)}...`
-                      : challenge.body}
-                  </p>
-                  <button
-                    className="challengeCardView"
-                    value={challenge.id}
-                    onClick={this.pushChoice}
-                  >
-                    View
-                  </button>
-                </div>
-              </div>
-            );
           }
+
+          //small
+          return (
+            <div className="challengeCard">
+              <img src={challenge.img} className="challengeCardImg" />
+              <div className="challengeCardRight">
+                <h4 className="challengeCardTitle">{challenge.title}</h4>
+                <p className="challengeCardBody">
+                  {challenge.body.length > 30
+                    ? `${challenge.body.substring(0, 30)}...`
+                    : challenge.body}
+                </p>
+                <button
+                  className="challengeCardView"
+                  value={challenge.id}
+                  onClick={this.pushChoice}
+                >
+                  View
+                </button>
+              </div>
+            </div>
+          );
         })}
       </div>
     );

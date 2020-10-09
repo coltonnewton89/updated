@@ -75,7 +75,7 @@ class JournalEntries extends Component {
               ? `${post.body.substring(0, 30)}...`
               : post.body}
           </p>
-          <button className="journalBtn" onClick={this.viewLarge} value={key}>
+          <button className="journalBtnTwo" onClick={this.viewLarge} value={key}>
             View
           </button>
         </div>

@@ -99,7 +99,7 @@ export default function SwipeableTemporaryDrawer(props) {
           <SimpleMenu />
         </div>
 
-        <img className="menuLogo" src={selfTeckLogo} alt="Self Teck logo" />
+        <div className='menuLogo'></div>
 
         <div className="logOffDiv">
           <img src={logOut} />

@@ -17,9 +17,11 @@ class DeleteUser extends Component {
     user
       .delete()
       .then(function () {
+        localStorage.clear();
         alert(
           "Your account has been sucessfully deleted. You can create a new account at any time if you so choose to."
         );
+        firebase.auth().signOut();
       })
       .catch(function (error) {
         alert(error);

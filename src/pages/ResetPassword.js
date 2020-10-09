@@ -20,6 +20,8 @@ class ResetPassword extends Component {
       });
   };
 
+  
+
   render() {
     return (
       <div className="resetContainer">

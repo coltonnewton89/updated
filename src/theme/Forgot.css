@@ -1,0 +1,44 @@
+.forgotContainer {
+  display: grid;
+  background: linear-gradient(
+    144deg,
+    rgba(14, 189, 192, 1) 0%,
+    rgba(35, 62, 79, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  overflow: scroll;
+  text-align: center;
+  justify-items: center;
+  color: #f1faee !important;
+}
+
+.forgotLi {
+  margin-bottom: 24px;
+  margin-left: -15px;
+}
+
+.submitReset {
+  text-align: center;
+  margin-top: 24px;
+  height: 38px;
+  width: 65%;
+  background-color: #00d1bb;
+  border-radius: 25px;
+  border-color: rgba(0, 0, 0, 0);
+  box-shadow: 2px 6px 4px #233e4f;
+  color: #f1faee;
+}
+
+.cancelBtn {
+  text-align: center;
+  height: 38px;
+  width: 45%;
+  background-color: #00d1bb;
+  border-radius: 25px;
+  border-color: rgba(0, 0, 0, 0);
+  box-shadow: 2px 6px 4px #233e4f;
+  color: #f1faee;
+}

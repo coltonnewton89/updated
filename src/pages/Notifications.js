@@ -15,6 +15,7 @@ class Timer extends React.Component {
       alarmTimeFive: "",
       useNotifications: false,
       notificationName: "",
+      notificationCrumb: false,
     };
     this.setAlarmTime = this.setAlarmTime.bind(this);
     this.setAlarmTimeTwo = this.setAlarmTimeTwo.bind(this);
@@ -26,7 +27,13 @@ class Timer extends React.Component {
   componentDidMount() {
     this.clock = setInterval(() => this.setCurrentTime(), 1000);
     this.interval = setInterval(() => this.checkAlarmClock(), 1000);
+    let crumb = localStorage.getItem("notificationCrumb");
+    this.setState({ notificationCrumb: crumb });
   }
+
+  // componentDidUpdate = () => {
+  //   this.componentDidMount();
+  // };
 
   componentWillUnmount() {
     clearInterval(this.clock);
@@ -96,6 +103,7 @@ class Timer extends React.Component {
   };
 
   toggleNotifications = () => {
+    let crumb = localStorage.getItem("notificationCrumb");
     this.setState({ useNotifications: !this.state.useNotifications });
     if (this.state.useNotifications == true) {
       this.setState({ notificationName: "flipIn" });
@@ -103,6 +111,31 @@ class Timer extends React.Component {
     } else {
       this.setState({ notificationName: "flipOut" });
       console.log(this.state.notificationName);
+    }
+    if (this.state.notificationName == "flipIn") {
+      localStorage.setItem("notificationCrumb", true);
+      console.log("set to true");
+    } else if (this.state.notificationName == "flipOut") {
+      localStorage.setItem("notificationCrumb", false);
+      console.log("set to false");
+    }
+  };
+
+  checkOrNot = () => {
+    if (this.state.notificationCrumb == true) {
+      return (
+        <label class="switch">
+          <input type="checkbox" checked onChange={this.toggleNotifications} />
+          <span class="slider round"></span>
+        </label>
+      );
+    } else {
+      return (
+        <label class="switch">
+          <input type="checkbox" onChange={this.toggleNotifications} />
+          <span class="slider round"></span>
+        </label>
+      );
     }
   };
 
@@ -122,51 +155,53 @@ class Timer extends React.Component {
             </p>
           </li>
           <div className="notificationToggle">
-            <p>
-              Use Notifications:{" "}
-              <label class="switch">
-                <input type="checkbox" onChange={this.toggleNotifications} />
-                <span class="slider round"></span>
-              </label>
-            </p>
+            <p>Use Notifications: {this.checkOrNot()}</p>
           </div>
         </ul>
         <div className={this.state.notificationName}>
-          <form id="tOne">
-            <input
-              type="time"
-              className="timerInput"
-              onChange={this.setAlarmTime}
-            ></input>
-          </form>
-          <form id="tTwo">
-            <input
-              type="time"
-              className="timerInput"
-              onChange={this.setAlarmTimeTwo}
-            ></input>
-          </form>
-          <form id="tThree">
-            <input
-              type="time"
-              className="timerInput"
-              onChange={this.setAlarmTimeThree}
-            ></input>
-          </form>
-          <form id="tFour">
-            <input
-              type="time"
-              className="timerInput"
-              onChange={this.setAlarmTimeFour}
-            ></input>
-          </form>
-          <form id="tFive">
-            <input
-              type="time"
-              className="timerInput"
-              onChange={this.setAlarmTimeFive}
-            ></input>
-          </form>
+          <div className="timeShell">
+            {this.state.notificationCrumb == null ||
+            this.state.notificationcrumb == false ? null : (
+              <div className="timeContainer">
+                <form id="tOne">
+                  <p>Select times</p>
+                  <input
+                    type="time"
+                    className="timerInput"
+                    onChange={this.setAlarmTime}
+                  ></input>
+                </form>
+                <form id="tTwo">
+                  <input
+                    type="time"
+                    className="timerInput"
+                    onChange={this.setAlarmTimeTwo}
+                  ></input>
+                </form>
+                <form id="tThree">
+                  <input
+                    type="time"
+                    className="timerInput"
+                    onChange={this.setAlarmTimeThree}
+                  ></input>
+                </form>
+                <form id="tFour">
+                  <input
+                    type="time"
+                    className="timerInput"
+                    onChange={this.setAlarmTimeFour}
+                  ></input>
+                </form>
+                <form id="tFive">
+                  <input
+                    type="time"
+                    className="timerInput"
+                    onChange={this.setAlarmTimeFive}
+                  ></input>
+                </form>
+              </div>
+            )}
+          </div>
         </div>
 
         <NavLink

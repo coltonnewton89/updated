@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Forgot from "../pages/Forgot";
 import "../theme/Login.css";
 import firebase from "../FireConfig";
 import Signup from "../pages/Signup";
@@ -14,11 +15,17 @@ class Login extends Component {
       email: "",
       password: "",
       create: false,
+      forgot: false,
     };
   }
 
   create = () => {
     this.setState({ create: !this.state.create });
+  };
+
+  forgot = () => {
+    this.setState({ forgot: !this.state.forgot });
+    console.log(this.state.forgot);
   };
 
   login(e) {
@@ -38,58 +45,68 @@ class Login extends Component {
   }
 
   render() {
-    if (!this.state.create) {
-      return (
-        <div className="loginContainer">
-          <img
-            src={selfteckImg}
-            className="selfteckImg"
-            alt="Self teck title"
-          />
-          <form className="loginForm" onSubmit={this.login}>
-            <div className="loginInput">
-              <label htmlFor="email">Email:</label>
-              <input
-                className="inputLogin"
-                type="text"
-                name="email"
-                placeholder="Email"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
+    return (
+      <div className="loginShell">
+        {!this.state.create && !this.state.forgot ? (
+          <div className="loginContainer">
+            <img
+              src={selfteckImg}
+              className="selfteckImg"
+              alt="Self teck title"
+            />
+            <form className="loginForm" onSubmit={this.login}>
+              <div className="loginInput">
+                <label htmlFor="email">Email:</label>
+                <input
+                  className="inputLogin"
+                  type="text"
+                  name="email"
+                  placeholder="Email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="loginInput">
+                <label htmlFor="password">Password:</label>
+                <input
+                  className="inputLogin"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <p onClick={this.forgot}>Forgot Password?</p>
+              <button type="submit" className="loginBtn">
+                Login
+              </button>
+            </form>
+            <span className="loginSpan"></span>
+            <div className="specDiv">
+              <p>Not yet a user?</p>
+              <p className="specP" onClick={this.create}>
+                Register Now!
+              </p>
             </div>
-            <div className="loginInput">
-              <label htmlFor="password">Password:</label>
-              <input
-                className="inputLogin"
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={this.state.password}
-                onChange={this.handleChange}
-              />
-            </div>
-            <p>Forgot Email or Password?</p>
-            <button type="submit" className="loginBtn">
-              Login
+            <button className="createUser" onClick={this.create}>
+              Create New User
             </button>
-          </form>
-          <span className="loginSpan"></span>
-          <div className="specDiv">
-            <p>Not yet a user?</p>
-            <p className="specP" onClick={this.create}>
-              Register Now!
-            </p>
           </div>
-          <button className="createUser" onClick={this.create}>
-            Create New User
-          </button>
-        </div>
-      );
-    } else {
-      return <Signup goBack={this.create} />;
-    }
+        ) : this.state.forgot ? (
+          <Forgot forgot={this.forgot} />
+        ) : (
+          <Signup goBack={this.create} />
+        )}
+      </div>
+    );
   }
 }
 
 export default Login;
+
+// else if (this.state.create) {
+//   return <Signup goBack={this.create} />;
+// } else if (this.state.forgot) {
+//   return <ForgotPassword />;
+// }
