@@ -104,9 +104,6 @@ const Journal = () => {
     if (entry == null || entry.toString() == "[]") {
       setIsEntry(false);
     }
-    if (entry.toString() == "[]") {
-      setIsEntry(false);
-    }
   });
 
   return (
