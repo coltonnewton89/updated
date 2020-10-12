@@ -5,6 +5,7 @@ import ButtonApp from "./components/ButtonApp";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
 import { IonApp, IonContent } from "@ionic/react";
+import './notifications/Notifications'
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
