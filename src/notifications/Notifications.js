@@ -5,7 +5,7 @@ const notifs = LocalNotifications.schedule({
   notifications: [
     {
       title: "Four Steps Reminder",
-      body: '"Priorities and purpose help keep us on track" -Candace Cameron',
+      body: '',
       id: 1,
       schedule: { at: new Date(Date.now() + 1000 * 5) },
       sound: null,
@@ -15,7 +15,7 @@ const notifs = LocalNotifications.schedule({
     },
     {
       title: "Four Steps Reminder",
-      body: '"The greatest gift you ever give is your honest self" -Mr.Rogers',
+      body: '',
       id: 1,
       schedule: { at: new Date(Date.now() + 1000 * 5) },
       sound: null,
@@ -25,7 +25,7 @@ const notifs = LocalNotifications.schedule({
     },
     {
       title: "Four Steps Reminder",
-      body: '"You need the dark in order to show the light" -Bob Ross',
+      body: '',
       id: 1,
       schedule: { at: new Date(Date.now() + 1000 * 5) },
       sound: null,
@@ -35,7 +35,7 @@ const notifs = LocalNotifications.schedule({
     },
     {
       title: "Four Steps Reminder",
-      body: '"Repitition creates the master" -Cesar Milan',
+      body: '',
       id: 1,
       schedule: { at: new Date(Date.now() + 1000 * 5) },
       sound: null,
@@ -45,7 +45,7 @@ const notifs = LocalNotifications.schedule({
     },
     {
       title: "Four Steps Reminder",
-      body: '"I am worth it" -Yourself',
+      body: '',
       id: 1,
       schedule: { at: new Date(Date.now() + 1000 * 5) },
       sound: null,

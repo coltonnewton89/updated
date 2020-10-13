@@ -3,31 +3,31 @@
 export const quotes = [
     {
         id:1,
-        body:''
+        body:'"Priorities and purpose help keep us on track" -Candace Cameron Bure'
     },
     {
         id:2,
-        body:''
+        body:'"The greatest gift you ever give is your honest self" -Mr.Rogers'
     },
     {
         id:3,
-        body:''
+        body:'"You need the dark in order to show the light" -Bob Ross'
     },
     {
         id:4,
-        body:''
+        body:'"Repitition creates the master" -Cesar Milan'
     },
     {
         id:5,
-        body:''
+        body:'"I am worth it" -Yourself'
     },
     {
         id:6,
-        body:''
+        body:'"We\'re all broken, that is how the light gets in. -Ernest Hemingway"'
     },
     {
         id:7,
-        body:''
+        body:'"If you\'re going to be thinking, you may as well think big" -MLK Jr'
     },
     {
         id:8,
@@ -35,7 +35,7 @@ export const quotes = [
     },
     {
         id:9,
-        body:''
+        body:'"The best way out is always through." -Robert Frost'
     },
     {
         id:10,
@@ -47,7 +47,7 @@ export const quotes = [
     },
     {
         id:12,
-        body:''
+        body:'"Be the change you want to see in the world" -Mahatma Gandi'
     },
     {
         id:13,
@@ -55,7 +55,7 @@ export const quotes = [
     },
     {
         id:14,
-        body:''
+        body:'"Keep your face to the sunshine and you cannot see the shadows." -Helen Keller'
     },
     {
         id:15,
@@ -63,7 +63,7 @@ export const quotes = [
     },
     {
         id:16,
-        body:''
+        body:'"Be mindful to your thoughts - thoughts become actions" -Laozi'
     },
     {
         id:17,
@@ -75,7 +75,7 @@ export const quotes = [
     },
     {
         id:19,
-        body:''
+        body:'"If you quit once it becomes habit. Never quit!" -Michael Jordan'
     },
     {
         id:20,
@@ -83,11 +83,11 @@ export const quotes = [
     },
     {
         id:21,
-        body:''
+        body:'"kindness seeks to give—without thought or condition of return." -Candace Cameron Bure'
     },
     {
         id:22,
-        body:''
+        body:'"The present is theirs; the future, for which I really worked, is mine." -Nikola Tesla'
     },
     {
         id:23,
@@ -99,7 +99,7 @@ export const quotes = [
     },
     {
         id:25,
-        body:''
+        body:'"The best way to find yourself is to lose yourself in the service of others." -Mahatma Gandi'
     },
     {
         id:26,
@@ -107,7 +107,7 @@ export const quotes = [
     },
     {
         id:27,
-        body:''
+        body:'“Faithless is he that says farewell when the road darkens.” ― J.R.R. Tolkien'
     },
     {
         id:28,
@@ -115,11 +115,11 @@ export const quotes = [
     },
     {
         id:29,
-        body:''
+        body:'“It is never too late to be what you might have been.” -Mary Ann Evans'
     },
     {
         id:30,
-        body:''
+        body:'"All truths are easy to understand once they are discovered; the point is to discover them." -Galileo Galilei'
     },
     {
         id:31,
@@ -127,7 +127,7 @@ export const quotes = [
     },
     {
         id:32,
-        body:''
+        body:'If I have done the public any service, it is due to my patient thought. -Isaac Newton'
     },
     {
         id:33,
@@ -135,7 +135,7 @@ export const quotes = [
     },
     {
         id:34,
-        body:''
+        body:'"Act enthusiastic and you will be enthusiastic" -Dale Carnegie'
     },
     {
         id:35,
@@ -147,7 +147,7 @@ export const quotes = [
     },
     {
         id:37,
-        body:''
+        body:'"Although the world is full of suffering, it is also full of the overcoming of it." -Helen Keller'
     },
     {
         id:38,
@@ -155,7 +155,7 @@ export const quotes = [
     },
     {
         id:39,
-        body:''
+        body:'"I stayed true to my dreams and eventually, they came true." -Kevin Hart'
     },
     {
         id:40,
@@ -167,7 +167,7 @@ export const quotes = [
     },
     {
         id:42,
-        body:''
+        body:'"Every great dream beings with a dreamer" -Hariet Tubman'
     },
     {
         id:43,
@@ -175,7 +175,7 @@ export const quotes = [
     },
     {
         id:44,
-        body:''
+        body:'"Our fatigue is often caused not by work, but by worry, frustration and resentment" -Dale Carnegie'
     },
     {
         id:45,
@@ -187,7 +187,7 @@ export const quotes = [
     },
     {
         id:47,
-        body:''
+        body:'"All battles are first won or lost, in the mind" -Joan of Arc'
     },
     {
         id:48,
@@ -195,10 +195,10 @@ export const quotes = [
     },
     {
         id:49,
-        body:''
+        body:'"I like to use the hard times in the past to motivate me today" -Dwayne Johnson'
     },
     {
         id:50,
-        body:''
+        body:'"Opportunities multiply as they are seized." -Sun Tzu'
     },
 ]
