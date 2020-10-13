@@ -5,7 +5,7 @@ import ButtonApp from "./components/ButtonApp";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
 import { IonApp, IonContent } from "@ionic/react";
-import './notifications/Notifications'
+
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -51,20 +51,16 @@ class App extends Component {
   render() {
     return (
       <IonApp>
-        <IonContent>
+        
           {this.state.user ? (
             <BrowserRouter>
               <ButtonApp />
-              <Router
-                style={{
-                  alignText: "center",
-                }}
-              />
+              <Router/>
             </BrowserRouter>
           ) : (
             <Login />
           )}
-        </IonContent>
+        
       </IonApp>
     );
   }

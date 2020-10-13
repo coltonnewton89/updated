@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import alertAudio from "../audio/alertAudio.wav";
 import "../theme/Notifications.css";
 
 class Timer extends React.Component {
   constructor() {
     super();
     this.state = {
-      currentTime: "",
       alarmTime: "",
       alarmTimeTwo: "",
       alarmTimeThree: "",
       alarmTimeFour: "",
       alarmTimeFive: "",
       useNotifications: false,
-      notificationName: "",
-      notificationCrumb: false,
+      formName: false,
+      exit: false
     };
     this.setAlarmTime = this.setAlarmTime.bind(this);
     this.setAlarmTimeTwo = this.setAlarmTimeTwo.bind(this);
@@ -24,27 +22,7 @@ class Timer extends React.Component {
     this.setAlarmTimeFive = this.setAlarmTimeFive.bind(this);
   }
 
-  componentDidMount() {
-    this.clock = setInterval(() => this.setCurrentTime(), 1000);
-    this.interval = setInterval(() => this.checkAlarmClock(), 1000);
-    let crumb = localStorage.getItem("notificationCrumb");
-    this.setState({ notificationCrumb: crumb });
-  }
-
-  // componentDidUpdate = () => {
-  //   this.componentDidMount();
-  // };
-
-  componentWillUnmount() {
-    clearInterval(this.clock);
-    clearInterval(this.interval);
-  }
-
-  setCurrentTime() {
-    this.setState({
-      currentTime: new Date().toLocaleTimeString("en-US", { hour12: false }),
-    });
-  }
+  
 
   setAlarmTime(event) {
     event.preventDefault();
@@ -82,136 +60,104 @@ class Timer extends React.Component {
     });
   }
 
-  checkAlarmClock() {
-    const timeArray = [
-      this.state.alarmTime,
-      this.state.alarmTimeTwo,
-      this.state.alarmTimeThree,
-      this.state.alarmTimeFour,
-      this.state.alarmTimeFive,
-    ];
-    for (let i = 0; i < timeArray.length; i++)
-      if (this.state.currentTime === timeArray[i]) {
-        var audio = new Audio(alertAudio);
-        audio.play();
-      }
+  toggleNotifications=()=>{
+    var oldEntry = JSON.parse(localStorage.getItem("notificationTimes")) || [];
+    this.setState({useNotifications: !this.state.useNotifications})
+    console.log(oldEntry)
+    this.setState({formName: !this.state.formName})
   }
 
-  sampleSound = () => {
-    var audio = new Audio(alertAudio);
-    audio.play();
-  };
+  save=()=>{
+    var oldEntry = JSON.parse(localStorage.getItem("notificationTimes")) || [];
+    if(this.state.useNotifications == true){
+      oldEntry=[this.state.alarmTime, this.state.alarmTimeTwo, this.state.alarmTimeThree, this.state.alarmTimeFour, this.state.alarmTimeFive]
+    }else{
+      oldEntry=[null]
+    }
+    localStorage.setItem("notificationTimes", JSON.stringify(oldEntry));
+    this.exit();
+  }
 
-  toggleNotifications = () => {
-    let crumb = localStorage.getItem("notificationCrumb");
-    this.setState({ useNotifications: !this.state.useNotifications });
-    if (this.state.useNotifications == true) {
-      this.setState({ notificationName: "flipIn" });
-      console.log(this.state.notificationName);
-    } else {
-      this.setState({ notificationName: "flipOut" });
-      console.log(this.state.notificationName);
-    }
-    if (this.state.notificationName == "flipIn") {
-      localStorage.setItem("notificationCrumb", true);
-      console.log("set to true");
-    } else if (this.state.notificationName == "flipOut") {
-      localStorage.setItem("notificationCrumb", false);
-      console.log("set to false");
-    }
-  };
+  exit=()=>{
+    this.setState({exit: true})
+  }
 
-  checkOrNot = () => {
-    if (this.state.notificationCrumb == true) {
-      return (
-        <label class="switch">
-          <input type="checkbox" checked onChange={this.toggleNotifications} />
-          <span class="slider round"></span>
-        </label>
-      );
-    } else {
-      return (
-        <label class="switch">
-          <input type="checkbox" onChange={this.toggleNotifications} />
-          <span class="slider round"></span>
-        </label>
-      );
-    }
-  };
+  
 
   render() {
     return (
-      <div className="notificationContainer">
-        <p>
-          Remembering to do our four steps can prove difficult. Below, please
-          choose five times throughout your day for a simple reminder tone to
-          alert you to cycle through your four steps.
-        </p>
-        <ul>
-          <li>
-            What will the alert sound like?{" "}
-            <p className="sampleSound" onClick={this.sampleSound}>
-              Click here
-            </p>
-          </li>
-          <div className="notificationToggle">
-            <p>Use Notifications: {this.checkOrNot()}</p>
-          </div>
-        </ul>
-        <div className={this.state.notificationName}>
-          <div className="timeShell">
-            {this.state.notificationCrumb == null ||
-            this.state.notificationcrumb == false ? null : (
-              <div className="timeContainer">
-                <form id="tOne">
-                  <p>Select times</p>
-                  <input
-                    type="time"
-                    className="timerInput"
-                    onChange={this.setAlarmTime}
-                  ></input>
-                </form>
-                <form id="tTwo">
-                  <input
-                    type="time"
-                    className="timerInput"
-                    onChange={this.setAlarmTimeTwo}
-                  ></input>
-                </form>
-                <form id="tThree">
-                  <input
-                    type="time"
-                    className="timerInput"
-                    onChange={this.setAlarmTimeThree}
-                  ></input>
-                </form>
-                <form id="tFour">
-                  <input
-                    type="time"
-                    className="timerInput"
-                    onChange={this.setAlarmTimeFour}
-                  ></input>
-                </form>
-                <form id="tFive">
-                  <input
-                    type="time"
-                    className="timerInput"
-                    onChange={this.setAlarmTimeFive}
-                  ></input>
-                </form>
-              </div>
-            )}
-          </div>
-        </div>
-
-        <NavLink
+      <div className="notificationShell">
+        {
+          !this.state.exit ? <div className="notificationContainer">
+          <p>
+            Remembering to do our four steps can prove difficult. Below, please
+            choose five times throughout your day for a simple reminder tone to
+            alert you to cycle through your four steps.
+          </p>        
+            <div className="notificationToggle">
+              Use Notifications: 
+              <label class="switch">
+            <input type="checkbox" onChange={this.toggleNotifications}/>
+            <span class="slider round"></span>
+          </label>
+            </div>       
+                  <div className={this.state.formName ? 'flipIn': 'flipOut'}>
+                  <form  className="timeContainer" onSubmit={this.save}>
+                    <p>Select times</p>
+                    <input
+                      type="time"
+                      value={this.state.alarmTime}
+                      className="timerInput"
+                      onChange={this.setAlarmTime}
+                      required={this.state.useNotifications}
+                    ></input>
+                 
+                    <input
+                      type="time"
+                      className="timerInput"
+                      onChange={this.setAlarmTimeTwo}
+                      required={this.state.useNotifications}
+                    ></input>
+                  
+                  
+                    <input
+                      type="time"
+                      className="timerInput"
+                      onChange={this.setAlarmTimeThree}
+                      required={this.state.useNotifications}
+                    ></input>
+                 
+                  
+                    <input
+                      type="time"
+                      className="timerInput"
+                      onChange={this.setAlarmTimeFour}
+                      required={this.state.useNotifications}
+                    ></input>
+                  
+                    <input
+                      type="time"
+                      className="timerInput"
+                      onChange={this.setAlarmTimeFive}
+                      required={this.state.useNotifications}
+                    ></input>
+                    <button className="timeSaveBtn" type="submit">Save</button>
+                  </form>
+                  </div>
+                  {!this.state.formName ? <button className='flipInTwo' onClick={this.save}>Save</button> : null}
+           
+        </div> : <div className="notificationContainer">
+          <h2>Your Notification Settings have been saved.</h2>
+          <NavLink
           exact
           to="/Cycle"
           className="deleteCancelBtn"
           activeStyle={{ color: "#e56b6f" }}
         >
-          Save
+          Exit
         </NavLink>
+        </div>
+        }
       </div>
     );
   }

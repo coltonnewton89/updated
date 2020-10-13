@@ -14,7 +14,6 @@
   justify-items: center;
   text-align: center;
   color: #f1faee !important;
-  z-index: 2;
 }
 
 .timerInput::-webkit-calendar-picker-indicator {
@@ -26,6 +25,7 @@
   margin-bottom: 10px;
   border: 2px solid #f1faee;
   border-radius: 24px;
+  width: 110px;
   color: #f1faee !important;
   background-color: rgba(46, 243, 243, 0);
 }
@@ -97,16 +97,53 @@ input:checked + .slider:before {
 }
 
 /* ==notification names== */
-.flipOut {
-  -webkit-animation: flip-in-hor-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+.flipIn {
+  -webkit-animation: flip-in-hor-top 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
-  animation: flip-in-hor-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: flip-in-hor-top 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.flipIn {
-  -webkit-animation: flip-out-hor-top 0.45s
-    cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-  animation: flip-out-hor-top 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+.flipOut {
+  display: none;
+}
+
+/* ==timer container== */
+
+.timeContainer {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  width: 100vw;
+}
+
+.timeSaveBtn {
+  display: grid;
+  align-content: center;
+  height: 30px;
+  padding: 20px;
+  background-color: #f1faee;
+  color: #00d1bb;
+  border-radius: 24px;
+  border-color: rgba(0, 0, 0, 0);
+  box-shadow: 2px 6px 4px #233e4f;
+  width: 200%;
+}
+
+.flipInTwo {
+  display: grid;
+  align-content: center;
+  height: 30px;
+  padding: 20px;
+  background-color: #f1faee;
+  color: #00d1bb;
+  border-radius: 24px;
+  border-color: rgba(0, 0, 0, 0);
+  box-shadow: 2px 6px 4px #233e4f;
+  width: 65%;
+  -webkit-animation: flip-in-hor-top 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: flip-in-hor-top 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 /* ====Animations==== */
