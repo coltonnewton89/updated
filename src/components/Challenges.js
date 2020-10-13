@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../theme/Challenges.css";
 import { workshopChallenges } from "../db/Workshop";
-import spinTeck from "../imgs/spinTeck.gif";
 
 class Challenges extends Component {
   constructor(props) {

@@ -1,5 +1,8 @@
 import { Plugins } from '@capacitor/core';
 const { LocalNotifications } = Plugins;
+import {quotes} from '../db/Quotes'
+
+
 
 const notifs = LocalNotifications.schedule({
   notifications: [

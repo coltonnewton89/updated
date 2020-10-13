@@ -31,7 +31,7 @@ export const quotes = [
     },
     {
         id:8,
-        body:''
+        body:'"Climate is what we expect, weather is what we get." -Mark Twain'
     },
     {
         id:9,
@@ -39,11 +39,11 @@ export const quotes = [
     },
     {
         id:10,
-        body:''
+        body:'"Success is not final, failure is not fatal: it is the courage to continue that counts." - Winston Churchill'
     },
     {
         id:11,
-        body:''
+        body:'"Failure means a stripping away of the inessential." -J.K. Rowling'
     },
     {
         id:12,
@@ -51,7 +51,7 @@ export const quotes = [
     },
     {
         id:13,
-        body:''
+        body:'"Vitality shows in not only the ability to persist but the ability to start over." -F. Scott Fitzgerald'
     },
     {
         id:14,
@@ -59,7 +59,7 @@ export const quotes = [
     },
     {
         id:15,
-        body:''
+        body:'"You cannot find peace by avoiding life." -Virginia Woolf'
     },
     {
         id:16,
@@ -67,11 +67,11 @@ export const quotes = [
     },
     {
         id:17,
-        body:''
+        body:'"Let your dreams stay big and your worries stay small" -Rascall Flatts'
     },
     {
         id:18,
-        body:''
+        body:'"Bless the broken road" -Rascal Flatts'
     },
     {
         id:19,
@@ -79,11 +79,11 @@ export const quotes = [
     },
     {
         id:20,
-        body:''
+        body:'"Change has to come for life to struggle forward." -Helen Hollick'
     },
     {
         id:21,
-        body:'"kindness seeks to give—without thought or condition of return." -Candace Cameron Bure'
+        body:'"kindness seeks to give without thought or condition of return." -Candace Cameron Bure'
     },
     {
         id:22,
@@ -91,11 +91,11 @@ export const quotes = [
     },
     {
         id:23,
-        body:''
+        body:'"The tragedy of life is what dies inside a man while he lives" -Albert Einstein'
     },
     {
         id:24,
-        body:''
+        body:'"Life is a hypocrite if I can\'t live the way it moves me!" -John Eldredge'
     },
     {
         id:25,
@@ -103,7 +103,7 @@ export const quotes = [
     },
     {
         id:26,
-        body:''
+        body:'"You can find that life - if you are willing to embark on a great adventure -John Eldredge"'
     },
     {
         id:27,
@@ -111,7 +111,7 @@ export const quotes = [
     },
     {
         id:28,
-        body:''
+        body:'"When we expose the lie, the enemy\'s power is broken." -Neil T. Anderson'
     },
     {
         id:29,
@@ -123,7 +123,7 @@ export const quotes = [
     },
     {
         id:31,
-        body:''
+        body:'"When you have nothing else have faith" -Francine Rivers'
     },
     {
         id:32,
@@ -131,7 +131,7 @@ export const quotes = [
     },
     {
         id:33,
-        body:''
+        body:'"We are products of our past, but we don\'t have to be prisoners of it." -Rick Warren'
     },
     {
         id:34,
@@ -139,11 +139,11 @@ export const quotes = [
     },
     {
         id:35,
-        body:''
+        body:'"If you\'re alive, there\'s a purpose for your life." -Rick Warren'
     },
     {
         id:36,
-        body:''
+        body:'"You need to doubt your doubts and believe your beliefs." -Rick Warren'
     },
     {
         id:37,
@@ -151,27 +151,27 @@ export const quotes = [
     },
     {
         id:38,
-        body:''
+        body:'"Don\'t let the things you can\'t do stop you from doing the things you can." -Mat Best'
     },
     {
         id:39,
-        body:'"I stayed true to my dreams and eventually, they came true." -Kevin Hart'
+        body:'"It is what we do after the fact that define us and puts us on the path to our next great success" -Nick Koumalatsos'
     },
     {
         id:40,
-        body:''
+        body:'"Keeping calm, I think comes from the fact that you\'ve already analyzed the fire" -John Krebs'
     },
     {
         id:41,
-        body:''
+        body:'"Peace begins with a smile" -Mother Teresa'
     },
     {
         id:42,
-        body:'"Every great dream beings with a dreamer" -Hariet Tubman'
+        body:'"I never quit, I never surrender, and I always move forward" -Nick Koumalatsos'
     },
     {
         id:43,
-        body:''
+        body:'"Don\'t let your mind control you. Control your mind." -Jocko Willink'
     },
     {
         id:44,
@@ -179,11 +179,11 @@ export const quotes = [
     },
     {
         id:45,
-        body:''
+        body:'"Discipline equals freedom" -Jocko Willink'
     },
     {
         id:46,
-        body:''
+        body:'"Adventures are never fun while you\'re having them." -C.S. Lewis'
     },
     {
         id:47,
@@ -191,7 +191,7 @@ export const quotes = [
     },
     {
         id:48,
-        body:''
+        body:'"We are what we believe we are." - C.S. Lewis'
     },
     {
         id:49,
