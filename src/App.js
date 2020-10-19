@@ -4,7 +4,7 @@ import firebase from "./FireConfig";
 import ButtonApp from "./components/ButtonApp";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
-import { IonApp, IonContent } from "@ionic/react";
+import { IonApp} from "@ionic/react";
 
 
 /* Core CSS required for Ionic components to work properly */

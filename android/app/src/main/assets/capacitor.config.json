@@ -5,6 +5,9 @@
   "npmClient": "npm",
   "webDir": "build",
   "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "./menuImgs/smallIcon.png"
+    },
     "SplashScreen": {
       "launchShowDuration": 0
     }

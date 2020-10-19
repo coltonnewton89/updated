@@ -26,35 +26,35 @@ class Timer extends React.Component {
 
   setAlarmTime(event) {
     event.preventDefault();
-    const inputAlarmTimeModified = event.target.value + ":00";
+    const inputAlarmTimeModified = event.target.value;
     this.setState({
       alarmTime: inputAlarmTimeModified,
     });
   }
   setAlarmTimeTwo(event) {
     event.preventDefault();
-    const inputAlarmTimeModified = event.target.value + ":00";
+    const inputAlarmTimeModified = event.target.value;
     this.setState({
       alarmTimeTwo: inputAlarmTimeModified,
     });
   }
   setAlarmTimeThree(event) {
     event.preventDefault();
-    const inputAlarmTimeModified = event.target.value + ":00";
+    const inputAlarmTimeModified = event.target.value;
     this.setState({
       alarmTimeThree: inputAlarmTimeModified,
     });
   }
   setAlarmTimeFour(event) {
     event.preventDefault();
-    const inputAlarmTimeModified = event.target.value + ":00";
+    const inputAlarmTimeModified = event.target.value;
     this.setState({
       alarmTimeFour: inputAlarmTimeModified,
     });
   }
   setAlarmTimeFive(event) {
     event.preventDefault();
-    const inputAlarmTimeModified = event.target.value + ":00";
+    const inputAlarmTimeModified = event.target.value;
     this.setState({
       alarmTimeFive: inputAlarmTimeModified,
     });
@@ -70,9 +70,10 @@ class Timer extends React.Component {
   save=()=>{
     var oldEntry = JSON.parse(localStorage.getItem("notificationTimes")) || [];
     if(this.state.useNotifications == true){
-      oldEntry=[this.state.alarmTime, this.state.alarmTimeTwo, this.state.alarmTimeThree, this.state.alarmTimeFour, this.state.alarmTimeFive]
+      oldEntry = [];
+      oldEntry.push(this.state.alarmTime, this.state.alarmTimeTwo, this.state.alarmTimeThree, this.state.alarmTimeFour, this.state.alarmTimeFive)
     }else{
-      oldEntry=[null]
+      oldEntry= null
     }
     localStorage.setItem("notificationTimes", JSON.stringify(oldEntry));
     this.exit();
@@ -90,7 +91,7 @@ class Timer extends React.Component {
         {
           !this.state.exit ? <div className="notificationContainer">
           <p>
-            Remembering to do our four steps can prove difficult. Below, please
+            Remembering to do our four steps can prove difficult. Below, you can choose to use notifications. If you do, please
             choose five times throughout your day for a simple reminder tone to
             alert you to cycle through your four steps.
           </p>        
@@ -126,6 +127,7 @@ class Timer extends React.Component {
                       onChange={this.setAlarmTimeThree}
                       required={this.state.useNotifications}
                     ></input>
+                    
                  
                   
                     <input
@@ -148,6 +150,7 @@ class Timer extends React.Component {
            
         </div> : <div className="notificationContainer">
           <h2>Your Notification Settings have been saved.</h2>
+          <p>Note: Your old notification schedule may still be in affect but will update within 24 hours.</p>
           <NavLink
           exact
           to="/Cycle"

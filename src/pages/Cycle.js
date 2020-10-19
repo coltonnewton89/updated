@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Slides from "../components/Slides";
 import MasterIntro from "../components/MasterIntro";
-import IntroD from "../intro/IntroD";
 import "../theme/Cycle.css";
+import Notes from '../notifications/Notifications'
 
 class Cycle extends Component {
   state = {
@@ -23,6 +23,7 @@ class Cycle extends Component {
     if (this.state.crumb === "crumb") {
       return (
         <div className="cycleContainer">
+          <Notes/>
           <Slides />
         </div>
       );
