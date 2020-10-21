@@ -54,16 +54,27 @@ class DeleteUser extends Component {
         ) : this.state.displayReset ? (
           <div className="resetHome">
             <h2>
-              Resetting your account will not reset your login information. To
-              reset just your login information, navigate to Account Setttings
-              -- Reset Password.
+              Resetting your account will not reset your login email or password. To
+              reset just your login password, Click <NavLink
+          to="/Reset"
+          style={{ color: "#F1FAEE" }}
+        >
+          Here.
+        </NavLink>
             </h2>
             <ul>
               <li>
-                To continue, Click{" "}
-                <p className="resetReset" onClick={this.clearAll}>
+                To reset your account, Click{" "}
+                <NavLink
+                to="/Cycle"
+                className="deleteCancelBtn"
+                activeStyle={{ color: "#e56b6f" }}
+                onClick={this.clearAll}
+                className="resetReset"
+              >
                   Here
-                </p>
+              </NavLink>
+                
               </li>
               <li>Otherwise, just click "Cancel" to exit.</li>
             </ul>

@@ -82,6 +82,7 @@ class Slides extends Component {
   };
 
   componentDidMount() {
+    
     let count = JSON.parse(localStorage.getItem("count"));
     this.setState({ stepCounter: count });
     console.log("componentDidMount");

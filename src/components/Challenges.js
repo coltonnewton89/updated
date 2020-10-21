@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { Plugins } from '@capacitor/core';
+import { NavLink } from "react-router-dom";
 import "../theme/Challenges.css";
 import { workshopChallenges } from "../db/Workshop";
+const { Share } = Plugins;
 
 class Challenges extends Component {
   constructor(props) {
@@ -50,9 +53,23 @@ class Challenges extends Component {
 
   //share challenge img, title and body with link to facebook
   shareContent = () => {
-    alert(
-      "We apologize! Hopefully we can get this function up by Beta testing. Thank you for understanding and again, congratulations on completing your challenge!"
-    );
+    var targetValue = localStorage.getItem('userAcceptedNumber')
+    //map challenge
+    workshopChallenges.map((challenge) => {
+      if (challenge.id == targetValue) {
+    //Share Challenge
+    async function shareRet(){
+      await Share.share({
+        title: `I just completed the "${challenge.title}" challenge from Selfteck. Can you? \nThe challenge is: ${challenge.body}`,
+        text: `I just completed the "${challenge.title}" challenge from Selfteck. Can you? \nThe challenge is: ${challenge.body}`,
+        url: 'https://www.facebook.com/infoselfteck',
+        dialogTitle: `I just completed the "${challenge.title}" challenge from Selfteck. Can you? \nThe challenge is: ${challenge.body}`
+      });
+    } 
+    shareRet();
+      }
+    });
+    //complete
     this._congrats();
   };
 
@@ -102,12 +119,15 @@ class Challenges extends Component {
                           as a post on your feed.
                         </small>
                         <div className="challengeBtnContainer">
-                          <button
-                            className="challengeDivBtn"
-                            onClick={this.shareContent}
+                        <NavLink
+                           to="/Cycle"
+                           className="challengeDivBtn"
+                           activeStyle={{ color: "#e56b6f" }}
+                           onClick={this.shareContent}
                           >
-                            Share
-                          </button>
+                          Share
+                          </NavLink>
+                          
                           <button
                             className="challengeDivCancel"
                             onClick={this._congrats}

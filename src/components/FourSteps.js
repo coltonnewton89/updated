@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import firebase from "../FireConfig";
 import "../theme/FourSteps.css";
 import Success from "../imgs/goodJob.png";
@@ -13,6 +14,7 @@ class FourSteps extends Component {
     copeArr: "",
     truthArr: "",
     responseArr: "",
+    noteCrumb: null,
   };
 
   stepOneComplete = () => {
@@ -34,11 +36,18 @@ class FourSteps extends Component {
   };
 
   completeFourSteps = () => {
+    const noteCrumb = localStorage.getItem('noteCrumb')
+    if(noteCrumb === null){
+      localStorage.setItem('noteCrumb', 'true')
+    }
+    this.setState({noteCrumb: 'true'})
     const { _completeFourSteps } = this.props;
     this.props._completeFourSteps();
   };
 
   componentDidMount = () => {
+    const noteCrumb = localStorage.getItem('noteCrumb')
+    this.setState({noteCrumb: noteCrumb})
     const currentUser = firebase.auth().currentUser.uid.toString();
     var priArrRef = firebase
       .firestore()
@@ -90,9 +99,16 @@ class FourSteps extends Component {
               src={Success}
               alt="Green circle with Thumbs up"
             />
-            <button className="fourStepBtn" onClick={this.completeFourSteps}>
+            {this.state.noteCrumb == 'true' ? <button className="fourStepBtn" onClick={this.completeFourSteps}>
               Got it
-            </button>
+            </button> : <button className="fourStepBtn"><NavLink
+          to="/Notifications"
+          style={{ color: "#F1FAEE" }}          
+          onClick={this.completeFourSteps}
+        >
+          Got it
+        </NavLink></button>}
+            
           </div>
         ) : (
           <div className="timelineContainer">
