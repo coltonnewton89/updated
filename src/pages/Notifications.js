@@ -92,8 +92,7 @@ class Timer extends React.Component {
           !this.state.exit ? <div className="notificationContainer">
           <p>
             Remembering to do our four steps can prove difficult. Below, you can choose to use notifications. If you do, please
-            choose five times throughout your day for a simple reminder tone to
-            alert you to cycle through your four steps.
+            choose five times throughout your day for a simple reminder to cycle through your four steps.
           </p>        
             <div className="notificationToggle">
               Use Notifications: 

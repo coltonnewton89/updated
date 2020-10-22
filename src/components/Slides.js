@@ -37,8 +37,7 @@ class Slides extends Component {
     tomorrow.setDate(tomorrow.getDate() + 1);
     localStorage.setItem("loggedDate", tomorrow);
     this.setState({ stepCounter: 1 });
-    localStorage.setItem("count", this.state.stepCounter);
-    console.log("changeDate");
+    localStorage.setItem("count", 1);
   };
 
   setBeginningDate = () => {
@@ -49,7 +48,6 @@ class Slides extends Component {
 
     this.setState({ stepCounter: 1 });
     localStorage.setItem("count", this.state.stepCounter);
-    console.log("setBeginningDate", this.state.stepCounter);
   };
 
   lessThanTwoIncrement() {
@@ -59,33 +57,36 @@ class Slides extends Component {
   }
 
   togglePeace = () => {
-    //set state is throwing it off
+     if (this.state.stepCounter <= 2) {
+      this.setState({ stepCounter: this.state.stepCounter + 1 });
+      localStorage.setItem("count", JSON.parse(localStorage.getItem("count")) + 1);
+    } else if (this.state.stepCounter >= 3) {
+      this.setState({ stepCounter: this.state.stepCounter + 1 });
+      localStorage.setItem("count", JSON.parse(localStorage.getItem("count")) + 1);
+    }
+  };
+
+  componentWillMount(){
     var today = new Date();
     let loggedDate = localStorage.getItem("loggedDate");
-    let count = localStorage.getItem("count");
+    
     if (loggedDate === null) {
       this.setBeginningDate();
     } else if (
       loggedDate.toString().substring(0, 15) ===
       today.toString().substring(0, 15)
-    ) {
-      this.changeDate();
-    } else if (this.state.stepCounter <= 2) {
-      this.setState({ stepCounter: this.state.stepCounter + 1 });
-      localStorage.setItem("count", this.state.stepCounter);
-      console.log("togglePeace less than 2", this.state.stepCounter, count);
-    } else if (this.state.stepCounter >= 3) {
-      this.setState({ stepCounter: this.state.stepCounter + 1 });
-      localStorage.setItem("count", this.state.stepCounter);
-      console.log("togglePeace greater than 3");
-    }
-  };
-
-  componentDidMount() {
-    
+    ) { this.changeDate(); }
+    let _count = localStorage.getItem('count')
     let count = JSON.parse(localStorage.getItem("count"));
+    if(_count == 'null'){localStorage.setItem("count", 1)}
     this.setState({ stepCounter: count });
-    console.log("componentDidMount");
+  }
+
+  componentDidMount(){
+    if(this.state.stepCounter == 'null'){
+      this.setState({stepCounter: 1})
+      localStorage.setItem('count', 1)
+    }
   }
 
   render() {

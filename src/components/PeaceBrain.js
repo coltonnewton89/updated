@@ -14,7 +14,7 @@ class PeaceBrain extends Component {
 
   giveInstructions = () => {
     alert(
-      "to open your four steps, click on the brain. Remember: red means pain, green means peace."
+      "Practicing your four steps often increase your chances of achieving a positive state of self-regulation. A new day or long periods without practicing your four steps will result in a \"Reset.\" This will change your \"Regulation Map\" back to red, indicating you might need to practice your four steps. This will change to blue (representing positive) after two or three times of practicing your four steps. To do so, simply click on the \"Regulation Map.\" (This is the brain displayed in the center.)"
     );
   };
 

@@ -28,6 +28,9 @@ class notes extends Component {
     snapDate.setHours(hour);
     snapDate.setMinutes(minute)
     snapDate.setSeconds(0)
+    if(snapDate < new Date()){
+      snapDate.setDate(snapDate.getDate() + 1)
+    }
     return snapDate
     }
 
@@ -44,6 +47,9 @@ class notes extends Component {
       snapDate.setHours(hour);
       snapDate.setMinutes(minute)
       snapDate.setSeconds(0)
+      if(snapDate < new Date()){
+        snapDate.setDate(snapDate.getDate() + 1)
+      }
       return snapDate
       }
 
@@ -60,6 +66,9 @@ class notes extends Component {
       snapDate.setHours(hour);
       snapDate.setMinutes(minute)
       snapDate.setSeconds(0)
+      if(snapDate < new Date()){
+        snapDate.setDate(snapDate.getDate() + 1)
+      }
       return snapDate
       }
 
@@ -76,6 +85,9 @@ class notes extends Component {
       snapDate.setHours(hour);
       snapDate.setMinutes(minute)
       snapDate.setSeconds(0)
+      if(snapDate < new Date()){
+        snapDate.setDate(snapDate.getDate() + 1)
+      }
       return snapDate
       }
 
@@ -92,6 +104,9 @@ class notes extends Component {
       snapDate.setHours(hour);
       snapDate.setMinutes(minute)
       snapDate.setSeconds(0)
+      if(snapDate < new Date()){
+        snapDate.setDate(snapDate.getDate() + 1)
+      }
       return snapDate
       }
 
