@@ -94,7 +94,7 @@ class IntroD extends Component {
         <div style={{ textAlign: "center" }}>
           <h3>You said: {this.state.event}</h3>
           <h4>
-            Now, true confession time. Choose three words from below that best
+            Now, quick confession time. Choose three words from below that best
             describe how you acted in this situation? I became _____.
           </h4>
           <img

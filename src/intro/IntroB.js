@@ -43,8 +43,7 @@ class IntroB extends Component {
         {!this.state.great ? (
           <div>
             <p>
-              Welcome to SelfTeck. Will you help us get to know you a little
-              better? Do any of the fallowing match why you're here?
+              Welcome to SelfTeck. We're glad your here and hope you find your own peace through SelfTeck. First, Do any of the fallowing describe why you're here?
             </p>
             <br />
             <form className="demographicOne" onSubmit={this.handleFormSubmit}>
@@ -272,7 +271,7 @@ class IntroB extends Component {
         ) : (
           <div className="successDiv">
             <img src={floppy} alt="image of floppy disc" />
-            <h3>Alright, Let's continue to get you set up.</h3>
+            <h3>Alright, Let's continue to get you set up. Next, we'll try to identify anything preventing you from moving to your peace.</h3>
             <button className="challengeCardView" onClick={this.propFunction}>
               Continue
             </button>

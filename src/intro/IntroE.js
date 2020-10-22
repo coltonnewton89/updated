@@ -97,11 +97,11 @@ class IntroE extends Component {
         {this.state.priArr.length < 3 ? (
           <div style={{ textAlign: "center" }}>
             <p>
-              Have you ever thought about the emotions or thoughts that keep
-              driving you to this place of pain? Look again at the triggering
+              Alright, Have you ever thought about the emotions or thoughts that might keep you
+              in this place of pain? Look again at the triggering
               situation. <p>"{this.state.event}"</p>
-              Choose three words that best describe how you were feeling or
-              believing?
+              Now choose three words that best describe how you were feeling or
+              believing? I felt _____.
             </p>
             <img
               className="painBulb"
@@ -219,7 +219,7 @@ class IntroE extends Component {
                 value="A Failure"
                 onClick={this.pushChoice}
               >
-                A Failure
+                Like A Failure
               </button>
               <button
                 className="wordbank"

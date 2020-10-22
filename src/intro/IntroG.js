@@ -82,9 +82,8 @@ class IntroG extends Component {
       <div className="introGContainer">
         <div style={{ textAlign: "center" }}>
           <h4>
-            Choose three words from below that best describes how you would
-            respond to or want to respond to situations when feeling your best?
-            I am or I can choose to become _____.
+            When feeling your best, how would you want to respond in most situations? 
+            Again, try to choose three words from below. I am or I can choose to become _____.
           </h4>
           <img
             className="castedLightBulb"

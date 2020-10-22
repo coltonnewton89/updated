@@ -183,7 +183,7 @@ class Challenges extends Component {
           //small
           return (
             <div className="challengeCard">
-              <img src={challenge.img} className="challengeCardImg" />
+              <div className='imgSide' className="challengeCardImg" ><img src={challenge.img}/></div>              
               <div className="challengeCardRight">
                 <h4 className="challengeCardTitle">{challenge.title}</h4>
                 <p className="challengeCardBody">

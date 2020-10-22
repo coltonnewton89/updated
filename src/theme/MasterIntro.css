@@ -178,3 +178,13 @@
 .swipeLeft {
   width: 60%;
 }
+
+/* ==Intro H== */
+.finalTip {
+  margin-left: -5px;
+  margin-right: 15px;
+}
+
+.finalLi {
+  margin-bottom: 10px;
+}

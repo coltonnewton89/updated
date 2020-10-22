@@ -46,7 +46,7 @@
   grid-template-columns: 40% 1fr;
   gap: 5px;
   background-color: #00d1bb;
-  height: 175px;
+  height: fit-content;
   width: 90%;
   margin-top: 50px;
   align-content: center;
@@ -57,9 +57,16 @@
 }
 
 .challengeCardImg {
-  height: 80%;
-  margin-top: 15%;
+  display: flex;
+  max-width: fit-content;
+  margin-top: 24px;
+  margin-bottom: 24px;
   margin-left: 5px;
+}
+
+.challengeCardRight {
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .challengeCardView {

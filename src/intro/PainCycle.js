@@ -95,14 +95,14 @@ class PainCycle extends Component {
               </div>
             ) : (
               <div style={{ textAlign: "center" }}>
-                <h3>This is your pain cycle:</h3>
+                <h3>You've successfully set up your pain cycle. It might look something like this:</h3>
                 <h4>When you feel or believe you are {this.state.priArr}</h4>
                 <img
                   className="painCycler"
                   src={painCycler}
                   alt="image of red bulb angery at reflection of breaking bulb"
                 />
-                <h4>your reaction is to get/start {this.state.copeArr}</h4>
+                <h4>You could react by becoming {this.state.copeArr} if you choose to do so.</h4>
                 <button className="painCycleSubmit" onClick={this.painFunction}>
                   Got it
                 </button>

@@ -14,6 +14,7 @@ class IntroH extends Component {
       priArr: "",
       viewTruth: false,
       see: false,
+      finalTip: false
     };
     this.pushCustomChoice = this.pushCustomChoice.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -79,6 +80,11 @@ class IntroH extends Component {
     e.target.style.scale = "1.3";
   };
 
+  toggleFinal=()=>{
+    this.setState({see: false})
+    this.setState({finalTip: true})
+  }
+
   componentDidMount() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -115,22 +121,37 @@ class IntroH extends Component {
       <div className="introHContainer">
         {this.state.see ? (
           <div style={{ textAlign: "center" }}>
-            <h3>Again, You can change your peace cycle any time!</h3>
+            <h3>You can also change your peace cycle any time.</h3>
             <img
               className="swipeLeft"
               src={swipeLeft}
               alt="image of finger swiping left"
             />{" "}
             <br />
-            <button className="loginBtn" onClick={this.toggleH}>
-              Finish
+            <button className="loginBtn" onClick={this.toggleFinal}>
+              Continue
             </button>
           </div>
-        ) : (
+        ) : this.state.finalTip ? (<div>
+          <h2>Final tip:</h2>
+          <ul className='finalTip'>
+            <li className='finalLi'>Events happen through out our lives that can alter how we self-regulate.</li>
+            <li className='finalLi'>We can choose to act or respond with our pain, but very seldom will this benefit us or the people around us.</li>
+            <li className='finalLi'>Instead of responding out of pain, try to let peace be your compass. This can greatly improve present circumstances.</li>
+            <li className='finalLi'>Cycling through your four steps when something negative arrises can help. Remember to really believe your truth, not lies.</li>
+            <li className='finalLi'>Some last words: Peace can be habbit and SelfTeck is designed to help develop that habbit. For best results,
+              try to cycle through your four steps five times a day, or when needed. You can set reminders to cycle through your four steps after
+              you cycle through your four steps the first time.
+            </li>
+          </ul>
+          <button className="loginBtn" onClick={this.toggleH}>
+              Finish
+            </button>
+        </div>) : (
           <div>
             {this.state.truthArr.length === 3 ? (
               <div style={{ textAlign: "center" }}>
-                <h3>Now we have our peace cycle!</h3>
+                <h3>From here on, try to embrace your peace cycle:</h3>
                 <br />
                 <h4>You are {this.state.truthArr}</h4>
                 <img
@@ -139,7 +160,7 @@ class IntroH extends Component {
                 />
 
                 <br />
-                <h4>which leads you to become {this.state.responseArr}</h4>
+                <h4>which allows you to become {this.state.responseArr}, again, if you choose so.</h4>
                 <br />
                 <button className="loginBtn" onClick={this.toggleSee}>
                   Continue
