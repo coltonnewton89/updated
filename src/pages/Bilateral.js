@@ -73,7 +73,7 @@ class Bilateral extends Component {
                 <small>
                   The fallowing process is designed to help individuals relax.
                   Press the Start button to begin. For best results, try to stay
-                  with the audiotory que. This process takes approximately 5:30
+                  with the auditory queue. This process takes approximately 5:30
                   minutes.
                 </small>
               </p>

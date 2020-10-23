@@ -68,6 +68,11 @@ class ContinuePainEdit extends Component {
   }
 
   pushChoice = (e) => {
+    var needle = this.state.priArr.indexOf(e.target.value + ", ")
+  if(needle > -1){
+    this.state.priArr.splice(needle, 1)
+    e.target.style= null
+  }else{
     if (this.state.priArr.length <= 1) {
       this.setState({
         priArr: this.state.priArr.concat(e.target.value + ", "),
@@ -81,10 +86,7 @@ class ContinuePainEdit extends Component {
     e.target.style.backgroundColor = "rgb(33, 221, 224)";
     e.target.style.border = "1px solid #f1faee";
     e.target.style.scale = "1.3";
-  };
-
-  clearAll = () => {
-    this.setState({ priArr: [] });
+  }    
   };
 
   render() {
@@ -272,14 +274,6 @@ class ContinuePainEdit extends Component {
               Add pain
             </button>
           </form>
-
-          <br />
-          <button className="wordbankClear" onClick={this.clearAll}>
-            Clear All
-          </button>
-          <p className="list">
-            <span style={{ marginBottom: "-300px" }}>{this.state.priArr}</span>
-          </p>
         </div>
       </div>
     );

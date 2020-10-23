@@ -43,6 +43,7 @@ class JournalEntries extends Component {
           <div className="largeJournalContainer" key={key}>
             <h2>{post.title}</h2>
             <p>{post.body}</p>
+            <br/>
             <div className="journalBtnContainer">
               <button
                 className="journalBtnTwo"

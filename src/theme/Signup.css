@@ -86,3 +86,25 @@ p {
   box-shadow: 2px 6px 4px #233e4f;
   color: #f1faee;
 }
+
+/* ==Terms and Conditions== */
+
+.termsDiv {
+  display: grid;
+  background: linear-gradient(
+    144deg,
+    rgba(14, 189, 192, 1) 0%,
+    rgba(35, 62, 79, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  justify-items: center;
+  color: #f1faee !important;
+}
+
+.termsP {
+  margin-top: 20%;
+  width: 80%;
+}

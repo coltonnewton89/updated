@@ -3,6 +3,8 @@ import firebase from "../FireConfig";
 import bulbAndOthers from "../imgs/bulbAndOthers.png";
 import truthReflection from "../imgs/truthReflection.png";
 import swipeLeft from "../imgs/swipeLeft.png";
+import facebookIcon from "../menuImgs/facebookIcon.png";
+import youtubeIcon from "../menuImgs/youtubeIcon.png";
 
 class IntroH extends Component {
   constructor(props) {
@@ -64,6 +66,11 @@ class IntroH extends Component {
   };
 
   pushChoice = (e) => {
+    var needle = this.state.truthArr.indexOf(e.target.value + ", ")
+  if(needle > -1){
+    this.state.truthArr.splice(needle, 1)
+    e.target.style= null
+  } else {
     if (this.state.truthArr.length <= 1) {
       this.setState({
         truthArr: this.state.truthArr.concat(e.target.value + ", "),
@@ -78,6 +85,7 @@ class IntroH extends Component {
     e.target.style.backgroundColor = "rgb(33, 221, 224)";
     e.target.style.border = "1px solid #f1faee";
     e.target.style.scale = "1.3";
+  };
   };
 
   toggleFinal=()=>{
@@ -121,37 +129,57 @@ class IntroH extends Component {
       <div className="introHContainer">
         {this.state.see ? (
           <div style={{ textAlign: "center" }}>
-            <h3>You can also change your peace cycle any time.</h3>
+            <h3>Just like the pain cycle, you can change your peace cycle any time.</h3>
             <img
               className="swipeLeft"
               src={swipeLeft}
               alt="image of finger swiping left"
             />{" "}
             <br />
-            <button className="loginBtn" onClick={this.toggleFinal}>
+            <button className="introPCSubmit" onClick={this.toggleFinal}>
               Continue
             </button>
           </div>
         ) : this.state.finalTip ? (<div>
-          <h2>Final tip:</h2>
+          <h2>Final tips:</h2>
           <ul className='finalTip'>
             <li className='finalLi'>Events happen through out our lives that can alter how we self-regulate.</li>
             <li className='finalLi'>We can choose to act or respond with our pain, but very seldom will this benefit us or the people around us.</li>
             <li className='finalLi'>Instead of responding out of pain, try to let peace be your compass. This can greatly improve present circumstances.</li>
-            <li className='finalLi'>Cycling through your four steps when something negative arrises can help. Remember to really believe your truth, not lies.</li>
+            <li className='finalLi'>Cycling through your four steps when something negative arises can help. Remember to really believe your truth, not lies.</li>
             <li className='finalLi'>Some last words: Peace can be habbit and SelfTeck is designed to help develop that habbit. For best results,
-              try to cycle through your four steps five times a day, or when needed. You can set reminders to cycle through your four steps after
+              try to cycle through your four steps five times a day or when needed. You can set reminders to cycle through your four steps after
               you cycle through your four steps the first time.
             </li>
           </ul>
-          <button className="loginBtn" onClick={this.toggleH}>
+          <p>
+              For more content and helpful advice to better utilize this app, you can click on the appropriate icon below to visit us on facebook or youtube.
+            </p>
+            <div className="socialMediaContainer">
+              <a href="https://www.facebook.com/infoselfteck">
+                <img
+                  className="mediaIcon"
+                  src={facebookIcon}
+                  alt="Facebook Icon"
+                />
+              </a>
+
+              <a href="https://www.youtube.com/channel/UCAqFMa7oOn-7I1cTAt8q58g?view_as=subscriber">
+                <img
+                  className="mediaIcon"
+                  src={youtubeIcon}
+                  alt="Youtube Icon"
+                />
+              </a>
+            </div>
+          <button className="introPCSubmit" onClick={this.toggleH}>
               Finish
             </button>
         </div>) : (
           <div>
             {this.state.truthArr.length === 3 ? (
               <div style={{ textAlign: "center" }}>
-                <h3>From here on, try to embrace your peace cycle:</h3>
+                <h3>Excellent. From here on, try to embrace your peace cycle:</h3>
                 <br />
                 <h4>You are {this.state.truthArr}</h4>
                 <img
@@ -160,9 +188,9 @@ class IntroH extends Component {
                 />
 
                 <br />
-                <h4>which allows you to become {this.state.responseArr}, again, if you choose so.</h4>
+                <h4>which allows you to become {this.state.responseArr}. Again, if you choose so.</h4>
                 <br />
-                <button className="loginBtn" onClick={this.toggleSee}>
+                <button className="introPCSubmit" onClick={this.toggleSee}>
                   Continue
                 </button>
               </div>
@@ -177,8 +205,8 @@ class IntroH extends Component {
                     alt="light bulb conversing with other light bulbs"
                   />
                   <br />
-                  Imagine that the people who knew you best could speak to you
-                  about those words. What would they tell you was your truth?
+                  Imagine that the people who knew you best could comment on 
+                  these words. What would they say your truth was?
                   You are _____.
                 </h4>
 
@@ -331,12 +359,6 @@ class IntroH extends Component {
                         Add Truth
                       </button>
                     </form>
-                    <span>{this.state.truthArr}</span>
-                    <br />
-                    <button className="wordbank" onClick={this.clearAll}>
-                      Clear All
-                    </button>
-                    <p className="list"></p>
                   </div>
                 </div>
               </div>

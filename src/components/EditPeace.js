@@ -37,6 +37,11 @@ class EditPeace extends Component {
   }
 
   pushChoice = (e) => {
+    var needle = this.state.truthArr.indexOf(e.target.value + ", ")
+  if(needle > -1){
+    this.state.truthArr.splice(needle, 1)
+    e.target.style= null
+  }else{
     if (this.state.truthArr.length <= 1) {
       this.setState({
         truthArr: this.state.truthArr.concat(e.target.value + ", "),
@@ -50,11 +55,7 @@ class EditPeace extends Component {
     e.target.style.backgroundColor = "rgb(33, 221, 224)";
     e.target.style.border = "1px solid #f1faee";
     e.target.style.scale = "1.3";
-    console.log(this.state.truthArr);
-  };
-
-  clearAll = () => {
-    this.setState({ truthArr: [] });
+  }
   };
 
   componentDidMount() {
@@ -212,14 +213,6 @@ class EditPeace extends Component {
               Add Truth
             </button>
           </form>
-
-          <br />
-          <button className="wordbank" onClick={this.clearAll}>
-            Clear All
-          </button>
-          <p className="list">
-            <span>{this.state.truthArr}</span>
-          </p>
         </div>
       </div>
     );

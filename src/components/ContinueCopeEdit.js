@@ -65,6 +65,11 @@ class ContinueCopeEdit extends Component {
   }
 
   pushChoice = (e) => {
+    var needle = this.state.copeArr.indexOf(e.target.value + ", ")
+  if(needle > -1){
+    this.state.copeArr.splice(needle, 1)
+    e.target.style= null
+  }else{
     if (this.state.copeArr.length <= 1) {
       this.setState({
         copeArr: this.state.copeArr.concat(e.target.value + ", "),
@@ -78,12 +83,10 @@ class ContinueCopeEdit extends Component {
     e.target.style.backgroundColor = "rgb(33, 221, 224)";
     e.target.style.border = "1px solid #f1faee";
     e.target.style.scale = "1.3";
+  }
+    
 
     console.log(this.state.copeArr);
-  };
-
-  clearAll = () => {
-    this.setState({ copeArr: [] });
   };
 
   render() {
@@ -93,7 +96,7 @@ class ContinueCopeEdit extends Component {
           <p>"{this.state.event}"</p>
           <p>
             <small>
-              How did you act when this took place? I started to get or I became
+              How did you act when this took place? I became
               _____.
             </small>
           </p>
@@ -262,11 +265,6 @@ class ContinueCopeEdit extends Component {
                 Add Cope
               </button>
             </form>
-
-            <br />
-            <button className="wordbankClear" onClick={this.clearAll}>
-              Clear All
-            </button>
           </div>
         </div>
       </div>

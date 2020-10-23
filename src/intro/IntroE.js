@@ -72,6 +72,11 @@ class IntroE extends Component {
   };
 
   pushChoice = (e) => {
+    var needle = this.state.priArr.indexOf(e.target.value + ", ")
+  if(needle > -1){
+    this.state.priArr.splice(needle, 1)
+    e.target.style= null
+  } else {
     if (this.state.priArr.length <= 1) {
       this.setState({
         priArr: this.state.priArr.concat(e.target.value + ", "),
@@ -86,9 +91,6 @@ class IntroE extends Component {
     e.target.style.border = "1px solid #f1faee";
     e.target.style.scale = "1.3";
   };
-
-  clearAll = () => {
-    this.setState({ priArr: [] });
   };
 
   render() {
@@ -294,15 +296,9 @@ class IntroE extends Component {
                   onChange={this.handleChange}
                 />
                 <button type="submit" className="wordbankTwo">
-                  Add custom pain
+                  Add A Custom Pain
                 </button>
               </form>
-              <p>
-                <span>{this.state.priArr}</span>
-              </p>
-              <button className="wordbank" onClick={this.clearAll}>
-                Clear All
-              </button>
             </div>
           </div>
         ) : (

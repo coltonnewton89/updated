@@ -112,7 +112,7 @@ const Journal = () => {
         <div className="painAlert">
           <p>You might be in pain! Analyzing your four steps might help!</p>
           <NavLink to="/Cycle">
-            <button className="journalBtn">Go to cycle</button>
+            <button className="journalBtnIgnore" style={{color: '#00d1bb'}}>Go to cycle</button>
           </NavLink>
           <button
             className="journalBtnIgnore"

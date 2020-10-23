@@ -79,14 +79,14 @@ class PainGear extends Component {
           </div>
         ) : (
           <div className="GearContainer">
-            <p className="painPart">"{this.state.priArr}" is your pain</p>
+            <h4 className="painPart">When you feel or believe you are {this.state.priArr}</h4>
             <img className="gearImg" src={Gear} alt="Image of geare" />
             <button className="editCycle" onClick={this.toggleEdit}>
               Click here to edit Pain Cycle
             </button>
-            <p className="copePart">
-              Which leads you to get or start: "{this.state.copeArr}"
-            </p>
+            <h4 className="copePart">
+            You might choose to become {this.state.copeArr} 
+            </h4>
           </div>
         )}
       </div>

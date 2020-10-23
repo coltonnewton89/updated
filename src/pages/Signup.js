@@ -77,7 +77,21 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="signUpContainer">
+      <div className="signUpShell">
+        {
+          this.state.privacy ? <div className='termsDiv'>
+            <p className='termsP'>Terms and conditions are currently under review. For now, 
+              we will not take any responsibility and/or liability for the use of this application 
+              and want to inform it's current testers and/or users they are using this product on their own accord. 
+              We are working hard on making sure SelfTeck's terms and conditions are as informative 
+              as possible to it's users. We are also in the midst of alpha and beta testing 
+              and have many variables subject to change. We will have a completed terms and 
+              conditions by the time we transition from testing to completed product.
+            </p>
+            <button className="createUser" onClick={this.terms}>
+            Continue
+          </button>
+          </div> : <div className="signUpContainer">
         <img
           src={createTitle}
           className="selfteckImg"
@@ -139,7 +153,7 @@ class Signup extends Component {
             />
             <div className="checkLabel">
               I have read and agree to the SelfTeck
-              <p className="specP" style={{ marginTop: "-1px" }}>
+              <p className="specP" style={{ marginTop: "-1px" }} onClick={this.terms}>
                 "Terms and Conditions"
               </p>
             </div>
@@ -152,6 +166,9 @@ class Signup extends Component {
           </button>
         </form>
       </div>
+        }
+      </div>
+      
     );
   }
 }

@@ -7,7 +7,6 @@ import ListItem from "@material-ui/core/ListItem";
 import firebase from "../FireConfig";
 import "../theme/MenuButton.css";
 import { NavLink } from "react-router-dom";
-import selfTeckLogo from "../imgs/teck.png";
 import cycleBtn from "../menuImgs/cycleBtn.png";
 import journalBtn from "../menuImgs/journalBtn.png";
 import workshopBtn from "../menuImgs/workshopBtn.png";

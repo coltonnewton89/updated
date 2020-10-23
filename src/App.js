@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './App.css'
 import Login from "./pages/Login";
 import firebase from "./FireConfig";
 import ButtonApp from "./components/ButtonApp";

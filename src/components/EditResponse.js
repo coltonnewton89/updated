@@ -54,6 +54,11 @@ class EditResponse extends Component {
   }
 
   pushChoice = (e) => {
+    var needle = this.state.responseArr.indexOf(e.target.value + ", ")
+  if(needle > -1){
+    this.state.responseArr.splice(needle, 1)
+    e.target.style= null
+  }else{
     if (this.state.responseArr.length <= 1) {
       this.setState({
         responseArr: this.state.responseArr.concat(e.target.value + ", "),
@@ -67,6 +72,7 @@ class EditResponse extends Component {
     e.target.style.backgroundColor = "rgb(33, 221, 224)";
     e.target.style.border = "1px solid #f1faee";
     e.target.style.scale = "1.3";
+  }    
   };
 
   clearAll = () => {
@@ -240,14 +246,6 @@ class EditResponse extends Component {
               Add Response
             </button>
           </form>
-
-          <br />
-          <button className="wordbank" onClick={this.clearAll}>
-            Clear All
-          </button>
-          <p className="list">
-            <span>{this.state.responseArr}</span>
-          </p>
         </div>
       </div>
     );

@@ -37,10 +37,9 @@ class IntroC extends Component {
       <div className="IntroCContainer">
         <div style={{ textAlign: "center" }}>
           <h3>
-            This might be a little difficult but try to think of a real life situation where you had conflict
+            This might be a little difficult but try to think of a situation where you had conflict
             or stuggled with negative feelings. Maybe you fought with a friend
             last night, maybe you got nervous meeting someone or got outraged for some reason.
-           Briefly explain below what happened.
           </h3>
           <img
             className="triggerEvent"
@@ -50,7 +49,7 @@ class IntroC extends Component {
           <div>
             <form onSubmit={this.clicked}>
               <div className="customInput">
-                <p>Please type your life situation here</p>
+                <p>Please type that situation here</p>
                 <input
                   name="slidecInput"
                   onChange={this.handleChange}

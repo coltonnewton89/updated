@@ -1,3 +1,7 @@
+.loginShell {
+  overflow: scroll;
+}
+
 .loginContainer {
   display: grid;
   background: linear-gradient(

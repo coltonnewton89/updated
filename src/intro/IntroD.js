@@ -66,6 +66,11 @@ class IntroD extends Component {
   }
 
   pushChoice = (e) => {
+    var needle = this.state.copeArr.indexOf(e.target.value + ", ")
+  if(needle > -1){
+    this.state.copeArr.splice(needle, 1)
+    e.target.style= null
+  }else{
     if (this.state.copeArr.length <= 1) {
       this.setState({
         copeArr: this.state.copeArr.concat(e.target.value + ", "),
@@ -82,10 +87,6 @@ class IntroD extends Component {
     e.target.style.border = "1px solid #f1faee";
     e.target.style.scale = "1.3";
   };
-
-  clearAll = () => {
-    this.setState({ copeArr: [] });
-    document.getElementsByClassName("wordbank").style = null;
   };
 
   render() {
@@ -268,11 +269,6 @@ class IntroD extends Component {
                 Add A Custom Cope
               </button>
             </form>
-            {this.state.copeArr}
-            <br />
-            <button className="wordbank" onClick={this.clearAll}>
-              Clear All
-            </button>
           </div>
         </div>
       </div>

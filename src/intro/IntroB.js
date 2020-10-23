@@ -28,11 +28,11 @@ class IntroB extends Component {
 
   checked = (e) => {
     let reasons = this.state.reasons;
-    let target = e.target.value;
-    if (reasons.includes(target)) {
-      reasons.pop(target);
-    } else {
-      reasons.push(target);
+    var needle = reasons.indexOf(e.target.value)
+  if(needle > -1){
+    reasons.splice(needle, 1)
+  } else {
+      reasons.push(e.target.value);
     }
     console.log(this.state.reasons, "+ i logged reasons.");
   };
@@ -43,7 +43,7 @@ class IntroB extends Component {
         {!this.state.great ? (
           <div>
             <p>
-              Welcome to SelfTeck. We're glad your here and hope you find your own peace through SelfTeck. First, Do any of the fallowing describe why you're here?
+              Welcome to SelfTeck. We're glad you're here and hope you find your own peace through SelfTeck. First, Do any of the fallowing describe why you're here?
             </p>
             <br />
             <form className="demographicOne" onSubmit={this.handleFormSubmit}>

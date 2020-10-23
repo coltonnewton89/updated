@@ -62,17 +62,6 @@
   border-bottom-right-radius: 24px;
 }
 
-.wordbankClear {
-  margin-bottom: 20px !important;
-  background-color: rgb(14, 189, 192);
-  color: #f1faee;
-  font-size: medium;
-  border-top-left-radius: 24px;
-  border-bottom-left-radius: 24px;
-  border-top-right-radius: 24px;
-  border-bottom-right-radius: 24px;
-}
-
 .finish {
   position: absolute;
   background-color: rgb(14, 189, 192);

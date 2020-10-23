@@ -29,6 +29,7 @@ class PainBrain extends Component {
         </h2>
         <div className="gifContainer">
           <img
+          className='brain'
             src={painGif}
             alt="computer chip style brain with pink neurons"
             onClick={this.openFour}

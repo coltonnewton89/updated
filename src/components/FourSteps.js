@@ -115,7 +115,7 @@ class FourSteps extends Component {
             <h2>Your Four Steps</h2>
             <div className="fourStepContent">
               <p className="fourB">
-                <b>"{this.state.priArr}" is your pain.</b>
+                <b>When you feel or believe you are {this.state.priArr}</b>
               </p>
               {this.state.stepOne ? null : (
                 <button className="fourStepBtn" onClick={this.stepOneComplete}>
@@ -127,7 +127,7 @@ class FourSteps extends Component {
             {this.state.stepOne ? (
               <div className="fourStepContent">
                 <p className="fourB">
-                  <b>Which leads you to get or start: "{this.state.copeArr}"</b>
+                  <b>You might choose to become {this.state.copeArr}</b>
                 </p>
                 {this.state.stepTwo ? null : (
                   <button
@@ -143,7 +143,7 @@ class FourSteps extends Component {
             {this.state.stepTwo ? (
               <div className="fourStepContent">
                 <p className="fourB">
-                  <b>But you are: "{this.state.truthArr}"</b>
+                  <b>But you are {this.state.truthArr}</b>
                 </p>
                 {this.state.stepThree ? null : (
                   <button
@@ -160,8 +160,7 @@ class FourSteps extends Component {
               <div className="fourStepContent">
                 <p className="fourB">
                   <b>
-                    Which means you are or you can choose to become: "
-                    {this.state.responseArr}"
+                  Which allows you to become {this.state.responseArr} if you choose so.
                   </b>
                 </p>
                 {this.state.stepFour ? null : (

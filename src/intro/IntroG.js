@@ -56,6 +56,11 @@ class IntroG extends Component {
   }
 
   pushChoice = (e) => {
+    var needle = this.state.responseArr.indexOf(e.target.value + ", ")
+  if(needle > -1){
+    this.state.responseArr.splice(needle, 1)
+    e.target.style= null
+  } else {
     if (this.state.responseArr.length <= 1) {
       this.setState({
         responseArr: this.state.responseArr.concat(e.target.value + ", "),
@@ -72,9 +77,6 @@ class IntroG extends Component {
     e.target.style.border = "1px solid #f1faee";
     e.target.style.scale = "1.3";
   };
-
-  clearAll = () => {
-    this.setState({ responseArr: [] });
   };
 
   render() {
@@ -83,7 +85,7 @@ class IntroG extends Component {
         <div style={{ textAlign: "center" }}>
           <h4>
             When feeling your best, how would you want to respond in most situations? 
-            Again, try to choose three words from below. I am or I can choose to become _____.
+            Again, try to choose three words from below. I am or I can choose to be _____.
           </h4>
           <img
             className="castedLightBulb"
@@ -267,14 +269,6 @@ class IntroG extends Component {
                   Add Response
                 </button>
               </form>
-              <span>{this.state.responseArr}</span>
-              <button
-                className="wordbank"
-                style={{ marginTop: "5px" }}
-                onClick={this.clearAll}
-              >
-                Clear All
-              </button>
             </div>
           </div>
         </div>

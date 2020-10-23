@@ -84,15 +84,14 @@ class PeaceGear extends Component {
           </div>
         ) : (
           <div className="GearContainer">
-            <p className="truthPart">"{this.state.truthArr}" is your truth.</p>
+            <h4 className="truthPart">Try to remember that you are {this.state.truthArr}</h4>
             <img className="gearImg" src={Gear} alt="Image of geare" />
             <button className="editCycle" onClick={this.toggleOpenPeace}>
               Click here to edit Peace Cycle
             </button>
-            <p className="reactPart">
-              Which means you are or you can choose to become: "
-              {this.state.responseArr}""
-            </p>
+            <h4 className="reactPart">
+              Which allows you to become {this.state.responseArr} if you choose so.
+            </h4>
           </div>
         )}
       </div>
