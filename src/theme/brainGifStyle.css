@@ -20,7 +20,8 @@
 .instructions {
   border-radius: 50%;
   border: 1px solid #f1faee;
-  width: 10%;
+  width: 25px;
+  height: 25px;
 }
 
 /* ==Click Reminder== */
