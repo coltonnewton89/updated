@@ -35,7 +35,7 @@ class IntroC extends Component {
   render() {
     return (
       <div className="IntroCContainer">
-        <div style={{ textAlign: "center" }}>
+        <div className='conffessionTime' style={{ textAlign: "center" }}>
           <h3>
             This might be a little difficult but try to think of a situation where you had conflict
             or stuggled with negative feelings. Maybe you fought with a friend

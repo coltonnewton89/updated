@@ -85,19 +85,13 @@ class Login extends Component {
             <span className="loginSpan"></span>
             <div className="specDiv">
               <p>Not yet a user?</p>
-              <p className="specP" onClick={this.create}>
-                Register Now!
-              </p>
+              <a href="https://messenger-36c0b.web.app/" className="specP">Register Now!</a>
             </div>
-            <button className="createUser" onClick={this.create}>
-              Create New User
-            </button>
+            <a href="https://messenger-36c0b.web.app/" className="createUser">Create New User</a>
           </div>
-        ) : this.state.forgot ? (
+        ) :  (
           <Forgot forgot={this.forgot} />
-        ) : (
-          <Signup goBack={this.create} />
-        )}
+        ) }
       </div>
     );
   }

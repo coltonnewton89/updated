@@ -1,5 +1,4 @@
-.forgotContainer {
-  display: grid;
+.forgotShell {
   background: linear-gradient(
     144deg,
     rgba(14, 189, 192, 1) 0%,
@@ -8,11 +7,19 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.forgotContainer {
+  display: grid;
   height: 100vh;
   overflow: scroll;
   text-align: center;
   justify-items: center;
+  align-content: center;
+  align-items: center;
   color: #f1faee !important;
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .forgotLi {

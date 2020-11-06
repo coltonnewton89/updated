@@ -128,7 +128,7 @@ class IntroH extends Component {
     return (
       <div className="introHContainer">
         {this.state.see ? (
-          <div style={{ textAlign: "center" }}>
+          <div className='justLike' style={{ textAlign: "center" }}>
             <h3>Just like the pain cycle, you can change your peace cycle any time.</h3>
             <img
               className="swipeLeft"
@@ -140,7 +140,7 @@ class IntroH extends Component {
               Continue
             </button>
           </div>
-        ) : this.state.finalTip ? (<div>
+        ) : this.state.finalTip ? (<div className='finalTips'>
           <h2>Final tips:</h2>
           <ul className='finalTip'>
             <li className='finalLi'>Events happen through out our lives that can alter how we self-regulate.</li>
@@ -178,7 +178,7 @@ class IntroH extends Component {
         </div>) : (
           <div>
             {this.state.truthArr.length === 3 ? (
-              <div style={{ textAlign: "center" }}>
+              <div className='embrace' style={{ textAlign: "center" }}>
                 <h3>Excellent. From here on, try to embrace your peace cycle:</h3>
                 <br />
                 <h4>You are {this.state.truthArr}</h4>
@@ -195,7 +195,7 @@ class IntroH extends Component {
                 </button>
               </div>
             ) : (
-              <div style={{ textAlign: "center" }}>
+              <div className='theseWords' style={{ textAlign: "center" }}>
                 <h4>
                   Next step. Remember these words?
                   <br /> <h3>{this.state.priArr}</h3>

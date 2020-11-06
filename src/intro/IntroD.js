@@ -92,7 +92,7 @@ class IntroD extends Component {
   render() {
     return (
       <div className="introDContainer">
-        <div style={{ textAlign: "center" }}>
+        <div className='conffessional'style={{ textAlign: "center" }}>
           <h3>You said: {this.state.event}</h3>
           <h4>
             Now, quick confession time. Choose three words from below that best

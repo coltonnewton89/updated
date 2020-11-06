@@ -42,7 +42,8 @@ class Forgot extends Component {
 
   render() {
     return (
-      <div className="forgotContainer">
+      <div className="forgotShell">
+        <div className="forgotContainer">
         <h2>Forgot your password? No problem!</h2>
         <ul>
           <li className="forgotLi">
@@ -73,11 +74,12 @@ class Forgot extends Component {
             Reset Password
           </button>
         </form>
-
+        <br/>
         <button className="cancelBtn" onClick={this.cancel}>
           Cancel
         </button>
       </div>
+      </div>      
     );
   }
 }

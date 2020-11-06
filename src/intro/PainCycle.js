@@ -56,7 +56,7 @@ class PainCycle extends Component {
     return (
       <div className="PainCycleContainer">
         {this.state.continue ? (
-          <div style={{ textAlign: "center" }}>
+          <div className='remember' style={{ textAlign: "center" }}>
             <h3>Try to remember:</h3>
             <li>
               You must take personal responsiblity to change your behavior
@@ -74,7 +74,7 @@ class PainCycle extends Component {
         ) : (
           <div>
             {this.state.understood ? (
-              <div style={{ textAlign: "center" }}>
+              <div className='swipeRight' style={{ textAlign: "center" }}>
                 <h3>
                   You can swipe right from the Cycle page to edit your pain
                   cycle at any time.
@@ -94,7 +94,7 @@ class PainCycle extends Component {
                 </button>
               </div>
             ) : (
-              <div style={{ textAlign: "center" }}>
+              <div className='sSetUp' style={{ textAlign: "center" }}>
                 <h3>You've successfully set up your pain cycle. It might look something like this:</h3>
                 <h4>When you feel or believe you are {this.state.priArr}</h4>
                 <img
