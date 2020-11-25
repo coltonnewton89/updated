@@ -64,6 +64,11 @@
   margin-left: 5px;
 }
 
+.challengeImager{
+  height: 120px;
+  width: 120px;
+}
+
 .challengeCardRight {
   margin-top: 5px;
   margin-bottom: 10px;

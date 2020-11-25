@@ -7,6 +7,7 @@
 
 .menuBtnContainer {
   position: absolute;
+  margin-top: 15px;
   z-index: 2 !important;
 }
 
@@ -25,6 +26,7 @@
 
 .menuBtn {
   position: absolute;
+  margin-top: 15px;
   background-image: url("../imgs/menuBtn.png");
   background-size: contain;
   background-position: center;
