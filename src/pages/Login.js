@@ -85,9 +85,10 @@ class Login extends Component {
             <span className="loginSpan"></span>
             <div className="specDiv">
               <p>Not yet a user?</p>
-              <a href="https://messenger-36c0b.web.app/" className="specP">Register Now!</a>
+              <a href="https://selfteckregistration.web.app/" className="specP">Register Now!</a>
             </div>
-            <a href="https://messenger-36c0b.web.app/" className="createUser">Create New User</a>
+            <a href="https://selfteckregistration.web.app/" className="createUser">Create New User</a>
+            <p>v1.3(alpha)</p>
           </div>
         ) :  (
           <Forgot forgot={this.forgot} />
