@@ -118,64 +118,72 @@ class notes extends Component {
     console.log('I have canceled schedule')}
 
     if( times !== null){
-      const notifs = times.toString() == 'null' ? logger() : LocalNotifications.schedule({
-        notifications: [
-          {
-            title: "Four Steps Reminder",
-            body: quoteArr[0],
-            id: 1,
-            schedule: { at:  myTimeOne()},
-            sound: null,
-            attachments: null,
-            actionTypeId: "",
-            extra: null
-          },
-          {
-            title: "Four Steps Reminder",
-            body: quoteArr[1],
-            id: 2,
-            schedule: { at:  myTimeTwo()},
-            sound: null,
-            attachments: null,
-            actionTypeId: "",
-            extra: null
-          },
-          {
-            title: "Four Steps Reminder",
-            body: quoteArr[2],
-            id: 3,
-            schedule: { at:  myTimeThree()},
-            sound: null,
-            attachments: null,
-            actionTypeId: "",
-            extra: null
-          },
-          {
-            title: "Four Steps Reminder",
-            body: quoteArr[3],
-            id: 4,
-            schedule: { at:  myTimeFour()},
-            sound: null,
-            attachments: null,
-            actionTypeId: "",
-            extra: null
-          },
-          {
-            title: "Four Steps Reminder",
-            body: quoteArr[4],
-            id: 5,
-            schedule: { at:  myTimeFive()},
-            sound: null,
-            attachments: null,
-            actionTypeId: "",
-            extra: null
-          },
-        ]
-      });
+      const notifs = times.toString() == 'null' ? logger() : LocalNotifications.requestPermission().then(res => {
+        console.log(res);
+        if(res.granted){
+          this.scheduleNotificationsIfAvailable();
+        }
+      })
       console.log('scheduled notifications', notifs);
     }else{
       console.log('your time is null')
     }
+  }
+  scheduleNotificationsIfAvailable(){
+    LocalNotifications.schedule({
+      notifications: [
+        {
+          title: "Four Steps Reminder",
+          body: this.quoteArr[0],
+          id: 1,
+          schedule: { at:  this.myTimeOne()},
+          sound: null,
+          attachments: null,
+          actionTypeId: "",
+          extra: null
+        },
+        {
+          title: "Four Steps Reminder",
+          body: this.quoteArr[1],
+          id: 2,
+          schedule: { at:  this.myTimeTwo()},
+          sound: null,
+          attachments: null,
+          actionTypeId: "",
+          extra: null
+        },
+        {
+          title: "Four Steps Reminder",
+          body: this.quoteArr[2],
+          id: 3,
+          schedule: { at:  this.myTimeThree()},
+          sound: null,
+          attachments: null,
+          actionTypeId: "",
+          extra: null
+        },
+        {
+          title: "Four Steps Reminder",
+          body: this.quoteArr[3],
+          id: 4,
+          schedule: { at:  this.myTimeFour()},
+          sound: null,
+          attachments: null,
+          actionTypeId: "",
+          extra: null
+        },
+        {
+          title: "Four Steps Reminder",
+          body: this.quoteArr[4],
+          id: 5,
+          schedule: { at:  this.myTimeFive()},
+          sound: null,
+          attachments: null,
+          actionTypeId: "",
+          extra: null
+        },
+      ]
+    });
   }
   render() { 
     return ( null );
