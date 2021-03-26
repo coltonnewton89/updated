@@ -5,6 +5,9 @@ import firebase from "../FireConfig";
 import Signup from "../pages/Signup";
 import selfteckImg from "../imgs/teck.png";
 
+import { Plugins } from '@capacitor/core';
+const { Browser } = Plugins;
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -43,7 +46,11 @@ class Login extends Component {
       [e.target.name]: e.target.value,
     });
   }
-
+  async launchRegistrationCommandCallback(){
+    await Browser.open({
+      url: 'https://selfteckregistration.web.app'
+    });
+  }
   render() {
     return (
       <div className="loginShell">
@@ -84,10 +91,10 @@ class Login extends Component {
             </form>
             <span className="loginSpan"></span>
             <div className="specDiv">
-              <p>Not yet a user?</p>
-              <a href="https://selfteckregistration.web.app/" className="specP">Register Now!</a>
+              <p className="hintText">Not yet a user?</p>
+              <a href="#" onClick={() => { this.launchRegistrationCommandCallback();}} className="specP"> Register Now!</a>
             </div>
-            <a href="https://selfteckregistration.web.app/" className="createUser">Create New User</a>
+            <a href="#" onClick={() => { this.launchRegistrationCommandCallback();}} className="createUser">Create New User</a>
             <p>v1.3(alpha)</p>
           </div>
         ) :  (
