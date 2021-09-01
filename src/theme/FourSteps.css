@@ -18,15 +18,14 @@
 }
 
 .fourStepBtn {
-  text-align: center;
-  margin-bottom: 25px;
-  height: 38px;
-  width: 65%;
-  background-color: #00d1bb;
-  border-radius: 25px;
-  border-color: rgba(0, 0, 0, 0);
-  box-shadow: 2px 6px 4px #233e4f;
-  color: #f1faee;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 4px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 24px;
+    padding: 5px;
+    border: #f1faee solid 2px;
   -webkit-animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
     both;
   animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;

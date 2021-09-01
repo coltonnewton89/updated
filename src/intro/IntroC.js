@@ -1,74 +1,86 @@
-import React, { Component } from "react";
-import firebase from "../FireConfig";
-import triggerEvent from "../imgs/triggerEvent.png";
+import React, { Component } from 'react';
+import trigger from '../imgs/triggerEvent.png';
+import '../theme/introC.css';
 
-class IntroC extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      newEvent: "",
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
+class introC extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          newEvent: "",
+          exit: false
+        };
+        this.handleChange = this.handleChange.bind(this);
+      }
 
-  //input needs to be sent to the headspace section!
-  //on submit also show video of where they can find this head space
-  handleChange(e) {
+    //Handle input change.
+    handleChange(e) {
     this.setState({ newEvent: e.target.value });
     console.log(this.state.newEvent);
   }
 
-  clicked = () => {
-    const currentUser = firebase.auth().currentUser.uid.toString();
-    firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_event`)
-      .set({ event: this.state.newEvent });
-    console.log("submitted new event");
+    //Save input to local storage & Exit C
+    introBtn=()=>{
+    localStorage.setItem("event", this.state.newEvent)
+    this.setState({exit: true})
+    setTimeout(()=>{
     const { toggleC } = this.props;
     this.props.toggleC();
-    console.log("I was clicked");
-    //firebase stuff goes here
-  };
-
-  render() {
-    return (
-      <div className="IntroCContainer">
-        <div className='conffessionTime' style={{ textAlign: "center" }}>
-          <h3>
-            This might be a little difficult but try to think of a situation where you had conflict
+    }, 700)
+    }
+    
+    render() { 
+        return ( 
+            <div className="introCcontainer">
+            <img src={trigger} alt="red, broken lightbulb" className='triggerEvent'/>
+            {
+              !this.state.exit ? (
+            <div>
+            <div className="topIntroInCharlie">
+            <p className='pThree'>This might be a little difficult but try to think of a situation where you had conflict
             or stuggled with negative feelings. Maybe you fought with a friend
-            last night, maybe you got nervous meeting someone or got outraged for some reason.
-          </h3>
-          <img
-            className="triggerEvent"
-            src={triggerEvent}
-            alt="image of red lightbulb breaking"
-          />
-          <div>
-            <form onSubmit={this.clicked}>
-              <div className="customInput">
-                <p>Please type that situation here</p>
-                <input
-                  name="slidecInput"
-                  onChange={this.handleChange}
-                  type="text"
-                  placeholder="Life Situation..."
-                  required
-                  className="inputLogin"
-                />
-              </div>
-              <br />
-              <button id="logBtn" type="submit" className="introBSubmit">
+            last night, maybe you got nervous meeting someone or got outraged for some reason.</p>
+            </div>
+            <hr className='introHrIn'/>
+            <div className="bottomIntroInCharlie">
+            <input
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Type that situation here..."
+                required
+                className="introInput"
+            />
+            <br />
+            <btn className='introRouterBtn' onClick={this.introBtn}>
                 Submit
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    );
-  }
+            </btn>
+            </div>
+            </div>
+              ) :
+              <div>
+                <div className="topIntroOutCharlie">
+            <p className='pThree'>This might be a little difficult but try to think of a situation where you had conflict
+            or stuggled with negative feelings. Maybe you fought with a friend
+            last night, maybe you got nervous meeting someone or got outraged for some reason.</p>
+            </div>
+            <hr className='introHrOut'/>
+            <div className="bottomIntroOutCharlie">
+            <input
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Type that situation here..."
+                required
+                className="introInput"
+            />
+            <br />
+            <btn className='introRouterBtn'>
+                Submit
+            </btn>
+            </div>
+              </div>
+            }
+            </div>
+         );
+    }
 }
-
-export default IntroC;
+ 
+export default introC;

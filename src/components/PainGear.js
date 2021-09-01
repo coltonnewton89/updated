@@ -3,7 +3,6 @@ import Gear from "../imgs/gear.png";
 import "../theme/Gear.css";
 import EditPain from "./EditPain";
 import Checky from "../imgs/goodJob.png";
-import firebase from "../FireConfig";
 
 class PainGear extends Component {
   constructor(props) {
@@ -33,31 +32,9 @@ class PainGear extends Component {
     this.setState({ edit: false, almost: false });
   };
 
-  componentDidMount() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        const currentUser = firebase.auth().currentUser.uid.toString();
-        var priArrRef = firebase
-          .firestore()
-          .collection("usercycle")
-          .doc(`${currentUser}_priArr`);
-        var copeArrRef = firebase
-          .firestore()
-          .collection("usercycle")
-          .doc(`${currentUser}_copeArr`);
-
-        priArrRef.get().then((doc) => {
-          if (doc.exists) {
-            this.setState({ priArr: doc.data().priArr });
-          }
-        });
-        copeArrRef.get().then((doc) => {
-          if (doc.exists) {
-            this.setState({ copeArr: doc.data().copeArr });
-          }
-        });
-      }
-    });
+  componentDidMount() {    
+    this.setState({ priArr: localStorage.getItem("pain")});  
+    this.setState({ copeArr: localStorage.getItem("cope")});      
   }
 
   render() {
@@ -79,13 +56,13 @@ class PainGear extends Component {
           </div>
         ) : (
           <div className="GearContainer">
-            <h4 className="painPart">When you feel or believe you are {this.state.priArr}</h4>
+            <h4 className="painPart">When you feel or believe you are {this.state.priArr.replace(/, ,/g, ", ")}</h4>
             <img className="gearImg" src={Gear} alt="Image of geare" />
             <button className="editCycle" onClick={this.toggleEdit}>
               Click here to edit Pain Cycle
             </button>
             <h4 className="copePart">
-            You might choose to become {this.state.copeArr} 
+            You might choose to become {this.state.copeArr.replace(/, ,/g, ", ")} 
             </h4>
           </div>
         )}

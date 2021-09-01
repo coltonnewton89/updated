@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import firebase from "../FireConfig";
 import Gear from "../imgs/gear.png";
 import "../theme/Gear.css";
 import EditPeace from "./EditPeace";
@@ -37,30 +36,9 @@ class PeaceGear extends Component {
     console.log("I am completely finished!");
   };
 
-  componentDidMount() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        const currentUser = firebase.auth().currentUser.uid.toString();
-        var truthArrRef = firebase
-          .firestore()
-          .collection("usercycle")
-          .doc(`${currentUser}_truthArr`);
-        truthArrRef.get().then((doc) => {
-          if (doc.exists) {
-            this.setState({ truthArr: doc.data().truthArr });
-          }
-        });
-        var responseArrRef = firebase
-          .firestore()
-          .collection("usercycle")
-          .doc(`${currentUser}_responseArr`);
-        responseArrRef.get().then((doc) => {
-          if (doc.exists) {
-            this.setState({ responseArr: doc.data().responseArr });
-          }
-        });
-      }
-    });
+  componentDidMount() {    
+    this.setState({ truthArr: localStorage.getItem("truth")});     
+    this.setState({ responseArr: localStorage.getItem("response")});         
   }
 
   render() {
@@ -84,13 +62,13 @@ class PeaceGear extends Component {
           </div>
         ) : (
           <div className="GearContainer">
-            <h4 className="truthPart">Try to remember that you are {this.state.truthArr}</h4>
-            <img className="gearImg" src={Gear} alt="Image of geare" />
+            <h4 className="truthPart">Try to remember that you are {this.state.truthArr.replace(/, ,/g, ", ")}</h4>
+            <img className="gearImg" src={Gear} alt="Image of gear" />
             <button className="editCycle" onClick={this.toggleOpenPeace}>
               Click here to edit Peace Cycle
             </button>
             <h4 className="reactPart">
-              Which allows you to become {this.state.responseArr} if you choose so.
+              Which allows you to become {this.state.responseArr.replace(/, ,/g, ", ")} if you choose so.
             </h4>
           </div>
         )}

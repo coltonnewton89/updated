@@ -1,23 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Source+Serif+Pro:wght@700;900&display=swap');
+
+.notificationShell{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 777;
+  font-family: 'EB Garamond', serif;
+  color: #f1faee;
+  text-shadow: 2px 2px #30303049
+}
+
 .notificationContainer {
   display: grid;
-  background: linear-gradient(
-    144deg,
-    rgba(14, 189, 192, 1) 0%,
-    rgba(35, 62, 79, 1) 100%
-  );
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   height: 100vh;
   overflow: scroll;
   align-content: center;
   justify-items: center;
   text-align: center;
   color: #f1faee !important;
+  -webkit-animation: scale-in-center-specNote 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center-specNote 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .timerInput::-webkit-calendar-picker-indicator {
-  filter: invert(65%) sepia(25%) saturate(3207%) hue-rotate(130deg)
+  filter: invert(0%) sepia(5%) saturate(3207%) hue-rotate(130deg)
     brightness(100%) contrast(100%);
 }
 
@@ -116,32 +122,41 @@ input:checked + .slider:before {
   justify-items: center;
   text-align: center;
   width: 100vw;
+  color: #f1faee !important;
 }
 
 .timeSaveBtn {
-  display: grid;
-  align-content: center;
-  height: 30px;
-  padding: 20px;
-  background-color: #f1faee;
-  color: #00d1bb;
-  border-radius: 24px;
-  border-color: rgba(0, 0, 0, 0);
-  box-shadow: 2px 6px 4px #233e4f;
-  width: 200%;
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    color: #f1faee !important;
+    top: 5px !important;
+    border-radius: 24px;
+    padding: 5px;
+    font-size: 20px;
+    border: #f1faee solid 2px;
+    text-decoration: none;
+}
+
+.deleteCancelBtn{
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    color: #f1faee !important;
+    top: 5px !important;
+    border-radius: 24px;
+    padding: 5px;
+    font-size: 20px;
+    border: #f1faee solid 2px;
+    text-decoration: none;
 }
 
 .flipInTwo {
-  display: grid;
-  align-content: center;
-  height: 30px;
-  padding: 20px;
-  background-color: #f1faee;
-  color: #00d1bb;
-  border-radius: 24px;
-  border-color: rgba(0, 0, 0, 0);
-  box-shadow: 2px 6px 4px #233e4f;
-  width: 65%;
+  background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    top: 5px !important;
+    border-radius: 24px;
+    padding: 5px;
+    font-size: 20px;
+    border: #f1faee solid 2px;
   -webkit-animation: flip-in-hor-top 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
   animation: flip-in-hor-top 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -198,5 +213,70 @@ input:checked + .slider:before {
     -webkit-transform: rotateX(70deg);
     transform: rotateX(70deg);
     opacity: 0;
+  }
+}
+
+
+.notificationContainerTwo{
+  display: grid;
+  height: 100vh;
+  overflow: scroll;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  color: #f1faee !important;
+  -webkit-animation: scale-in-center-specNoteTwo 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center-specNoteTwo 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-center-specNote {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center-specNote {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/*================*/
+@-webkit-keyframes scale-in-center-specNoteTwo {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center-specNoteTwo {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
   }
 }

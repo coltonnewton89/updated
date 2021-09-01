@@ -1,0 +1,296 @@
+.introHdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* ==truth Reflection== */
+.truthReflection{
+  position: absolute;
+    z-index: -1 !important;
+    opacity: 50%;
+    left: 0px;
+    -webkit-animation: kenburns-left 5s ease-out both;
+	        animation: kenburns-left 5s ease-out both;
+}
+
+@-webkit-keyframes kenburns-left {
+  0% {
+    -webkit-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
+    -webkit-transform-origin: 16% 50%;
+            transform-origin: 16% 50%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translate(-20px, 15px);
+            transform: scale(1.25) translate(-20px, 15px);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+}
+@keyframes kenburns-left {
+  0% {
+    -webkit-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
+    -webkit-transform-origin: 16% 50%;
+            transform-origin: 16% 50%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translate(-20px, 15px);
+            transform: scale(1.25) translate(-20px, 15px);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+}
+
+/* ==No Btns In== */
+.noBtnContainerIn{  
+    position: absolute;
+    z-index: 2;
+    -webkit-animation: scale-in-center-hotel 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                animation: scale-in-center-hotel 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;  
+}
+
+@-webkit-keyframes scale-in-center-hotel {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes scale-in-center-hotel {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+/* ==No btns Out== */
+.noBtnContainerOut{
+    position: absolute;
+    z-index: 2;
+    -webkit-animation: scale-out-center-hotel 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: scale-out-center-hotel 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    }
+    
+    @-webkit-keyframes scale-out-center-hotel {
+            0% {
+              -webkit-transform: scale(1);
+                      transform: scale(1);
+              opacity: 1;
+            }
+            100% {
+              -webkit-transform: scale(0);
+                      transform: scale(0);
+              opacity: 1;
+            }
+          }
+          @keyframes scale-out-center-hotel {
+            0% {
+              -webkit-transform: scale(1);
+                      transform: scale(1);
+              opacity: 1;
+            }
+            100% {
+              -webkit-transform: scale(0);
+                      transform: scale(0);
+              opacity: 1;
+            }
+          }
+
+/* ==bulb and others== */
+.bulbAndOthers{
+    -webkit-animation: kenburns-right 5s ease-out both;
+	        animation: kenburns-right 5s ease-out both;
+    opacity: 40%;
+}
+
+@-webkit-keyframes kenburns-right {
+    0% {
+      -webkit-transform: scale(1) translate(0, 0);
+              transform: scale(1) translate(0, 0);
+      -webkit-transform-origin: 84% 50%;
+              transform-origin: 84% 50%;
+    }
+    100% {
+      -webkit-transform: scale(1.25) translateX(20px);
+              transform: scale(1.25) translateX(20px);
+      -webkit-transform-origin: right;
+              transform-origin: right;
+    }
+  }
+  @keyframes kenburns-right {
+    0% {
+      -webkit-transform: scale(1) translate(0, 0);
+              transform: scale(1) translate(0, 0);
+      -webkit-transform-origin: 84% 50%;
+              transform-origin: 84% 50%;
+    }
+    100% {
+      -webkit-transform: scale(1.25) translateX(20px);
+              transform: scale(1.25) translateX(20px);
+      -webkit-transform-origin: right;
+              transform-origin: right;
+    }
+  }
+
+  /*btn container out*/
+  .btnContainerOut{
+        -webkit-animation: slide-out-bottom-hotel 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        animation: slide-out-bottom-hotel 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        position: absolute;
+  }
+
+  @-webkit-keyframes slide-out-bottom-hotel {
+        0% {
+          -webkit-transform: translateY(0);
+                  transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: translateY(1000px);
+                  transform: translateY(1000px);
+          opacity: 0;
+        }
+      }
+      @keyframes slide-out-bottom-hotel {
+        0% {
+          -webkit-transform: translateY(0);
+                  transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: translateY(1000px);
+                  transform: translateY(1000px);
+          opacity: 0;
+        }
+      }
+
+
+/* ==Embrace== */
+  .embraceIn{
+        -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s both;
+	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s both;
+        position: absolute;
+  }
+
+  @-webkit-keyframes scale-in-center {
+        0% {
+          -webkit-transform: scale(0);
+                  transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+          opacity: 1;
+        }
+      }
+      @keyframes scale-in-center {
+        0% {
+          -webkit-transform: scale(0);
+                  transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .embraceOut{
+        -webkit-animation: scale-out-center-hotel 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: scale-out-center-hotel 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+      }
+
+      .justLikeIn{
+        -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        position: absolute;
+      }
+
+      .justLikeOut{
+        position: absolute;
+        z-index: 0;
+        -webkit-animation: scale-out-center-hotel 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: scale-out-center-hotel 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+      }
+
+      .finalTips {
+        position: absolute;
+        z-index: 1;
+        height: 100vh !important;
+        width: 100vw !important;
+        overflow: scroll;
+        -webkit-animation: scale-in-center-final 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s both;
+	        animation: scale-in-center-final 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s both;
+    }
+
+    @-webkit-keyframes scale-in-center-final {
+      0% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes scale-in-center-final {
+      0% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        opacity: 1;
+      }
+    }
+    
+    .finalLi {
+        width: 90% !important;
+    }
+
+
+      .swipe{
+        opacity: 75%;
+        width: 58%;
+      }
+
+      .introBtnFinal{
+        background-color: rgba(0, 0, 0, 0);
+        position: relative;
+        top: 5px !important;
+        margin-bottom: 25px;
+        border-radius: 24px;
+        padding: 5px;
+        font-size: 20px;
+        border: #f1faee solid 2px;
+      }
+
+      .introBtnThree{
+        background-color: rgba(0, 0, 0, 0);
+        position: relative;
+        margin-top: -25px !important;
+        border-radius: 24px;
+        padding: 5px;
+        font-size: 20px;
+        border: #f1faee solid 2px;
+      }

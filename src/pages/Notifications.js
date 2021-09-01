@@ -90,12 +90,12 @@ class Timer extends React.Component {
       <div className="notificationShell">
         {
           !this.state.exit ? <div className="notificationContainer">
-          <p>
+          <p className='rememberP'>
             Remembering to do our four steps can prove difficult. Below, you can choose to use notifications. If you do, please
             choose five times throughout your day for a simple reminder to cycle through your four steps.
           </p>        
             <div className="notificationToggle">
-              Use Notifications: 
+              <p>Use Notifications: </p>
               <label class="switch">
             <input type="checkbox" onChange={this.toggleNotifications}/>
             <span class="slider round"></span>
@@ -142,19 +142,18 @@ class Timer extends React.Component {
                       onChange={this.setAlarmTimeFive}
                       required={this.state.useNotifications}
                     ></input>
-                    <button className="timeSaveBtn" type="submit">Save</button>
+                    <NavLink className="timeSaveBtn" to='/Cycle' onClick={this.save}>Save</NavLink>
                   </form>
                   </div>
                   {!this.state.formName ? <button className='flipInTwo' onClick={this.save}>Save</button> : null}
            
-        </div> : <div className="notificationContainer">
+        </div> : <div className="notificationContainerTwo">
           <h2>Your Notification Settings have been saved.</h2>
           <p>Note: Your old notification schedule may still be in affect but will update within 24 hours.</p>
           <NavLink
           exact
           to="/Cycle"
           className="deleteCancelBtn"
-          activeStyle={{ color: "#e56b6f" }}
         >
           Exit
         </NavLink>

@@ -1,0 +1,178 @@
+.introDcontainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+}
+
+/* ==noBtnIntro== */
+
+.noBtnContainerIn{
+        position: absolute;
+        z-index: 2;
+        -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-center {
+        0% {
+          -webkit-transform: scale(0);
+                  transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+          opacity: 1;
+        }
+      }
+      @keyframes scale-in-center {
+        0% {
+          -webkit-transform: scale(0);
+                  transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+          opacity: 1;
+        }
+      }
+/* noBtnsExit */
+.noBtnContainerOut{
+        position: absolute;
+        z-index: 2;
+        -webkit-animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+
+@-webkit-keyframes scale-out-center {
+        0% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(0);
+                  transform: scale(0);
+          opacity: 1;
+        }
+      }
+      @keyframes scale-out-center {
+        0% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(0);
+                  transform: scale(0);
+          opacity: 1;
+        }
+      }
+
+
+/* ==Sliding In Btns== */
+.btnContainer{
+        position: absolute;
+        z-index: 3;
+        -webkit-animation: slide-in-bottom-btns 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) .6s both;
+	        animation: slide-in-bottom-btns 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) .6s both;
+}
+
+@-webkit-keyframes slide-in-bottom-btns {
+        0% {
+          -webkit-transform: translateY(1000px);
+                  transform: translateY(1000px);
+          opacity: 0;
+        }
+        100% {
+          -webkit-transform: translateY(0);
+                  transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes slide-in-bottom-btns {
+        0% {
+          -webkit-transform: translateY(1000px);
+                  transform: translateY(1000px);
+          opacity: 0;
+        }
+        100% {
+          -webkit-transform: translateY(0);
+                  transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      
+.reflection{
+    position: absolute;
+    z-index: 0 !important;
+    opacity: 50%;
+    max-width:100%;
+    height:auto;
+    -webkit-animation: kenburns-right 5s ease-out both;
+	        animation: kenburns-right 5s ease-out both;
+}
+
+
+@-webkit-keyframes kenburns-right {
+    0% {
+      -webkit-transform: scale(1) translate(0, 0);
+              transform: scale(1) translate(0, 0);
+      -webkit-transform-origin: 94% 50%;
+              transform-origin: 94% 50%;
+    }
+    100% {
+      -webkit-transform: scale(1.25) translateX(20px);
+              transform: scale(1.25) translateX(20px);
+      -webkit-transform-origin: right;
+              transform-origin: right;
+    }
+  }
+  @keyframes kenburns-right {
+    0% {
+      -webkit-transform: scale(1) translate(0, 0);
+              transform: scale(1) translate(0, 0);
+      -webkit-transform-origin: 94% 50%;
+              transform-origin: 94% 50%;
+    }
+    100% {
+      -webkit-transform: scale(1.25) translateX(20px);
+              transform: scale(1.25) translateX(20px);
+      -webkit-transform-origin: right;
+              transform-origin: right;
+    }
+  }
+
+  .scrollUpBtn{
+          position: relative;
+          margin-top: 55px !important;
+          height: 45px !important;
+          width: 50px !important;
+  }
+
+
+  .customCopeInput{
+        background-color: rgba(0, 0, 0, 0);
+        position: relative;
+        margin-top: 8px;
+        border-radius: 24px;
+        padding: 5px;
+        border: #f1faee solid 2px;
+  }
+
+  .customCopeInput::placeholder{
+          color: #f1faeea8 !important;
+  }
+
+  .customCopeBtn{
+        background-color: rgba(0, 0, 0, 0);
+        position: relative;
+        font-size: 20px;
+        margin-top: 8px;
+        border-radius: 24px;
+        padding: 5px;
+        border: #f1faee solid 2px;
+  }

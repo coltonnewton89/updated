@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../theme/EditCycle.css";
-import firebase from "../FireConfig";
 import ContinueCopeEdit from "./ContinueCopeEdit";
 import ContinuePainEdit from "./ContinuePainEdit";
 
@@ -23,28 +22,13 @@ class EditPain extends Component {
   }
 
   submitNewEvent = () => {
-    const currentUser = firebase.auth().currentUser.uid.toString();
-    firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_event`)
-      .set({ event: this.state.newEvent });
+    localStorage.setItem("event", this.state.newEvent)
     console.log("submitted new event");
     this.continueEdit();
   };
 
   componentDidMount = () => {
-    const currentUser = firebase.auth().currentUser.uid.toString();
-    var eventRef = firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_event`);
-
-    eventRef.get().then((doc) => {
-      if (doc.exists) {
-        this.setState({ event: doc.data().event });
-      }
-    });
+    this.setState({ event: localStorage.getItem("event") });      
   };
 
   continueEdit = () => {
@@ -73,20 +57,20 @@ class EditPain extends Component {
           <div className="event">
             <p className="eventP">Event: "{this.state.event}"</p>
             <p>
-              <small>
+                <small>
                 The event is the start of how all this happened. If this hasn't
                 changed, just click continue. If there is a new event however,
-                please type in a new event and click "Change Event."
-              </small>
+                please type in a new event and click "Change Event."     
+                </small>         
             </p>
-
             <input
               type="text"
-              className="inputLogin"
+              className="inputEvent"
               value={this.state.value}
               onChange={this.handleChange}
               placeholder="New Event..."
             />
+            <br />
             <button
               type="submit"
               className="changeSubmit"
@@ -94,7 +78,8 @@ class EditPain extends Component {
             >
               Change Event
             </button>
-            <button className="editContinue" onClick={this.continueEdit}>
+            <br />
+            <button className="changeSubmit" onClick={this.continueEdit}>
               Continue
             </button>
           </div>

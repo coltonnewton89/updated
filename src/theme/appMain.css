@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Source+Serif+Pro:wght@700;900&display=swap');
+
+.appMain {
+    background-position: center;
+    background: linear-gradient(144deg,
+            rgb(4, 38, 102) 0%,
+            rgb(9, 146, 116) 40%,
+            rgb(9, 146, 116) 60%,
+            rgb(4, 38, 102) 100%);
+    height: 100vh;
+    width: 100vw;
+}
+
+.cycleContainer {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.masterIntroContainer {
+    font-family: 'EB Garamond', serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #f1faee;
+    text-shadow: 2px 2px #30303049
+}
+
+.introRouterBtn {
+    position: relative;
+    top: 55px !important;
+    border-radius: 24px;
+    padding: 5px;
+    border: #f1faee solid 2px;
+}
+
+.introInput {
+    background-color: rgba(0, 0, 0, 0);
+    color: #f1faee;
+    border-radius: 24px;
+    padding: 5px;
+    border: 2px #f1faee solid;
+}
+
+.introInput::placeholder {
+    color: #f1faeea1;
+}
+
+/*Btns styles*/
+.copeBtn {
+    position: relative;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 4px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 24px;
+    padding: 5px;
+    border: #f1faee solid 2px;
+}
+
+.painBtn {
+    position: relative;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 4px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 24px;
+    padding: 5px;
+    border: #f1faee solid 2px;
+}
+
+.responseBtn {
+    position: relative;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 4px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 24px;
+    padding: 5px;
+    border: #f1faee solid 2px;
+}
+
+.truthBtn {
+    position: relative;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 4px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 24px;
+    padding: 5px;
+    border: #f1faee solid 2px;
+}
+
+.introBtn {
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    top: 5px !important;
+    border-radius: 24px;
+    padding: 5px;
+    font-size: 20px;
+    border: #f1faee solid 2px;
+}
+
+:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+    outline-color: -webkit-focus-ring-color;
+    outline-style: none;
+    outline-width: 0px;
+  }
+  

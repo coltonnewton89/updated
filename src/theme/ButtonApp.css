@@ -1,0 +1,104 @@
+.myDrawer{
+    text-align: center;
+}
+
+.noFocus{
+  text-decoration: none;
+}
+
+/* ==Button Enter== */
+.showMenuEnter{  
+    margin-top: 20%;
+    width: 10% !important;
+    -webkit-animation: showMenuEnter 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: showMenuEnter 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes showMenuEnter {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes showMenuEnter {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* ==Button Exit== */
+  .showMenuExit{  
+    margin-top: 20%;
+    width: 10% !important;
+    -webkit-animation: showMenuExit 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: showMenuExit 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+  @-webkit-keyframes showMenuExit {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+  }
+  @keyframes showMenuExit {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+  }
+
+  /* =============Menu Drawer============= */
+  .MuiPaper-root{
+      height: fit-content !important;
+      width: 65% !important;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #f1faee2a !important;
+      color: #f1faee;
+      font-weight: bold;
+      border: #f1faee 2px solid;
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+      border-bottom: 0px;
+  }
+
+  .MuiBackdrop-root{
+      opacity: 0 !important;
+  }
+
+  li.MuiListItem-root{
+      color: #f1faee;
+      height: 55% !important;
+      justify-content: center !important;
+  }
+
+  .MuiDivider-root{
+      background-color: #f1faee !important;
+  }
+  
+  

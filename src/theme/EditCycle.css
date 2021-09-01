@@ -1,13 +1,24 @@
+.inputEvent{
+  background-color: rgba(0, 0, 0, 0);
+  position: relative;
+  top: 5px !important;
+  border-radius: 24px;
+  padding: 5px;
+  font-size: 20px;
+  border: #f1faee solid 2px;
+}
+
+.inputEvent::placeholder {
+  color: #f1faeea1;
+}
 
 .changeSubmit {
-  background-color: rgba(0, 217, 255, 0);
-  color: #f1faee;
-  font-size: medium;
-  border: 1px solid #f1faee;
-  border-top-left-radius: 24px;
-  border-bottom-left-radius: 24px;
-  border-top-right-radius: 24px;
-  border-bottom-right-radius: 24px;
+  background-color: rgba(0, 0, 0, 0);
+  margin-top: 10px !important;
+  border-radius: 24px;
+  padding: 5px;
+  font-size: 20px;
+  border: #f1faee solid 2px;
 }
 
 .continuePainEditContainer {

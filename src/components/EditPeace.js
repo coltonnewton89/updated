@@ -1,15 +1,27 @@
-import React, { Component } from "react";
-import firebase from "../FireConfig";
-import "../theme/EditCycle.css";
+import React, { Component } from 'react';
+import '../theme/appMain.css'
+import '../theme/introH.css'
+import truthBtns from '../Intro/truthBtns'
+import scrollUp from '../imgs/scrollUp.gif'
+import bulbAndOthers from '../imgs/bulbAndOthers.png'
+
+
+
+
 
 class EditPeace extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      priArr: "",
       truthArr: [],
       _truthArr: "",
+      responseArr: "",
+      priArr: "",
       viewTruth: false,
+      see: false,
+      me: false,
+      finalTip: false,
+      displayBtns: false
     };
     this.pushCustomChoice = this.pushCustomChoice.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -36,187 +48,132 @@ class EditPeace extends Component {
     console.log(this.state.truthArr);
   }
 
-  pushChoice = (e) => {
-    var needle = this.state.truthArr.indexOf(e.target.value + ", ")
-  if(needle > -1){
-    this.state.truthArr.splice(needle, 1)
-    e.target.style= null
-  }else{
-    if (this.state.truthArr.length <= 1) {
-      this.setState({
-        truthArr: this.state.truthArr.concat(e.target.value + ", "),
-      });
-    }
-    if (this.state.truthArr.length === 2) {
-      this.setState({
-        truthArr: this.state.truthArr.concat("and " + e.target.value),
-      });
-    }
-    e.target.style.backgroundColor = "rgb(33, 221, 224)";
-    e.target.style.border = "1px solid #f1faee";
-    e.target.style.scale = "1.3";
-  }
-  };
-
-  componentDidMount() {
-    const currentUser = firebase.auth().currentUser.uid.toString();
-    var priArrRef = firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_priArr`);
-    priArrRef.get().then((doc) => {
-      if (doc.exists) {
-        this.setState({ priArr: doc.data().priArr });
-      }
-    });
-    console.log("i pulled pain");
-  }
-
   componentDidUpdate = () => {
-    const currentUser = firebase.auth().currentUser.uid.toString();
-    if (this.state.truthArr.length === 3) {
-      firebase
-        .firestore()
-        .collection("usercycle")
-        .doc(`${currentUser}_truthArr`)
-        .set({
-          truthArr: this.state.truthArr,
-        });
+    if (this.state.truthArr.length === 3) {      
+      localStorage.setItem("truth", this.state.truthArr); 
       console.log("sent to truth");
       const { toggleResponse } = this.props;
       this.props.toggleResponse();
       // this.props.toggleTruth()
     }
   };
-  render() {
-    return (
-      <div className="editTruth">
-        <p>Pain: "{this.state.priArr}"</p>
-        <p>
-          <small>
-            Your pain is often an illusion. Try to replace this lie with what
-            you know to be true about you. I might feel this pain but in
-            reality I am or I can choose to become _____.
-          </small>
-        </p>
-        <div id="button-container">
-          <button className="wordbank" value="Loved" onClick={this.pushChoice}>
-            Loved
-          </button>
-          <button className="wordbank" value="Worthy" onClick={this.pushChoice}>
-            Worthy
-          </button>
-          <button
-            className="wordbank"
-            value="Significant"
-            onClick={this.pushChoice}
-          >
-            Significant
-          </button>
-          <button
-            className="wordbank"
-            value="Accompanied/Not Alone"
-            onClick={this.pushChoice}
-          >
-            Accompanied/Not Alone
-          </button>
-          <button
-            className="wordbank"
-            value="Valuable"
-            onClick={this.pushChoice}
-          >
-            Valuable
-          </button>
-          <button className="wordbank" value="Wanted" onClick={this.pushChoice}>
-            Wanted
-          </button>
-          <button
-            className="wordbank"
-            value="Hopeful"
-            onClick={this.pushChoice}
-          >
-            Hopeful
-          </button>
-          <button
-            className="wordbank"
-            value="Respected"
-            onClick={this.pushChoice}
-          >
-            Respected
-          </button>
-          <button
-            className="wordbank"
-            value="Liberalized"
-            onClick={this.pushChoice}
-          >
-            Liberalized
-          </button>
-          <button className="wordbank" value="Safe" onClick={this.pushChoice}>
-            Safe
-          </button>
-          <button className="wordbank" value="Secure" onClick={this.pushChoice}>
-            Secure
-          </button>
-          <button
-            className="wordbank"
-            value="Capable"
-            onClick={this.pushChoice}
-          >
-            Capable
-          </button>
-          <button
-            className="wordbank"
-            value="Empowered"
-            onClick={this.pushChoice}
-          >
-            Empowered
-          </button>
-          <button
-            className="wordbank"
-            value="In Control"
-            onClick={this.pushChoice}
-          >
-            In Control
-          </button>
-          <button className="wordbank" value="Free" onClick={this.pushChoice}>
-            Free
-          </button>
-          <button
-            className="wordbank"
-            value="Protected"
-            onClick={this.pushChoice}
-          >
-            Protected
-          </button>
-          <button
-            className="wordbank"
-            value="Connected"
-            onClick={this.pushChoice}
-          >
-            Connected
-          </button>
-          <button className="wordbank" value="Known" onClick={this.pushChoice}>
-            Known
-          </button>
-          <button className="wordbank" value="Strong" onClick={this.pushChoice}>
-            Strong
-          </button>
-          <form onSubmit={this.pushCustomChoice}>
-            <input
-              type="text"
-              className="inputLogin"
-              placeholder="Type Custom Truth Here"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-            <button type="submit" className="wordbankTwo">
-              Add Truth
-            </button>
-          </form>
-        </div>
+
+  toggleSee = () => {
+    this.setState({me: true})
+    setTimeout(() => {
+      this.setState({ see: true });
+    }, 700);
+  };
+
+  toggleHome = () => {
+    localStorage.setItem("truth", this.state.truthArr.toString())
+    const { toggleHome } = this.props;
+    this.props.toggleHome();
+  };
+
+  pushChoice = (e) => {
+    var needle = this.state.truthArr.indexOf(e.target.value + ", ")
+    if(needle > -1){
+      this.state.truthArr.splice(needle, 1)
+      e.target.style= null
+      this.setState({truthArr: this.state.truthArr})
+    }else{
+      if (this.state.truthArr.length <= 1) {
+        this.setState({
+          truthArr: this.state.truthArr.concat(e.target.value + ", "),
+        });
+      }
+      if (this.state.truthArr.length == 2) {
+        this.setState({
+          truthArr: this.state.truthArr.concat("and " + e.target.value),
+        });       
+        localStorage.setItem("truth", this.state.truthArr)
+      }
+      
+      console.log(this.state.truthArr);
+      e.target.style.backgroundColor = "rgb(11, 167, 159)";
+      e.target.style.border = "1px solid #f1faee";
+      e.target.style.scale = "1.3";
+    };
+    };
+
+  toggleFinal=()=>{
+    this.setState({see: false})
+    this.setState({finalTip: true})
+  }
+
+  componentDidMount() {
+    this.setState({priArr: localStorage.getItem("pain")})
+  }
+
+  // componentDidMount(){
+  //   this.setState({responseArr: localStorage.getItem("response")})
+  // }
+
+  displayBtns= () => {
+    this.setState({displayBtns: !this.state.displayBtns})
+  }
+
+
+  render() { 
+    return ( 
+      <div>
+        {
+          !this.state.displayBtns ? (
+            <div className="introHdiv">
+              <img src={bulbAndOthers} alt="lightbulb conversing with others" className='bulbAndOthers'/>
+              <div className='noBtnContainerIn' style={{ textAlign: "center" }}>
+              <p>Pain: "{this.state.priArr.replace(/, ,/g, ", ")}"</p>
+              <p>
+                  Your pain is often an illusion. Try to replace this lie with what
+                  you know to be true about you. I might feel this pain but in
+                  reality I am or I can choose to become _____.          
+              </p>
+              <img src={scrollUp} alt="scroll up button" className='scrollUpBtn' onClick={this.displayBtns}/>
+              </div>
+            </div>
+            ) :
+            // this is step A
+            <div className="introHdiv">
+              <img src={bulbAndOthers} alt="lightbulb conversing with others" className='bulbAndOthers'/>
+              <div className='noBtnContainerOut' style={{ textAlign: "center" }}>
+              <p>Pain: "{this.state.priArr.replace(/, ,/g, ", ")}"</p>
+              <p>
+                  Your pain is often an illusion. Try to replace this lie with what
+                  you know to be true about you. I might feel this pain but in
+                  reality I am or I can choose to become _____.          
+              </p>
+              <img src={scrollUp} alt="scroll up button" className='scrollUpBtn' onClick={this.displayBtns}/>
+              </div>
+              {/* this is step B */}
+              <div className='btnContainer'>  
+                <p>I am or I can choose to become _____.</p>                  
+                {truthBtns.map((truthBtn)=>{
+                        return(
+                            <button className='truthBtn' value={truthBtn} onClick={this.pushChoice}>{truthBtn}</button>
+                        )
+                    })}      
+                    <br />
+                    <input
+                            onChange={this.handleChange}
+                            id='custom'
+                            type="text"
+                            placeholder="Add Custom Truth Here"
+                            required
+                            className="customCopeInput"
+                          />
+                    <br />
+                    <button className='customCopeBtn' onClick={this.pushCustomChoice}>
+                            Add A Custom Truth
+                    </button>
+                    <br />
+                    {this.state.truthArr}
+                </div>
+            </div>
+        }
       </div>
-    );
+     );
   }
 }
-
+ 
 export default EditPeace;

@@ -1,0 +1,282 @@
+.hexContainer {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    ". hexSeven"
+    "hexOne ."
+    ". hexFive"
+    "hexThree ."
+    ". hexTwo"
+    "hexSix ."
+    ". hexFour";
+  top: 0px;
+  bottom: 0px;
+  margin-right: -10%;
+  margin-left: 30%;
+  height: 100vh !important;
+  z-index: 0;
+}
+
+.hexOne {
+  grid-area: hexOne;
+  width: 75%;
+  margin-left: 10px;
+  opacity: 5%;
+  -webkit-animation: fade-in-one 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+  animation: fade-in-one 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+}
+
+.hexTwo {
+  grid-area: hexTwo;
+  width: 75%;
+  opacity: 5%;
+  -webkit-animation: fade-in-two 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+  animation: fade-in-two 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+}
+
+.hexThree {
+  grid-area: hexThree;
+  width: 75%;
+  margin-left: 10px;
+  opacity: 5%;
+  -webkit-animation: fade-in-three 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+  animation: fade-in-three 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+}
+
+.hexFour {
+  grid-area: hexFour;
+  width: 75%;
+  opacity: 5%;
+  -webkit-animation: fade-in-four 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+  animation: fade-in-four 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+}
+
+.hexFive {
+  grid-area: hexFive;
+  width: 75%;
+  opacity: 5%;
+  -webkit-animation: fade-in-five 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+  animation: fade-in-five 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+}
+
+.hexSix {
+  grid-area: hexSix;
+  width: 75%;
+  margin-left: 10px;
+  opacity: 5%;
+  -webkit-animation: fade-in-six 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+  animation: fade-in-six 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+}
+
+.hexSeven {
+  grid-area: hexSeven;
+  width: 75%;
+  opacity: 5%;
+  -webkit-animation: fade-in-seven 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+  animation: fade-in-seven 7s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+}
+
+/*One*/
+@-webkit-keyframes fade-in-one {
+  0% {
+    opacity: .05;
+  }
+
+  10% {
+    opacity: .15;
+  }
+
+  20% {
+    opacity: .05;
+  }
+}
+
+@keyframes fade-in-one {
+  0% {
+    opacity: .05;
+  }
+
+  10% {
+    opacity: .15;
+  }
+
+  20% {
+    opacity: .05;
+  }
+}
+
+/*Two*/
+@-webkit-keyframes fade-in-two {
+  10% {
+    opacity: .05;
+  }
+
+  20% {
+    opacity: .15;
+  }
+
+  30% {
+    opacity: .05;
+  }
+}
+
+@keyframes fade-in-two {
+  10% {
+    opacity: .05;
+  }
+
+  20% {
+    opacity: .15;
+  }
+
+  30% {
+    opacity: .05;
+  }
+}
+
+/* three */
+@-webkit-keyframes fade-in-three {
+  20% {
+    opacity: .05;
+  }
+
+  30% {
+    opacity: .15;
+  }
+
+  40% {
+    opacity: .05;
+  }
+}
+
+@keyframes fade-in-three {
+  20% {
+    opacity: .05;
+  }
+
+  30% {
+    opacity: .15;
+  }
+
+  40% {
+    opacity: .05;
+  }
+}
+
+/*Four*/
+@-webkit-keyframes fade-in-four {
+  30% {
+    opacity: .05;
+  }
+
+  40% {
+    opacity: .15;
+  }
+
+  50% {
+    opacity: .05;
+  }
+}
+
+@keyframes fade-in-four {
+  30% {
+    opacity: .05;
+  }
+
+  40% {
+    opacity: .15;
+  }
+
+  50% {
+    opacity: .05;
+  }
+}
+
+/*Five*/
+@-webkit-keyframes fade-in-five {
+  40% {
+    opacity: .05;
+  }
+
+  50% {
+    opacity: .15;
+  }
+
+  60% {
+    opacity: .05;
+  }
+}
+
+@keyframes fade-in-five {
+  40% {
+    opacity: .05;
+  }
+
+  50% {
+    opacity: .15;
+  }
+
+  60% {
+    opacity: .05;
+  }
+}
+
+/*Six*/
+@-webkit-keyframes fade-in-six {
+  50% {
+    opacity: .05;
+  }
+
+  60% {
+    opacity: .15;
+  }
+
+  70% {
+    opacity: .05;
+  }
+}
+
+@keyframes fade-in-six {
+  50% {
+    opacity: .05;
+  }
+
+  60% {
+    opacity: .15;
+  }
+
+  70% {
+    opacity: .05;
+  }
+}
+
+/*Seven*/
+@-webkit-keyframes fade-in-seven {
+  60% {
+    opacity: .05;
+  }
+
+  70% {
+    opacity: .15;
+  }
+
+  80% {
+    opacity: .05;
+  }
+}
+
+@keyframes fade-in-seven {
+  60% {
+    opacity: .05;
+  }
+
+  70% {
+    opacity: .15;
+  }
+
+  80% {
+    opacity: .05;
+  }
+}

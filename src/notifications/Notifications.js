@@ -192,5 +192,3 @@ class notes extends Component {
 }
  
 export default notes;
-
-

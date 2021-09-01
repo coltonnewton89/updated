@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-import firebase from "../FireConfig";
 import "../theme/FourSteps.css";
 import Success from "../imgs/goodJob.png";
+import { NavLink } from "react-router-dom";
 
 class FourSteps extends Component {
   state = {
@@ -45,47 +44,19 @@ class FourSteps extends Component {
     this.props._completeFourSteps();
   };
 
+  // glove = () => {
+  //   const {gloveNotes} = this.props;
+  //   this.props.gloveNotes
+  // }
+
   componentDidMount = () => {
     const noteCrumb = localStorage.getItem('noteCrumb')
     this.setState({noteCrumb: noteCrumb})
-    const currentUser = firebase.auth().currentUser.uid.toString();
-    var priArrRef = firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_priArr`);
-    var copeArrRef = firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_copeArr`);
-    var truthArrRef = firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_truthArr`);
-    var responseArrRef = firebase
-      .firestore()
-      .collection("usercycle")
-      .doc(`${currentUser}_responseArr`);
-
-    priArrRef.get().then((doc) => {
-      if (doc.exists) {
-        this.setState({ priArr: doc.data().priArr });
-      }
-    });
-    copeArrRef.get().then((doc) => {
-      if (doc.exists) {
-        this.setState({ copeArr: doc.data().copeArr });
-      }
-    });
-    truthArrRef.get().then((doc) => {
-      if (doc.exists) {
-        this.setState({ truthArr: doc.data().truthArr });
-      }
-    });
-    responseArrRef.get().then((doc) => {
-      if (doc.exists) {
-        this.setState({ responseArr: doc.data().responseArr });
-      }
-    });
+    this.setState({priArr: localStorage.getItem("pain")})
+    this.setState({copeArr: localStorage.getItem("cope")})
+    this.setState({truthArr: localStorage.getItem("truth")})
+    this.setState({responseArr: localStorage.getItem("response")})
+    
   };
 
   render() {
@@ -99,14 +70,15 @@ class FourSteps extends Component {
               src={Success}
               alt="Green circle with Thumbs up"
             />
+            <br/>
             {this.state.noteCrumb == 'true' ? <button className="fourStepBtn" onClick={this.completeFourSteps}>
-              Got it
+              Finish
             </button> : <button className="fourStepBtn"><NavLink
           to="/Notifications"
-          style={{ color: "#F1FAEE" }}          
+          style={{ color: "#F1FAEE", textDecoration:"none" }}          
           onClick={this.completeFourSteps}
         >
-          Got it
+          Finish
         </NavLink></button>}
             
           </div>
@@ -115,7 +87,7 @@ class FourSteps extends Component {
             <h2>Your Four Steps</h2>
             <div className="fourStepContent">
               <p className="fourB">
-                <b>When you feel or believe you are {this.state.priArr}</b>
+                <b>When you feel or believe you are {this.state.priArr.replace(/, ,/g, ", ")}</b>
               </p>
               {this.state.stepOne ? null : (
                 <button className="fourStepBtn" onClick={this.stepOneComplete}>
@@ -127,7 +99,7 @@ class FourSteps extends Component {
             {this.state.stepOne ? (
               <div className="fourStepContent">
                 <p className="fourB">
-                  <b>You might choose to become {this.state.copeArr}</b>
+                  <b>You might choose to become {this.state.copeArr.replace(/, ,/g, ", ")}</b>
                 </p>
                 {this.state.stepTwo ? null : (
                   <button
@@ -143,7 +115,7 @@ class FourSteps extends Component {
             {this.state.stepTwo ? (
               <div className="fourStepContent">
                 <p className="fourB">
-                  <b>But you are {this.state.truthArr}</b>
+                  <b>But you are {this.state.truthArr.replace(/, ,/g, ", ")}</b>
                 </p>
                 {this.state.stepThree ? null : (
                   <button
@@ -160,7 +132,7 @@ class FourSteps extends Component {
               <div className="fourStepContent">
                 <p className="fourB">
                   <b>
-                  Which allows you to become {this.state.responseArr} if you choose so.
+                  Which allows you to become {this.state.responseArr.replace(/, ,/g, ", ")} if you choose so.
                   </b>
                 </p>
                 {this.state.stepFour ? null : (
